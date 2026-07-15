@@ -6,6 +6,8 @@
     <title>Panel de Empresa - Pasantes y Horas Laborales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/empresaCSS/pasantesYhorasLaboralesEmpresa.css">
 
 </head>
@@ -13,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold me-4" href="#">
+            <a class="navbar-brand fw-bold me-4" href="#">
                 <span class="text-warning">●</span> RICALDONE
             </a>
             <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
@@ -24,7 +26,7 @@
                     <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./indexEmpresa.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
                     <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./ofertasLaboralesEmpresa.html"><i class="bi bi-briefcase me-1"></i> Ofertas laborales</a></li>
                     <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./pasantiasEmpresa.html"><i class="bi bi-file-earmark-person me-1"></i> Pasantías</a></li>
-                    <li class="nav-item"><a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="#"><i class="bi bi-person-badge me-1"></i> Pasantes y horas</a></li>
+                    <li class="nav-item"><a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="#"><i class="bi bi-clock-history me-1"></i> Pasantes y horas</a></li>
                     <li class="nav-item">
                         <a class="nav-link px-3 rounded-5 fw-medium" href="./notificacionesEmpresa.html">
                             <i class="bi bi-bell me-1"></i> Notificaciones 
@@ -47,45 +49,38 @@
                     <h5 id="empresaTipo" class="fw-bold mb-0" style="font-size: 1.05rem;">Empresa</h5>
                     <p id="empresaNombre" class="text-muted small mb-3">TechSolutions S.A.</p>
                     
-                    <!-- CAMBIO EN EL BOTÓN: Se modificó de <a> a <button> y se agregaron los atributos data-bs para accionar el Modal -->
-                    <button id="empresaVerPerfil" type="button" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold border-0" style="background-color: var(--azul-primario); font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">
+                    <button id="empresaVerPerfil" type="button" class="btn btn-perfil-empresa w-100 rounded-pill py-2 fw-semibold border-0" style="font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">
                         Ver mi perfil
                     </button>
-                    <!-- FIN DEL CAMBIO EN EL BOTÓN -->
 
                 </div>
             </div>
 
             <div class="col-xl-10 col-lg-9">
                 <div class="mb-4">
-                    <h4 class="fw-bold mb-1">Pasantes y horas laborales</h4>
+                    <h4 class="titulo-pagina mb-1">Pasantes y horas laborales</h4>
                     <span class="text-muted">Gestiona tus pasantes y registra horas laborales</span>
                 </div>
 
-                <div class="row g-3 mb-4 text-start">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background: #e8f0fe; color: var(--azul-primario);"><i class="bi bi-backpack-fill"></i></div>
-                            <div><div id="contadorPasantesActivos" class="fw-bold fs-4 lh-1">18</div><div class="text-muted small">Pasantes activos</div></div>
-                        </div>
+                <div class="franja-metricas mb-4">
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorPasantesActivos">18</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-backpack-fill me-1"></i>Pasantes activos</div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background: #e6f7ed; color: #10b981;"><i class="bi bi-clock-history"></i></div>
-                            <div><div id="contadorHorasAcumuladas" class="fw-bold fs-4 lh-1">2,450</div><div class="text-muted small">Horas acumuladas</div></div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorHorasAcumuladas">2,450</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-clock-history me-1"></i>Horas acumuladas</div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background: #f3e8ff; color: #a855f7;"><i class="bi bi-calendar-check-fill"></i></div>
-                            <div><div id="contadorHorasMes" class="fw-bold fs-4 lh-1">245</div><div class="text-muted small">Horas este mes</div></div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorHorasMes">245</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-calendar-check-fill me-1"></i>Horas este mes</div>
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background: #fef3c7; color: #f59e0b;"><i class="bi bi-hourglass-split"></i></div>
-                            <div><div id="contadorPorFinalizar" class="fw-bold fs-4 lh-1">6</div><div class="text-muted small">Por finalizar</div></div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorPorFinalizar">6</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-hourglass-split me-1"></i>Por finalizar</div>
                     </div>
                 </div>
 
@@ -212,7 +207,7 @@
                     <div class="col-xl-4">
                         <div class="card border border-light-subtle rounded-4 p-4 bg-white shadow-sm">
                             <div class="d-flex justify-content-between align-items-center mb-4 text-start">
-                                <h6 class="fw-bold mb-0">Estudiante seleccionado</h6>
+                                <h6 class="titulo-seccion mb-0">Estudiante seleccionado</h6>
                                 <button id="btnCerrarDetalle" type="button" class="btn-close small" aria-label="Close"></button>
                             </div>
 
@@ -252,7 +247,7 @@
                                     <label class="text-muted small mb-1">Descripción</label>
                                     <textarea id="registroDescripcion" class="form-control bg-light border-0 small py-2 px-3" rows="3" style="resize: none;" placeholder="Actividades realizadas..."></textarea>
                                 </div>
-                                <button id="btnGuardarHoras" type="button" class="btn btn-primary w-100 py-2 fw-bold border-0" style="background-color: var(--azul-primario); border-radius: 10px;">Guardar horas</button>
+                                <button id="btnGuardarHoras" type="button" class="btn btn-guardar-horas w-100 py-2 fw-bold border-0" style="border-radius: 10px;">Guardar horas</button>
                             </form>
                         </div>
                     </div>
@@ -261,12 +256,9 @@
         </div>
     </div>
 
-      <!-- Agregar ver pefil empresa -->
-
     <div class="modal fade" id="modalPerfilEmpresa" tabindex="-1" aria-labelledby="modalPerfilEmpresaLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow">
-                <!-- Encabezado del Modal -->
                 <div class="modal-header border-bottom-0 px-4 pt-4 pb-2 d-flex align-items-center justify-content-between">
                     <h5 class="modal-title fw-bold fs-4" id="modalPerfilEmpresaLabel">Mi perfil</h5>
                     <div class="d-flex align-items-center gap-2">
@@ -276,16 +268,13 @@
                         <button type="button" class="btn-close ms-2" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
-                <!-- Cuerpo del Modal (Basado fielmente en tu imagen) -->
                 <div class="modal-body px-4 pb-4">
                     <div class="row align-items-start mb-4">
-                        <!-- Cuadro Gris de Logotipo / Imagen -->
                         <div class="col-auto">
                             <div class="rounded-3 bg-secondary-subtle d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
                                 <i class="bi bi-building text-white fs-1"></i>
                             </div>
                         </div>
-                        <!-- Información Principal Superior -->
                         <div class="col">
                             <h3 class="fw-bold text-dark mb-2">Tech Solutions S.A. de C.V.</h3>
                             <p class="text-secondary mb-3" style="font-size: 0.95rem;">Empresa de desarrollo de software y soluciones tecnológicas</p>
@@ -298,9 +287,7 @@
 
                     <hr class="text-secondary opacity-25 my-4">
 
-                    <!-- Cuadrícula de Datos de Contacto y Empresa -->
                     <div class="row g-4 mb-4" style="font-size: 0.9rem;">
-                        <!-- Columna Izquierda -->
                         <div class="col-md-6">
                             <div class="d-flex gap-3 mb-3">
                                 <div class="text-primary fs-5"><i class="bi bi-envelope"></i></div>
@@ -332,7 +319,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Columna Derecha -->
                         <div class="col-md-6">
                             <div class="d-flex gap-3 mb-3">
                                 <div class="text-primary fs-5"><i class="bi bi-briefcase"></i></div>
@@ -352,7 +338,6 @@
                         </div>
                     </div>
 
-                    <!-- Sección de Descripción -->
                     <div class="bg-light p-3 rounded-3" style="font-size: 0.88rem;">
                         <h6 class="fw-bold text-dark mb-2">Descripción de la empresa</h6>
                         <p class="text-secondary mb-0 lh-base">
@@ -364,11 +349,6 @@
         </div>
     </div>
 
-
-
-
-    <!-- Div editar perfil -->
-
     <div class="modal fade" id="modalEditarPerfilEmpresa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalVerPerfilEmpresaLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-content-custom">
@@ -378,7 +358,6 @@
                 </div>
                 <div class="modal-body modal-body-custom">
                     <form id="formPerfilEmpresa">
-                        
                         <h6 class="fw-bold mb-3" style="font-size: 0.9rem; color: #4b5563;">Detalles Generales</h6>
 
                         <div class="row mb-3">
@@ -413,7 +392,6 @@
                             <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-guardar">Guardar Cambios</button>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -421,8 +399,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
      <script src="../JS/EmpresaJS/pasantesYhorasLaborales.js"></script>
-
 </body>
 </html>

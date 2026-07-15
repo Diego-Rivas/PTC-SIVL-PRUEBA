@@ -1,91 +1,140 @@
-/* --- Variables Globales y Base --- */
-        :root {
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
-        body {
-            background-color: #f4f5f7;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+/* --- Variables Globales --- */
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+    --radio-borde-tarjeta: 14px;
+}
 
-        /* --- Componentes Personalizados --- */
-        .navbar-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            transition: 0.3s;
-        }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link.nav-activo {
-            background-color: #1a56db;
-            color: #ffffff !important;
-        }
-        .barra-busqueda {
-            background-color: #ffffff;
-            border-radius: 20px;
-            width: 250px;
-        }
-        .tarjeta-personalizada {
-            border-radius: 16px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-        .imagen-perfil {
-            width: 80px;
-            height: 80px;
-            background-color: #d1d5db;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Listas y Buscadores --- */
-        .lista-seleccionable {
-            max-height: 480px;
-            overflow-y: auto;
-        }
-        .item-seleccionable {
-            cursor: pointer;
-            transition: 0.2s;
-            border: 1px solid transparent;
-        }
-        .item-seleccionable:hover { background-color: #f8fafc; }
-        .item-seleccionable.activo {
-            background-color: #e1effe;
-            border-color: #bfdbfe;
-        }
-        .avatar-mini {
-            width: 40px;
-            height: 40px;
-            background-color: #e5e7eb;
-        }
-        .caja-buscar-interna {
-            background-color: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Tabla y Tarjetas de Resumen --- */
-        .tabla-grupos th {
-            background-color: #e5e7eb !important;
-            color: #374151;
-        }
-        .tarjeta-resumen-grupo {
-            background-color: #f9fafb;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            position: relative;
-        }
-        .btn-remover-seleccion {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            color: #ef4444;
-        }
-        .alerta-informativa {
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            color: #1e40af;
-            border-radius: 12px;
-        }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #16213b;
+}
+
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
+
+/* --- Navbar (idéntico al resto del sitio) --- */
+.navbar-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
+.nav-link.nav-activo { background-color: #2a3555; }
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+.imagen-perfil {
+    width: 82px;
+    height: 82px;
+    background-color: #d7dbe3;
+}
+.btn-perfil-admin {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-admin:hover { color: #fff; background-color: #1f3fae; }
+
+/* --- Caja de búsqueda interna --- */
+.caja-buscar-interna {
+    background-color: #f4f5f7;
+    border-radius: 10px;
+}
+.caja-buscar-interna input:focus { outline: none; box-shadow: none; }
+
+/* --- Lista de docentes seleccionable (barra lateral en vez de círculo de color) --- */
+.item-seleccionable {
+    cursor: pointer;
+    transition: 0.2s;
+}
+.item-seleccionable:hover { background-color: #f7f8fa; }
+.item-seleccionable.activo {
+    background-color: #e9edfb;
+}
+
+.marcador-item {
+    width: 5px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: #d7dbe3;
+    flex-shrink: 0;
+    display: inline-block;
+}
+.item-seleccionable.activo .marcador-item {
+    background-color: var(--azul-primario);
+}
+.texto-activo { color: var(--azul-primario); }
+
+.avatar-mini {
+    width: 35px;
+    height: 35px;
+    background-color: #d7dbe3;
+    color: #fff;
+}
+
+/* --- Tabla de grupos --- */
+.tabla-grupos thead th {
+    background-color: #f4f5f7;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+.tabla-grupos td { font-size: 0.85rem; }
+
+/* --- Tarjetas resumen de grupos seleccionados --- */
+.tarjeta-resumen-grupo {
+    background-color: #f7f8fb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+.marcador-resumen {
+    width: 4px;
+    align-self: stretch;
+    background-color: var(--azul-primario);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.btn-remover-seleccion {
+    color: #9ca3af;
+    transition: 0.2s;
+}
+.btn-remover-seleccion:hover { color: #ef4444; }
+
+/* --- Alerta informativa --- */
+.alerta-informativa {
+    background-color: #eef2ff;
+    color: #3730a3;
+    border-radius: 10px;
+}
+
+/* --- Botón de acción principal --- */
+.btn-asignar-grupos {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-asignar-grupos:hover { background-color: #1f3fae; color: #fff; }

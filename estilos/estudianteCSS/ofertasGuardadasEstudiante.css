@@ -1,110 +1,192 @@
+/* --- Variables Globales --- */
 :root {
-            --fondo-claro: #f4f5f7;
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: var(--fondo-claro);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Barra de Navegación --- */
-        .navbar-personalizado {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-nav {
-            color: #9ca3af !important;
-            font-weight: 500;
-            margin: 0 5px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .enlace-nav:hover { 
-            color: #ffffff !important; 
-        }
-        .nav-activo {
-            background-color: #1a56db;
-            color: #ffffff !important;
-        }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.titulo-pagina,
+.titulo-seccion,
+.navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Tarjetas Estilo Base --- */
-        .tarjeta-personalizada {
-            border-radius: 16px;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+.titulo-pagina {
+    font-weight: 700;
+    color: #16213b;
+}
 
-        /* --- Centro (Vacantes Guardadas) --- */
-        .tarjeta-vacante {
-            border-radius: 16px;
-            border: 1px solid #f3f4f6;
-            transition: 0.2s;
-        }
-        .tarjeta-vacante:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border-color: #e5e7eb;
-        }
-        .logo-empresa {
-            width: 85px;
-            height: 85px;
-            background-color: #d1d5db;
-            border-radius: 12px;
-            flex-shrink: 0;
-        }
-        .nombre-empresa {
-            color: var(--azul-primario);
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-        }
-        .nombre-empresa:hover { 
-            text-decoration: underline; 
-        }
-        
-        /* Botón Guardado Activo (Rojo/Rosa sutil) */
-        .btn-marcador-activo {
-            background-color: #fef2f2;
-            color: #ef4444;
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            border: 1px solid #fee2e2;
-            transition: 0.2s;
-        }
-        .btn-marcador-activo:hover {
-            background-color: #fee2e2;
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        .btn-lineas-primario-personalizado {
-            color: var(--azul-primario);
-            border: 1px solid var(--azul-primario);
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .btn-lineas-primario-personalizado:hover {
-            background-color: #f0f5ff;
-        }
-        .btn-primario-personalizado {
-            background-color: var(--azul-primario);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .btn-primario-personalizado:hover {
-            background-color: #1a56db;
-        }
+/* --- Navbar --- */
+.navegacion-personalizada {
+    background-color: var(--nav-oscuro);
+}
 
-        /* --- Columnas Laterales --- */
-        .imagen-perfil {
-            width: 80px;
-            height: 80px;
-            background-color: #9ca3af;
-        }
+.navbar-brand {
+    color: #f4f5f7 !important;
+}
+
+.enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.enlace-nav:hover,
+.enlace-nav.nav-activo {
+    color: #ffffff !important;
+}
+
+.enlace-nav.nav-activo {
+    background-color: #2a3555;
+}
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
+}
+
+/* --- Consejos --- */
+.item-consejo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.item-consejo:last-child {
+    margin-bottom: 0;
+}
+
+.marcador-consejo {
+    width: 4px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 30px;
+}
+
+/* --- Tarjetas de vacante guardada --- */
+.tarjeta-vacante-guardada {
+    background-color: #fafbfc;
+    border: 1px solid #eef0f2;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.tarjeta-vacante-guardada:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.logo-empresa-placeholder {
+    width: 64px;
+    height: 64px;
+    background-color: #eef0f2;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.nombre-empresa {
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.nombre-empresa:hover {
+    text-decoration: underline;
+}
+
+.btn-lineas-primario-personalizado {
+    color: var(--azul-primario);
+    border: 1px solid var(--azul-primario);
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.btn-lineas-primario-personalizado:hover {
+    background-color: #eef2ff;
+}
+
+.btn-primario-personalizado {
+    background-color: var(--azul-primario);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-primario-personalizado:hover {
+    background-color: #1550c9;
+    color: #fff;
+}
+
+.btn-marcador-activo {
+    width: 34px;
+    height: 34px;
+    background-color: #eef2ff;
+    color: var(--azul-primario);
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-marcador-activo:hover {
+    background-color: #dbe3fb;
+}
+
+/* --- Perfil --- */
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    background-color: #d7dbe3;
+}
+
+.btn-perfil-estudiante {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+
+.btn-perfil-estudiante:hover {
+    color: #fff;
+    background-color: #1550c9;
+}
+
+.punto-estado {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    display: inline-block;
+}
+
+/* --- Estadísticas (marcador lateral en vez de círculo de color) --- */
+.marcador-stat {
+    width: 4px;
+    height: 40px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: inline-block;
+    margin-right: 12px;
+}

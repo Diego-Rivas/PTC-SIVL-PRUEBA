@@ -1,61 +1,142 @@
-/* --- CSS Estrictamente Necesario (Identidad Visual) --- */
-        :root {
-            --fondo-gris: #eaebef;
-            --nav-oscuro: #0f1626;
-            --azul-primario: #1d64f2;
-        }
+/* --- Variables Globales --- */
+:root {
+    --fondo-gris: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+}
 
-        body {
-            background-color: var(--fondo-gris);
-            font-family: system-ui, -apple-system, sans-serif;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-gris);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* Navbar personalizado */
-        .navbar-personalizada { background-color: var(--nav-oscuro); }
-        .nav-link { color: #9ca3af !important; transition: 0.2s; }
-        .nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
-        .nav-link.nav-activo { background-color: #1f293d; }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* Pestañas internas */
-        .btn-filtro-pasante { color: #6b7280; transition: 0.2s; border-bottom: 3px solid transparent; }
-        .btn-filtro-pasante.activo { color: var(--azul-primario); border-bottom-color: var(--azul-primario); }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #16213b;
+}
 
-        /* Inputs de estilo "Línea" (No existen en Bootstrap base) */
-        .input-registro-linea {
-            border: none;
-            border-bottom: 2px solid #cbd5e1;
-            background: transparent;
-            transition: 0.2s;
-        }
-        .input-registro-linea:focus {
-            outline: none;
-            border-bottom-color: var(--azul-primario);
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* Ajustes de tabla */
-        .tabla-pasantes td {
-             vertical-align: middle; padding: 1rem 1.5rem;
-            }
-                    .btn-cancelar {
-            background-color: #ffffff;
-            color: #212529;
-            border: 1px solid #dee2e6;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-cancelar:hover {
-            background-color: #f8f9fa;
-        }
-        .btn-guardar {
-            background-color: #0d6efd;
-            color: #ffffff;
-            border: none;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-guardar:hover {
-            background-color: #0b5ed7;
-        }
+/* --- Navbar (idéntico a ofertasLaboralesEmpresa) --- */
+.navbar-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.2s;
+}
+.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
+.nav-link.nav-activo { background-color: #2a3555; }
+
+.btn-perfil-empresa {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
+
+/* --- Franja de Métricas (reemplaza tarjetas con ícono) --- */
+.franja-metricas {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+    padding: 1.4rem 1rem;
+}
+
+.metrica-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.metrica-numero {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #16213b;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.metrica-etiqueta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+.metrica-etiqueta i { color: var(--azul-primario); }
+
+.separador-metrica {
+    width: 1px;
+    background-color: #e9eaee;
+    margin: 4px 0;
+}
+
+@media (max-width: 767px) {
+    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
+    .metrica-item { flex: 1 1 40%; }
+    .separador-metrica { display: none; }
+}
+
+/* Pestañas internas */
+.btn-filtro-pasante { color: #6b7280; transition: 0.2s; border-bottom: 3px solid transparent; }
+.btn-filtro-pasante.activo { color: var(--azul-primario); border-bottom-color: var(--azul-primario); }
+
+/* Inputs de estilo "Línea" */
+.input-registro-linea {
+    border: none;
+    border-bottom: 2px solid #cbd5e1;
+    background: transparent;
+    transition: 0.2s;
+}
+.input-registro-linea:focus {
+    outline: none;
+    border-bottom-color: var(--azul-primario);
+}
+
+.btn-guardar-horas {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-guardar-horas:hover { background-color: #1f3fae; color: #fff; }
+
+/* Ajustes de tabla */
+.tabla-pasantes td {
+    vertical-align: middle;
+    padding: 1rem 1.5rem;
+}
+
+/* --- Modal --- */
+.btn-cancelar {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-cancelar:hover {
+    background-color: #f8f9fa;
+}
+.btn-guardar {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-guardar:hover {
+    background-color: #1f3fae;
+}

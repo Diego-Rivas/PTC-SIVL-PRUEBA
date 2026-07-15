@@ -1,60 +1,144 @@
+/* --- Variables Globales --- */
 :root {
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: #f4f5f7;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Navbar Personalizada --- */
-        .navbar-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            font-weight: 500;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .nav-link:hover, .nav-link.nav-activo { 
-            color: #ffffff !important; 
-        }
-        .nav-link.nav-activo { 
-            background-color: #1a56db; 
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Componentes Específicos --- */
-        .imagen-perfil {
-            width: 80px;
-            height: 80px;
-            background-color: #d1d5db;
-        }
-        .icono-metrica-contenedor {
-            width: 50px;
-            height: 50px;
-            font-size: 1.4rem;
-        }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #16213b;
+}
 
-        /* --- Gráfico de Barras --- */
-        .etiqueta-grafico { width: 160px; font-size: 0.8rem; }
-        .contenedor-barra { flex-grow: 1; background-color: #f3f4f6; height: 14px; }
-        .barra-progreso-azul { background-color: #3b82f6; height: 100%; }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Botones Laterales con Efecto Hover --- */
-        .btn-accion-lateral {
-            color: #374151;
-            background-color: #ffffff;
-            transition: 0.2s;
-            border: 1px solid #f3f4f6;
-        }
-        .btn-accion-lateral:hover {
-            background-color: #f9fafb;
-            color: var(--azul-primario);
-            border-color: #e5e7eb;
-            transform: translateX(2px);
-        }
+/* --- Navbar (idéntico al de ofertasLaboralesEmpresa) --- */
+.navbar-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
+.nav-link.nav-activo { background-color: #2a3555; }
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+/* --- Panel Lateral --- */
+.imagen-perfil {
+    width: 82px;
+    height: 82px;
+    background-color: #d7dbe3;
+}
+.btn-perfil-admin {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-admin:hover { color: #fff; background-color: #1f3fae; }
+
+.item-accion-rapida {
+    color: #23272f;
+    border-bottom: 1px solid #f1f2f5;
+    transition: 0.2s;
+}
+.item-accion-rapida:last-child { border-bottom: none; }
+.item-accion-rapida:hover { background-color: #f7f8fa; }
+
+.marcador-accion {
+    width: 6px;
+    height: 34px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* --- Franja de Métricas (reemplaza tarjetas con ícono de color) --- */
+.franja-metricas {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+    padding: 1.4rem 1rem;
+}
+
+.metrica-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.metrica-numero {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #16213b;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.metrica-etiqueta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+.metrica-etiqueta i { color: var(--azul-primario); }
+
+.separador-metrica {
+    width: 1px;
+    background-color: #e9eaee;
+    margin: 4px 0;
+}
+
+@media (max-width: 767px) {
+    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
+    .metrica-item { flex: 1 1 30%; }
+    .separador-metrica { display: none; }
+}
+
+/* --- Gráfico de barras horizontal (Estudiantes por especialidad) --- */
+.etiqueta-grafico {
+    width: 160px;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+}
+
+.contenedor-barra {
+    flex: 1;
+    height: 10px;
+    background-color: #eef0f2;
+}
+
+.barra-progreso-azul {
+    height: 100%;
+    background-color: var(--azul-primario);
+    transition: width 0.4s ease;
+}
+
+/* --- Tabla de actividad reciente --- */
+.texto-actividad {
+    color: var(--azul-primario);
+    font-weight: 500;
+}

@@ -1,102 +1,176 @@
- :root {
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-            --primario-enfoque: #1a56db;
-        }
-        body {
-            background-color: #f4f5f7;
-            font-size: 0.9rem;
-        }
+/* --- Variables Globales (paleta propia del módulo docente) --- */
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        /* --- Barra de Navegación --- */
-        .navegacion-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-nav {
-            color: #9ca3af !important;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .enlace-nav:hover, .enlace-nav.nav-activo {
-            color: #ffffff !important;
-        }
-        .enlace-nav.nav-activo {
-            background-color: var(--primario-enfoque);
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Foto Perfil Lateral --- */
-        .foto-perfil {
-            width: 85px;
-            height: 85px;
-            background-color: #d1d5db;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Tarjetas de Métricas Principales (Superiores) --- */
-        .tarjeta-metrica-top {
-            border: none;
-            border-radius: 16px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .icono-metrica-top {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-        }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #16213b;
+}
 
-        /* --- Acciones Rápidas --- */
-        .btn-accion-rapida {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-            font-size: 0.85rem;
-        }
-        .btn-accion-rapida:hover {
-            background-color: #f9fafb;
-            border-color: #d1d5db;
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Gráficos y Barras de Progreso Simuladas --- */
-        .barra-progreso-horizontal {
-            height: 8px;
-            border-radius: 4px;
-        }
+/* --- Navbar --- */
+.navegacion-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.enlace-nav:hover, .enlace-nav.nav-activo { color: #ffffff !important; }
+.enlace-nav.nav-activo { background-color: #2a3555; }
 
-        /* Simulación de gráfico de barras */
-        .columna-grafico {
-            width: 45px;
-            border-radius: 6px;
-            transition: transform 0.2s;
-            margin: 0 auto;
-        }
-        .columna-grafico:hover {
-            transform: scaleY(1.05);
-        }
-        .modal-perfil .modal-content {
-            border-radius: 20px;
-            border: none;
-        }
-        .modal-perfil .foto-perfil-grande {
-            width: 110px;
-            height: 110px;
-            background-color: #cccccc;
-            border-circle: 50%;
-        }
-        .modal-perfil .info-item {
-            font-size: 0.9rem;
-        }
-        .modal-perfil .badge-grupo {
-            background-color: #e3f2fd;
-            color: #0d6efd;
-            border: none;
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+.foto-perfil {
+    width: 82px;
+    height: 82px;
+    background-color: #d7dbe3;
+}
+.btn-perfil-docente {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-docente:hover { color: #fff; background-color: #1550c9; }
+
+/* --- Franja de Métricas --- */
+.franja-metricas {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+    padding: 1.4rem 1rem;
+}
+.metrica-item { flex: 1; text-align: center; padding: 0 0.5rem; }
+.metrica-numero {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #16213b;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.metrica-etiqueta { font-size: 0.8rem; color: #6b7280; font-weight: 500; }
+.metrica-etiqueta i { color: var(--azul-primario); }
+.separador-metrica { width: 1px; background-color: #e9eaee; margin: 4px 0; }
+
+@media (max-width: 767px) {
+    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
+    .metrica-item { flex: 1 1 30%; }
+    .separador-metrica { display: none; }
+}
+
+/* --- Tabla resumen de grupos --- */
+.fila-encabezado th {
+    color: #6b7280;
+    border-bottom: 1px solid #eef0f2;
+}
+.bg-avance { background-color: var(--azul-primario); }
+
+/* --- Distribución de avance (reemplaza barras verticales de colores superpuestos) --- */
+.etiqueta-distribucion {
+    width: 90px;
+    font-size: 0.8rem;
+    color: #4b5563;
+    flex-shrink: 0;
+}
+.contenedor-barra-distribucion {
+    flex: 1;
+    height: 8px;
+    background-color: #f1f2f5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.barra-distribucion { height: 100%; border-radius: 6px; }
+.barra-riesgo { background-color: #ef4444; }
+.barra-atencion { background-color: #f59e0b; }
+.barra-avanzado { background-color: #eab308; }
+.barra-completado { background-color: #16a34a; }
+
+.valor-distribucion {
+    width: 28px;
+    text-align: right;
+    font-weight: 700;
+    color: #16213b;
+    font-size: 0.85rem;
+    margin-right: 10px;
+}
+
+.badge-distribucion {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    width: 90px;
+    text-align: center;
+}
+.badge-riesgo { background-color: #fee2e2; color: #ef4444; }
+.badge-atencion { background-color: #fef3c7; color: #d97706; }
+.badge-avanzado { background-color: #fef9c3; color: #a16207; }
+.badge-completado { background-color: #dcfce7; color: #16a34a; }
+
+/* --- Acciones rápidas --- */
+.item-accion-rapida {
+    color: #23272f;
+    border-bottom: 1px solid #f1f2f5;
+    transition: 0.2s;
+}
+.item-accion-rapida:last-child { border-bottom: none; }
+.item-accion-rapida:hover { background-color: #f7f8fa; }
+.marcador-accion {
+    width: 6px;
+    height: 34px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* --- Mis grupos asignados --- */
+.btn-grupo-lateral {
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.btn-grupo-lateral:hover { background-color: #f3f4f6; color: #111827; }
+.btn-grupo-lateral.activo {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+.marcador-grupo {
+    width: 5px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #d7dbe3;
+    flex-shrink: 0;
+    display: inline-block;
+}
+.btn-grupo-lateral.activo .marcador-grupo { background-color: var(--azul-primario); }

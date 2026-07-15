@@ -6,671 +6,238 @@
     <title>Asignación de Pasantías - ITR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/docenteCSS/pasantiasDocente.css">
-
 </head>
-<body class="text-dark" style="font-size: 0.9rem;">
+<body>
 
-<nav class="navbar navbar-expand-lg navegacion-personalizada mx-4 mt-3 mb-4 py-2 px-4">
-    <div class="container-fluid">
-        <a class="navbar-brand text-white fw-bold me-4" href="#">
-            <span class="text-warning">●</span> RICALDONE
-        </a>
-        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <i class="bi bi-list fs-2"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="enlace-nav nav-link fw-medium mx-1 px-3 rounded-pill" href="./indexDocente.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
-                <li class="nav-item"><a class="enlace-nav nav-link fw-medium mx-1 px-3 rounded-pill" href="./estudiantesDocente.html"><i class="bi bi-people me-1"></i> Estudiantes</a></li>
-                <li class="nav-item"><a class="enlace-nav nav-link fw-medium mx-1 px-3 rounded-pill nav-activo" href="./pasantiasDocente.html"><i class="bi bi-folder-check me-1"></i> Pasantías</a></li>
-                <li class="nav-item"><a class="enlace-nav nav-link fw-medium mx-1 px-3 rounded-pill" href="./reportesDocente.html"><i class="bi bi-file-earmark-bar-graph me-1"></i> Reportes</a></li>
-                <li class="nav-item"><a class="enlace-nav nav-link fw-medium mx-1 px-3 rounded-pill" href="./notificacionesDocente.html"><i class="bi bi-bell me-1"></i> Notificaciones <span id="docenteCantidadNotificaciones" class="badge bg-primary rounded-pill ms-1">3</span></a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navegacion-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold me-4" href="#">
+                <span class="text-warning">●</span> RICALDONE
+            </a>
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-1">
+                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./indexDocente.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./estudiantesDocente.html"><i class="bi bi-people me-1"></i> Estudiantes</a></li>
+                    <li class="nav-item"><a class="nav-link enlace-nav nav-activo px-3 rounded-5 fw-medium" href="./pasantiasDocente.html"><i class="bi bi-folder-check me-1"></i> Pasantías</a></li>
+                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./reportesDocente.html"><i class="bi bi-file-earmark-bar-graph me-1"></i> Reportes</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./notificacionesDocente.html">
+                            <i class="bi bi-bell me-1"></i> Notificaciones
+                            <span id="docenteCantidadNotificaciones" class="badge bg-danger rounded-pill ms-1" style="font-size:0.7rem;">3</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container-fluid px-4">
-    <div class="row">
-        
-        <aside class="col-xl-2 col-lg-3 mb-4">
-            <div class="card tarjeta-personalizada p-4 text-center mb-4 border-0">
-                <div id="docenteFotoPerfil" class="bg-secondary bg-opacity-25 rounded-circle mb-3 d-flex align-items-center justify-content-center mx-auto" style="width: 85px; height: 85px;">
-                    <i class="bi bi-person-fill text-white" style="font-size: 3.5rem;"></i>
+    <div class="container-fluid px-4">
+        <div class="row">
+
+            <aside class="col-xl-2 col-lg-3 mb-4">
+                <div class="card tarjeta-personalizada border-0 p-4 text-center bg-white mb-3">
+                    <div id="docenteFotoPerfil" class="foto-perfil mb-3 d-flex align-items-center justify-content-center mx-auto rounded-circle">
+                        <i class="bi bi-person-fill text-white" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-0" style="font-size: 1.1rem;">Docente</h5>
+                    <p id="docenteNombre" class="text-muted small mb-1">Lic. Carlos García</p>
+                    <p id="docenteEspecialidad" class="text-muted small mb-3">Desarrollo de Software</p>
+                    <button id="docenteVerPerfil" class="btn btn-perfil-docente w-100 rounded-pill border-0 py-2 fw-semibold small">Ver mi perfil</button>
                 </div>
-                <h5 class="fw-bold mb-0">Docente</h5>
-                <p id="docenteNombre" class="text-muted small mb-1">Lic. Carlos Mendoza</p>
-                <p id="docenteEspecialidad" class="text-muted small mb-3">Desarrollo de Software</p>
-                <button id="docenteVerPerfil" class="btn btn-primary w-100 rounded-pill py-2 border-0 fw-semibold" style="background-color: var(--azul-primario); font-size: 0.85rem;">Ver mi perfil</button>
-            </div>
 
-            <div class="card tarjeta-personalizada p-3 border-0">
-                <h6 class="fw-bold px-2 mb-3">Mis grupos asignados</h6>
-                <div id="docenteListaGrupos" class="d-flex flex-column gap-1">
-                    <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 p-2 rounded-3 text-decoration-none fw-semibold activo" style="font-size: 0.85rem;">
-                        <i class="bi bi-people-fill fs-5"></i> 2 Software A - Grupo 1
-                    </a>
-                    <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 p-2 rounded-3 text-decoration-none fw-medium" style="font-size: 0.85rem;">
-                        <i class="bi bi-people-fill fs-5"></i> 2 Software A - Grupo 2
-                    </a>
-                    <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 p-2 rounded-3 text-decoration-none fw-medium" style="font-size: 0.85rem;">
-                        <i class="bi bi-people-fill fs-5"></i> 2 Software B - Grupo 1
-                    </a>
-                    <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 p-2 rounded-3 text-decoration-none fw-medium" style="font-size: 0.85rem;">
-                        <i class="bi bi-people-fill fs-5"></i> 2 Software B - Grupo 2
-                    </a>
+                <div class="card tarjeta-personalizada border-0 p-3 bg-white">
+                    <h6 class="titulo-seccion mb-3 px-1" style="font-size: 0.95rem;">Mis grupos asignados</h6>
+                    <div id="docenteListaGrupos" class="d-flex flex-column gap-1">
+                        <a href="#" class="btn-grupo-lateral activo d-flex align-items-center gap-2 text-decoration-none">
+                            <span class="marcador-grupo"></span> 2 Software A - Grupo 1
+                        </a>
+                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
+                            <span class="marcador-grupo"></span> 2 Software A - Grupo 2
+                        </a>
+                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
+                            <span class="marcador-grupo"></span> 2 Software B - Grupo 1
+                        </a>
+                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
+                            <span class="marcador-grupo"></span> 2 Software B - Grupo 2
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </aside>
+            </aside>
 
-      <section class="col-xl-3 col-lg-4 mb-4">
-
-    <div id="docenteListaVacantes" class="card tarjeta-personalizada p-3 d-flex flex-column gap-2 border-0">
-
-        <div data-id="1" class="tarjeta-vacante item-vacante seleccionada d-flex gap-3 p-3 rounded-4">
-
-            <div class="logo-vacante bg-secondary bg-opacity-25 rounded-3 flex-shrink-0"
-                style="width:50px; height:50px;">
-            </div>
-
-            <div>
-
-                <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">
-                    Desarrollo Frontend
-                </h6>
-
-                <span class="empresa-vacante text-primary small d-block fw-semibold">
-                    Nombre de la empresa
-                </span>
-
-                <span class="cupos-vacante text-success small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    ● Cupos disponibles
-                </span>
-
-                <span class="modalidad-vacante text-muted small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    Presencial
-                </span>
-
-            </div>
-
-        </div>
-
-        <div data-id="2" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-4">
-
-            <div class="logo-vacante bg-secondary bg-opacity-25 rounded-3 flex-shrink-0"
-                style="width:50px; height:50px;">
-            </div>
-
-            <div>
-
-                <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">
-                    Desarrollo Frontend
-                </h6>
-
-                <span class="empresa-vacante text-primary small d-block fw-semibold">
-                    Nombre de la empresa
-                </span>
-
-                <span class="cupos-vacante text-success small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    ● Cupos disponibles
-                </span>
-
-                <span class="modalidad-vacante text-muted small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    Presencial
-                </span>
-
-            </div>
-
-        </div>
-
-        <div data-id="3" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-4">
-
-            <div class="logo-vacante bg-secondary bg-opacity-25 rounded-3 flex-shrink-0"
-                style="width:50px; height:50px;">
-            </div>
-
-            <div>
-
-                <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">
-                    Desarrollo Frontend
-                </h6>
-
-                <span class="empresa-vacante text-primary small d-block fw-semibold">
-                    Nombre de la empresa
-                </span>
-
-                <span class="cupos-vacante text-success small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    ● Cupos disponibles
-                </span>
-
-                <span class="modalidad-vacante text-muted small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    Presencial
-                </span>
-
-            </div>
-
-        </div>
-
-        <div data-id="4" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-4">
-
-            <div class="logo-vacante bg-secondary bg-opacity-25 rounded-3 flex-shrink-0"
-                style="width:50px; height:50px;">
-            </div>
-
-            <div>
-
-                <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">
-                    Desarrollo Frontend
-                </h6>
-
-                <span class="empresa-vacante text-primary small d-block fw-semibold">
-                    Nombre de la empresa
-                </span>
-
-                <span class="cupos-vacante text-success small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    ● Cupos disponibles
-                </span>
-
-                <span class="modalidad-vacante text-muted small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    Presencial
-                </span>
-
-            </div>
-
-        </div>
-
-        <div data-id="5" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-4">
-
-            <div class="logo-vacante bg-secondary bg-opacity-25 rounded-3 flex-shrink-0"
-                style="width:50px; height:50px;">
-            </div>
-
-            <div>
-
-                <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">
-                    Desarrollo Frontend
-                </h6>
-
-                <span class="empresa-vacante text-primary small d-block fw-semibold">
-                    Nombre de la empresa
-                </span>
-
-                <span class="cupos-vacante text-success small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    ● Cupos disponibles
-                </span>
-
-                <span class="modalidad-vacante text-muted small d-block fw-medium"
-                    style="font-size:0.75rem;">
-                    Presencial
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <section class="col-xl-4 col-lg-5 mb-4">
-            <div class="card tarjeta-personalizada p-4 border-0">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="fw-bold mb-0" style="font-size: 1.1rem;">Estudiantes</h5>
-                    <div>
-                        <input id="docenteBuscarEstudiante" type="text" class="form-control shadow-none border rounded-pill px-3 py-1" placeholder="Buscar estudiante" style="font-size: 0.8rem; max-width: 150px;">
+            <section class="col-xl-3 col-lg-4 mb-4">
+                <div class="card tarjeta-personalizada border-0 p-3 bg-white mb-3">
+                    <div class="position-relative">
+                        <i class="bi bi-search text-muted position-absolute" style="left: 12px; top: 50%; transform: translateY(-50%);"></i>
+                        <input id="docenteBuscarVacante" type="text" class="form-control entrada-busqueda-alumnos shadow-none w-100" placeholder="Buscar vacante...">
                     </div>
                 </div>
 
-                <div class="bg-secondary bg-opacity-10 rounded-2 d-flex justify-content-between align-items-center p-2 mb-2 fw-semibold text-secondary" style="font-size: 0.8rem;">
-                    <span style="width: 50%;">Estudiantes</span>
-                    <span class="ps-2" style="width: 50%;">Progreso</span>
+                <div id="docenteListaVacantes" class="card tarjeta-personalizada border-0 p-3 d-flex flex-column gap-2 bg-white">
+                    <div data-id="1" class="tarjeta-vacante item-vacante seleccionada d-flex gap-3 p-3 rounded-3">
+                        <span class="marcador-vacante"></span>
+                        <div>
+                            <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">Desarrollo Frontend</h6>
+                            <span class="empresa-vacante d-block fw-semibold" style="font-size:0.8rem;">TechSV S.A.</span>
+                            <span class="cupos-vacante d-block fw-medium" style="font-size:0.75rem;">● 2 cupos disponibles</span>
+                            <span class="modalidad-vacante text-muted d-block fw-medium" style="font-size:0.75rem;">Presencial</span>
+                        </div>
+                    </div>
+                    <div data-id="2" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-3">
+                        <span class="marcador-vacante"></span>
+                        <div>
+                            <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">Diseñador UI/UX</h6>
+                            <span class="empresa-vacante d-block fw-semibold" style="font-size:0.8rem;">Creativa 360</span>
+                            <span class="cupos-vacante d-block fw-medium" style="font-size:0.75rem;">● 1 cupo disponible</span>
+                            <span class="modalidad-vacante text-muted d-block fw-medium" style="font-size:0.75rem;">Remoto</span>
+                        </div>
+                    </div>
+                    <div data-id="3" class="tarjeta-vacante item-vacante d-flex gap-3 p-3 rounded-3">
+                        <span class="marcador-vacante"></span>
+                        <div>
+                            <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">Soporte Técnico</h6>
+                            <span class="empresa-vacante d-block fw-semibold" style="font-size:0.8rem;">Data Solutions SV</span>
+                            <span class="cupos-vacante d-block fw-medium" style="font-size:0.75rem;">● 3 cupos disponibles</span>
+                            <span class="modalidad-vacante text-muted d-block fw-medium" style="font-size:0.75rem;">Presencial</span>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div id="docenteListaEstudiantes" class="d-flex flex-column">
-                    
-                  <div data-id="1" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+            <section class="col-xl-4 col-lg-5 mb-4">
+                <div class="card tarjeta-personalizada border-0 p-4 bg-white">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="titulo-seccion mb-0" style="font-size: 1.05rem;">Estudiantes</h5>
+                        <input id="docenteBuscarEstudiante" type="text" class="form-control entrada-busqueda-mini shadow-none px-3 py-1" placeholder="Buscar estudiante" style="font-size: 0.8rem; max-width: 150px;">
+                    </div>
 
-    <div style="width: 50%;" class="d-flex flex-column">
+                    <div id="docenteListaEstudiantes" class="d-flex flex-column gap-2">
+                        <div data-id="1" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+                            <div style="width: 50%;" class="d-flex flex-column">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <div class="avatar-estudiante rounded-circle" style="width: 32px; height: 32px;"></div>
+                                    <span class="nombre-estudiante fw-semibold" style="font-size: 0.85rem;">Diego Martínez</span>
+                                </div>
+                                <span class="grupo-estudiante text-muted small ps-4" style="font-size: 0.75rem;">2 Software A - G1</span>
+                            </div>
+                            <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
+                                    <span class="horas-estudiante text-muted small text-nowrap" style="font-size: 0.75rem;">30 / 200</span>
+                                    <div class="progress w-100" style="height: 5px;">
+                                        <div class="barra-progreso progress-bar bg-danger" style="width: 15%;"></div>
+                                    </div>
+                                    <span class="porcentaje-estudiante text-muted small" style="font-size: 0.75rem;">15%</span>
+                                </div>
+                                <input data-id="1" type="checkbox" class="checkbox-estudiante form-check-input shadow-none border" style="width:18px; height:18px; cursor:pointer;">
+                            </div>
+                        </div>
 
-        <div class="d-flex align-items-center gap-2 mb-1">
+                        <div data-id="2" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
+                            <div style="width: 50%;" class="d-flex flex-column">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <div class="avatar-estudiante rounded-circle" style="width: 32px; height: 32px;"></div>
+                                    <span class="nombre-estudiante fw-semibold" style="font-size: 0.85rem;">Sofía López</span>
+                                </div>
+                                <span class="grupo-estudiante text-muted small ps-4" style="font-size: 0.75rem;">2 Software A - G1</span>
+                            </div>
+                            <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
+                                    <span class="horas-estudiante text-muted small text-nowrap" style="font-size: 0.75rem;">40 / 200</span>
+                                    <div class="progress w-100" style="height: 5px;">
+                                        <div class="barra-progreso progress-bar bg-warning" style="width: 20%;"></div>
+                                    </div>
+                                    <span class="porcentaje-estudiante text-muted small" style="font-size: 0.75rem;">20%</span>
+                                </div>
+                                <input data-id="2" type="checkbox" class="checkbox-estudiante form-check-input shadow-none border" style="width:18px; height:18px; cursor:pointer;">
+                            </div>
+                        </div>
 
-            <div class="avatar-estudiante bg-secondary bg-opacity-25 rounded-circle"
-                style="width: 32px; height: 32px;">
-            </div>
-
-            <span class="nombre-estudiante fw-semibold"
-                style="font-size: 0.85rem;">
-                Nombre del estudiante
-            </span>
-
-        </div>
-
-        <span class="grupo-estudiante text-muted small ps-4"
-            style="font-size: 0.75rem;">
-            2 Software A - G1
-        </span>
-
-    </div>
-
-    <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
-
-        <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
-
-            <span class="horas-estudiante text-muted small text-nowrap"
-                style="font-size: 0.75rem;">
-                30 / 200
-            </span>
-
-            <div class="progress w-100" style="height: 5px;">
-
-                <div class="barra-progreso progress-bar bg-danger"
-                    style="width: 15%">
+                        <div data-id="3" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2">
+                            <div style="width: 50%;" class="d-flex flex-column">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <div class="avatar-estudiante rounded-circle" style="width: 32px; height: 32px;"></div>
+                                    <span class="nombre-estudiante fw-semibold" style="font-size: 0.85rem;">Sebastián Pérez</span>
+                                </div>
+                                <span class="grupo-estudiante text-muted small ps-4" style="font-size: 0.75rem;">2 Software A - G1</span>
+                            </div>
+                            <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
+                                <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
+                                    <span class="horas-estudiante text-muted small text-nowrap" style="font-size: 0.75rem;">150 / 200</span>
+                                    <div class="progress w-100" style="height: 5px;">
+                                        <div class="barra-progreso progress-bar bg-success" style="width: 75%;"></div>
+                                    </div>
+                                    <span class="porcentaje-estudiante text-muted small" style="font-size: 0.75rem;">75%</span>
+                                </div>
+                                <input data-id="3" type="checkbox" class="checkbox-estudiante form-check-input shadow-none border" style="width:18px; height:18px; cursor:pointer;">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-
-            <span class="porcentaje-estudiante text-muted small"
-                style="font-size: 0.75rem;">
-                15%
-            </span>
-
-        </div>
-
-        <input
-        data-id="1"
-            type="checkbox"
-            class="checkbox-estudiante form-check-input shadow-none border"
-            style="width:18px; height:18px; cursor:pointer;">
-
-    </div>
-
-</div>
-
-                  <div data-id="2" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
-
-    <div style="width: 50%;" class="d-flex flex-column">
-
-        <div class="d-flex align-items-center gap-2 mb-1">
-
-            <div class="avatar-estudiante bg-secondary bg-opacity-25 rounded-circle"
-                style="width: 32px; height: 32px;">
-            </div>
-
-            <span class="nombre-estudiante fw-semibold"
-                style="font-size: 0.85rem;">
-                Nombre del estudiante
-            </span>
-
-        </div>
-
-        <span class="grupo-estudiante text-muted small ps-4"
-            style="font-size: 0.75rem;">
-            2 Software A - G1
-        </span>
-
-    </div>
-
-    <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
-
-        <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
-
-            <span class="horas-estudiante text-muted small text-nowrap"
-                style="font-size: 0.75rem;">
-                30 / 200
-            </span>
-
-            <div class="progress w-100" style="height: 5px;">
-
-                <div class="barra-progreso progress-bar bg-danger"
-                    style="width: 15%">
-                </div>
-
-            </div>
-
-            <span class="porcentaje-estudiante text-muted small"
-                style="font-size: 0.75rem;">
-                15%
-            </span>
-
-        </div>
-
-        <input
-        data-id="2"
-            type="checkbox"
-            class="checkbox-estudiante form-check-input shadow-none border"
-            style="width:18px; height:18px; cursor:pointer;">
-
-    </div>
-
-</div>
-                   <div data-id="3" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
-
-    <div style="width: 50%;" class="d-flex flex-column">
-
-        <div class="d-flex align-items-center gap-2 mb-1">
-
-            <div class="avatar-estudiante bg-secondary bg-opacity-25 rounded-circle"
-                style="width: 32px; height: 32px;">
-            </div>
-
-            <span class="nombre-estudiante fw-semibold"
-                style="font-size: 0.85rem;">
-                Nombre del estudiante
-            </span>
-
-        </div>
-
-        <span class="grupo-estudiante text-muted small ps-4"
-            style="font-size: 0.75rem;">
-            2 Software A - G1
-        </span>
-
-    </div>
-
-    <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
-
-        <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
-
-            <span class="horas-estudiante text-muted small text-nowrap"
-                style="font-size: 0.75rem;">
-                30 / 200
-            </span>
-
-            <div class="progress w-100" style="height: 5px;">
-
-                <div class="barra-progreso progress-bar bg-danger"
-                    style="width: 15%">
-                </div>
-
-            </div>
-
-            <span class="porcentaje-estudiante text-muted small"
-                style="font-size: 0.75rem;">
-                15%
-            </span>
-
-        </div>
-
-        <input
-        data-id="3"
-            type="checkbox"
-            class="checkbox-estudiante form-check-input shadow-none border"
-            style="width:18px; height:18px; cursor:pointer;">
-
-    </div>
-
-</div>
-
-                   <div data-id="4" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
-
-    <div style="width: 50%;" class="d-flex flex-column">
-
-        <div class="d-flex align-items-center gap-2 mb-1">
-
-            <div class="avatar-estudiante bg-secondary bg-opacity-25 rounded-circle"
-                style="width: 32px; height: 32px;">
-            </div>
-
-            <span class="nombre-estudiante fw-semibold"
-                style="font-size: 0.85rem;">
-                Nombre del estudiante
-            </span>
-
-        </div>
-
-        <span class="grupo-estudiante text-muted small ps-4"
-            style="font-size: 0.75rem;">
-            2 Software A - G1
-        </span>
-
-    </div>
-
-    <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
-
-        <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
-
-            <span class="horas-estudiante text-muted small text-nowrap"
-                style="font-size: 0.75rem;">
-                30 / 200
-            </span>
-
-            <div class="progress w-100" style="height: 5px;">
-
-                <div class="barra-progreso progress-bar bg-danger"
-                    style="width: 15%">
-                </div>
-
-            </div>
-
-            <span class="porcentaje-estudiante text-muted small"
-                style="font-size: 0.75rem;">
-                15%
-            </span>
-
-        </div>
-
-        <input
-        data-id="4"
-            type="checkbox"
-            class="checkbox-estudiante form-check-input shadow-none border"
-            style="width:18px; height:18px; cursor:pointer;">
-
-    </div>
-
-</div>
-                  <div data-id="5" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
-
-    <div style="width: 50%;" class="d-flex flex-column">
-
-        <div class="d-flex align-items-center gap-2 mb-1">
-
-            <div class="avatar-estudiante bg-secondary bg-opacity-25 rounded-circle"
-                style="width: 32px; height: 32px;">
-            </div>
-
-            <span class="nombre-estudiante fw-semibold"
-                style="font-size: 0.85rem;">
-                Nombre del estudiante
-            </span>
-
-        </div>
-
-        <span class="grupo-estudiante text-muted small ps-4"
-            style="font-size: 0.75rem;">
-            2 Software A - G1
-        </span>
-
-    </div>
-
-    <div style="width: 50%;" class="d-flex align-items-center justify-content-between gap-2">
-
-        <div class="d-flex align-items-center gap-2 flex-grow-1 px-2">
-
-            <span class="horas-estudiante text-muted small text-nowrap"
-                style="font-size: 0.75rem;">
-                30 / 200
-            </span>
-
-            <div class="progress w-100" style="height: 5px;">
-
-                <div class="barra-progreso progress-bar bg-danger"
-                    style="width: 15%">
-                </div>
-
-            </div>
-
-            <span class="porcentaje-estudiante text-muted small"
-                style="font-size: 0.75rem;">
-                15%
-            </span>
-
-        </div>
-
-        <input
-        data-id="5"
-            type="checkbox"
-            class="checkbox-estudiante form-check-input shadow-none border"
-            style="width:18px; height:18px; cursor:pointer;">
-
-    </div>
-
-</div>
+            </section>
+
+            <section class="col-xl-3 col-lg-12 mb-4">
+                <div class="d-flex flex-column gap-3">
+
+                    <div class="card tarjeta-personalizada border-0 p-4 bg-white">
+                        <h6 class="titulo-seccion mb-3" style="font-size: 1rem;">Detalle asignación</h6>
+                        <div class="detalle-asignacion rounded-3 p-3">
+                            <span class="fw-bold d-block mb-3 text-dark" style="font-size: 0.8rem;">Resumen de asignación</span>
+                            <table class="w-100" style="font-size: 0.8rem;">
+                                <tr>
+                                    <td class="text-secondary py-1">Empresa</td>
+                                    <td id="docenteEmpresaAsignacion" class="empresa-asignacion fw-semibold text-dark text-end py-1">TechSV S.A.</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-secondary py-1">Rol/Vacante</td>
+                                    <td id="docenteVacanteAsignacion" class="vacante-asignacion fw-semibold text-dark text-end py-1">Frontend Developer</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-secondary py-1">Modalidad</td>
+                                    <td id="docenteModalidadAsignacion" class="modalidad-asignacion fw-semibold text-dark text-end py-1">Presencial</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-secondary py-1">Duración</td>
+                                    <td id="docenteDuracionAsignacion" class="duracion-asignacion fw-semibold text-dark text-end py-1">200 horas</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card tarjeta-personalizada border-0 p-4 bg-white">
+                        <h6 class="titulo-seccion mb-3" style="font-size: 1rem;">Estudiante seleccionado</h6>
+                        <div id="docenteEstudianteSeleccionado" class="d-flex flex-column gap-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <div id="detalleFotoEstudiante" class="rounded-circle" style="width: 32px; height: 32px; background-color:#d7dbe3;"></div>
+                                <div class="d-flex flex-column">
+                                    <span id="detalleNombreEstudiante" class="fw-semibold" style="font-size: 0.85rem;">Seleccione un estudiante</span>
+                                    <span id="detalleGrupoEstudiante" class="text-muted" style="font-size: 0.75rem;">—</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end mt-1">
+                                <span id="detalleHorasEstudiante" class="text-muted small fw-medium" style="font-size: 0.8rem;">0 / 200</span>
+                            </div>
+                            <div class="progress w-100" style="height: 6px;">
+                                <div id="detalleBarraProgreso" class="progress-bar bg-danger" style="width: 0%;"></div>
+                            </div>
+                            <span id="detallePorcentajeEstudiante" class="text-end text-muted" style="font-size:0.75rem;">0%</span>
+                        </div>
+
+                        <button id="docenteAsignarPasantia" class="btn-asignar-pasantia w-100 rounded-pill py-2 fw-bold border-0 mt-3">Asignar pasantía</button>
+                    </div>
 
                 </div>
-            </div>
-        </section>
-
-        <section class="col-xl-3 col-lg-12 mb-4">
-            <div class="d-flex flex-column gap-4">
-                
-                <div class="card tarjeta-personalizada p-4 border-0">
-
-    <h6 class="fw-bold mb-3" style="font-size: 1rem;">
-        Detalle asignación
-    </h6>
-
-    <div class="detalle-asignacion border rounded-4 p-3 bg-white shadow-sm">
-
-        <span class="fw-bold d-block mb-3 text-dark"
-              style="font-size: 0.8rem;">
-            Resumen de asignación
-        </span>
-
-        <table class="w-100" style="font-size: 0.8rem;">
-
-            <tr>
-                <td class="text-secondary py-1">
-                    Empresa
-                </td>
-                <td id="docenteEmpresaAsignacion"
-                    class="empresa-asignacion fw-semibold text-dark text-end py-1">
-                    Nombre de la empresa
-                </td>
-            </tr>
-
-            <tr>
-                <td class="text-secondary py-1">
-                    Rol/Vacante
-                </td>
-                <td id="docenteVacanteAsignacion"
-                    class="vacante-asignacion fw-semibold text-dark text-end py-1">
-                    Frontend Developer
-                </td>
-            </tr>
-
-            <tr>
-                <td class="text-secondary py-1">
-                    Modalidad
-                </td>
-                <td id="docenteModalidadAsignacion"
-                    class="modalidad-asignacion fw-semibold text-dark text-end py-1">
-                    Presencial
-                </td>
-            </tr>
-
-            <tr>
-                <td class="text-secondary py-1">
-                    Duración
-                </td>
-                <td id="docenteDuracionAsignacion"
-                    class="duracion-asignacion fw-semibold text-dark text-end py-1">
-                    Duración
-                </td>
-            </tr>
-
-        </table>
-
-    </div>
-
-</div>
-
-            <div class="card tarjeta-personalizada p-4 border-0">
-
-    <h6 class="fw-bold mb-3" style="font-size: 1rem;">
-        Estudiante seleccionado
-    </h6>
-
-    <div id="docenteEstudianteSeleccionado" class="d-flex flex-column gap-2">
-
-        <div class="d-flex align-items-center gap-2">
-
-            <div id="detalleFotoEstudiante"
-                 class="bg-secondary bg-opacity-25 rounded-circle"
-                 style="width: 32px; height: 32px;">
-            </div>
-
-            <div class="d-flex flex-column">
-
-                <span id="detalleNombreEstudiante"
-                      class="fw-semibold"
-                      style="font-size: 0.85rem;">
-                    Seleccione un estudiante
-                </span>
-
-                <span id="detalleGrupoEstudiante"
-                      class="text-muted"
-                      style="font-size: 0.75rem;">
-                    —
-                </span>
-
-            </div>
+            </section>
 
         </div>
-
-        <div class="d-flex justify-content-end mt-1">
-
-            <span id="detalleHorasEstudiante"
-                  class="text-muted small fw-medium"
-                  style="font-size: 0.8rem;">
-                0 / 200
-            </span>
-
-        </div>
-
-        <div class="progress w-100" style="height: 6px;">
-
-            <div id="detalleBarraProgreso"
-                 class="progress-bar bg-danger"
-                 style="width: 0%;">
-            </div>
-
-        </div>
-
-        <span id="detallePorcentajeEstudiante"
-              class="text-end text-muted"
-              style="font-size:0.75rem;">
-            0%
-        </span>
-
     </div>
 
-</div>
-
-                <button id="docenteAsignarPasantia" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm border-0" style="background-color: var(--azul-primario);">
-                    Asignar pasantía
-                </button>
-
-            </div>
-        </section>
-
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="../JS/DocentesJS/pasantias.js"></script>
-
-<script src="../JS/DocentesJS/docenteGlobal.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/DocentesJS/pasantias.js"></script>
+    <script src="../JS/DocentesJS/docenteGlobal.js"></script>
 </body>
 </html>

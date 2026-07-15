@@ -1,142 +1,200 @@
-        /* --- Variables Globales indispensables --- */
-        :root {
-            --fondo-claro: #e9e9e9;
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-            --radio-borde-tarjeta: 20px;
-        }
+/* --- Variables Globales --- */
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: var(--fondo-claro);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Navbar Personalizada --- */
-        .navbar-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            transition: 0.3s;
-        }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link.nav-activo {
-            background-color: #2e3748;
-            color: #ffffff !important;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Estilos de Tarjetas --- */
-        .tarjeta-personalizada {
-            border-radius: var(--radio-borde-tarjeta);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #16213b;
+}
 
-        /* --- Panel Lateral Izquierdo --- */
-        .imagen-perfil {
-            width: 85px;
-            height: 85px;
-            background-color: #cbd5e1;
-        }
-        .item-accion-rapida {
-            color: #1f2937;
-            border-bottom: 1px solid #f1f5f9;
-            transition: 0.2s;
-        }
-        .item-accion-rapida:last-child { border-bottom: none; }
-        .item-accion-rapida:hover {
-            background-color: #f8fafc;
-            color: var(--azul-primario) !important;
-        }
-        .icono-accion-contenedor {
-            width: 36px;
-            height: 36px;
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Tarjetas de Métricas --- */
-        .tarjeta-metrica {
-            border-radius: var(--radio-borde-tarjeta);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-        }
-        .icono-metrica-caja {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-        }
+/* --- Navbar --- */
+.navbar-personalizada {
+    background-color: var(--nav-oscuro);
+}
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.nav-link:hover, .nav-link.nav-activo {
+    color: #ffffff !important;
+}
+.nav-link.nav-activo {
+    background-color: #2a3555;
+}
 
-        /* --- Bloques Inferiores --- */
-        .avatar-lista {
-            width: 46px;
-            height: 46px;
-            background-color: #cbd5e1;
-        }
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
 
-        /* Badges de Estados */
-        .badge-nueva { background-color: #e8f5e9; color: #4caf50; }
-        .badge-revision { background-color: #fff3e0; color: #ffb74d; }
-        .badge-aceptada { background-color: #e3f2fd; color: #42a5f5; }
-        .badge-rechazada { background-color: #eceff1; color: #90a4ae; }
-        .badge-activo { background-color: #e8f5e9; color: #4caf50; }
+/* --- Panel Lateral --- */
+.imagen-perfil {
+    width: 82px;
+    height: 82px;
+    background-color: #d7dbe3;
+}
+.btn-perfil-empresa {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
 
-        .btn-ver-perfil {
-            border: 1px solid #cbd5e1;
-            color: #1c64f2;
-            transition: 0.2s;
-        }
-        .btn-ver-perfil:hover {
-            background-color: #f3f4f6;
-        }
+.item-accion-rapida {
+    color: #23272f;
+    border-bottom: 1px solid #f1f2f5;
+    transition: 0.2s;
+}
+.item-accion-rapida:last-child { border-bottom: none; }
+.item-accion-rapida:hover { background-color: #f7f8fa; }
 
-        /* MODAL PARA VER PERFIL */
+.marcador-accion {
+    width: 6px;
+    height: 34px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
 
-        .modal-content-custom {
-            border-radius: 20px;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .modal-header-custom {
-            border-bottom: none;
-            padding: 25px 30px 10px 30px;
-        }
-        .modal-body-custom {
-            padding: 10px 30px 25px 30px;
-        }
-        .form-label-custom {
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: #212529;
-            margin-bottom: 6px;
-        }
-        .form-control-custom {
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
-            padding: 10px 12px;
-            font-size: 0.9rem;
-        }
-        .form-control-custom::placeholder {
-            color: #adb5bd;
-        }
-        .btn-cancelar {
-            background-color: #ffffff;
-            color: #212529;
-            border: 1px solid #dee2e6;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-cancelar:hover {
-            background-color: #f8f9fa;
-        }
-        .btn-guardar {
-            background-color: #0d6efd;
-            color: #ffffff;
-            border: none;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-guardar:hover {
-            background-color: #0b5ed7;
-        }
+/* --- Franja de Métricas (reemplaza las tarjetas con ícono) --- */
+.franja-metricas {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+    padding: 1.4rem 1rem;
+}
+
+.metrica-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+
+.metrica-numero {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #16213b;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.metrica-etiqueta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.metrica-etiqueta i { color: var(--azul-primario); }
+
+.separador-metrica {
+    width: 1px;
+    background-color: #e9eaee;
+    margin: 4px 0;
+}
+
+@media (max-width: 767px) {
+    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
+    .metrica-item { flex: 1 1 40%; }
+    .separador-metrica { display: none; }
+}
+
+/* --- Bloques Inferiores --- */
+.avatar-lista {
+    width: 46px;
+    height: 46px;
+    background-color: #d7dbe3;
+}
+
+.enlace-ver-todos { color: var(--azul-primario); }
+
+/* Badges de Estados */
+.badge-nueva { background-color: #e8f5e9; color: #4caf50; }
+.badge-revision { background-color: #fff3e0; color: #ffb74d; }
+.badge-aceptada { background-color: #e3f2fd; color: #42a5f5; }
+.badge-rechazada { background-color: #eceff1; color: #90a4ae; }
+.badge-activo { background-color: #e8f5e9; color: #4caf50; }
+
+.btn-ver-perfil {
+    border: 1px solid #d7dbe3;
+    color: var(--azul-primario);
+    transition: 0.2s;
+}
+.btn-ver-perfil:hover { background-color: #f3f4f6; }
+
+/* --- Modal Ver Perfil --- */
+.modal-content-custom {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.modal-header-custom {
+    border-bottom: none;
+    padding: 25px 30px 10px 30px;
+}
+.modal-body-custom {
+    padding: 10px 30px 25px 30px;
+}
+.form-label-custom {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #212529;
+    margin-bottom: 6px;
+}
+.form-control-custom {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+.form-control-custom::placeholder {
+    color: #adb5bd;
+}
+.btn-cancelar {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-cancelar:hover {
+    background-color: #f8f9fa;
+}
+.btn-guardar {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-guardar:hover {
+    background-color: #1f3fae;
+}

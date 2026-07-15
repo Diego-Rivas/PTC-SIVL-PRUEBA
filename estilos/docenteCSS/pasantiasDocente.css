@@ -1,66 +1,85 @@
 /* --- Variables Globales --- */
-        :root {
-            --fondo-claro: #f4f5f7;
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-            --primario-enfoque: #1a56db;
-        }
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: var(--fondo-claro);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Barra de Navegación --- */
-        .navegacion-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-nav {
-            color: #9ca3af !important;
-            transition: 0.3s;
-        }
-        .enlace-nav:hover { 
-            color: #ffffff !important; 
-        }
-        .enlace-nav.nav-activo {
-            background-color: var(--primario-enfoque);
-            color: #ffffff !important;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
+.titulo-seccion { font-weight: 600; color: #16213b; }
 
-        /* --- Tarjetas --- */
-        .tarjeta-personalizada {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
+/* --- Navbar --- */
+.navegacion-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.enlace-nav { color: #a3a9bd !important; font-weight: 500; transition: 0.25s; }
+.enlace-nav:hover, .enlace-nav.nav-activo { color: #ffffff !important; }
+.enlace-nav.nav-activo { background-color: #2a3555; }
 
-        /* Panel Izquierdo: Botones de Grupos */
-        .btn-grupo-lateral {
-            color: #4b5563;
-            transition: 0.2s;
-        }
-        .btn-grupo-lateral:hover {
-            background-color: #f3f4f6;
-            color: #111827;
-        }
-        .btn-grupo-lateral.activo {
-            background-color: #eff6ff;
-            color: var(--azul-primario);
-        }
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada { border-radius: var(--radio-borde-tarjeta); box-shadow: 0 3px 10px rgba(20,25,40,0.05); }
+.foto-perfil { width: 82px; height: 82px; background-color: #d7dbe3; }
+.btn-perfil-docente { background-color: var(--azul-primario); color: #fff; }
+.btn-perfil-docente:hover { color: #fff; background-color: #1550c9; }
 
-        /* Columna: Vacantes */
-        .item-vacante {
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .item-vacante:hover {
-            background-color: #f8fafc;
-        }
-        .item-vacante.seleccionada {
-            border-color: var(--azul-primario);
-            background-color: #fff;
-            box-shadow: 0 4px 12px rgba(28, 100, 242, 0.08);
-        }
+/* --- Grupos asignados --- */
+.btn-grupo-lateral { color: #4b5563; font-size: 0.85rem; font-weight: 500; padding: 10px 12px; border-radius: 10px; transition: 0.2s; }
+.btn-grupo-lateral:hover { background-color: #f3f4f6; color: #111827; }
+.btn-grupo-lateral.activo { background-color: #e9edfb; color: var(--azul-primario); font-weight: 600; }
+.marcador-grupo { width: 5px; height: 20px; border-radius: 3px; background-color: #d7dbe3; flex-shrink: 0; display: inline-block; }
+.btn-grupo-lateral.activo .marcador-grupo { background-color: var(--azul-primario); }
+
+/* --- Búsquedas --- */
+.entrada-busqueda-alumnos, .entrada-busqueda-mini {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 8px 12px 8px 34px;
+    background-color: #f9fafb;
+}
+.entrada-busqueda-mini { border-radius: 20px; padding: 6px 12px; }
+.entrada-busqueda-alumnos:focus, .entrada-busqueda-mini:focus { border-color: var(--azul-primario); box-shadow: none; background-color: #fff; }
+
+/* --- Vacantes (marcador lateral en vez de logo gris cuadrado) --- */
+.item-vacante {
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+.item-vacante:hover { background-color: #f7f8fa; }
+.item-vacante.seleccionada { background-color: #e9edfb; border-color: #d3ddf7; }
+.marcador-vacante {
+    width: 5px;
+    border-radius: 4px;
+    align-self: stretch;
+    min-height: 60px;
+    background-color: var(--azul-primario);
+    flex-shrink: 0;
+}
+.empresa-vacante { color: var(--azul-primario); }
+.cupos-vacante { color: #16a34a; }
+
+/* --- Estudiantes (checklist) --- */
+.avatar-estudiante { background-color: #d7dbe3; }
+
+/* --- Detalle de asignación --- */
+.detalle-asignacion {
+    background-color: #f7f8fb;
+    border: 1px solid #eef0f2;
+}
+
+/* --- Botón asignar --- */
+.btn-asignar-pasantia {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-asignar-pasantia:hover { background-color: #1550c9; color: #fff; }

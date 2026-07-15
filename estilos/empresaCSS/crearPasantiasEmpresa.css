@@ -1,196 +1,138 @@
 /* --- Variables Globales --- */
-        :root {
-            --fondo-gris: #eaebef;
-            --nav-oscuro: #0f1626;
-            --azul-primario: #1d64f2;
-            --radio-tarjeta: 16px;
-        }
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+}
 
-        body {
-            background-color: var(--fondo-gris);
-            font-family: system-ui, -apple-system, sans-serif;
-            color: #1f2937;
-            font-size: 0.9rem;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Navbar Redondeado --- */
-        .navbar-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 30px;
-            padding: 0.7rem 2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            font-weight: 500;
-            margin: 0 5px;
-            padding: 8px 16px !important;
-            border-radius: 20px;
-            transition: 0.2s;
-        }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link.nav-activo {
-            background-color: #1f293d;
-            color: #ffffff !important;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand, .texto-paso {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Panel Lateral Izquierdo --- */
-        .tarjeta-perfil {
-            background: white;
-            border-radius: var(--radio-tarjeta);
-            border: none;
-        }
-        .avatar-placeholder {
-            width: 75px;
-            height: 75px;
-            background-color: #cbd5e1;
-            border-radius: 50%;
-            margin: 0 auto;
-        }
+.titulo-pagina {
+    font-weight: 700; color: #16213b; 
+}
+.titulo-seccion {
+    font-weight: 600; color: #16213b;
+}
 
-        /* --- Panel de Creación --- */
-        .tarjeta-panel-creacion {
-            background: white;
-            border-radius: var(--radio-tarjeta);
-            border: none;
-            padding: 30px;
-        }
-        .boton-retorno {
-            border: none;
-            background: none;
-            color: #4b5563;
-            font-size: 1.2rem;
-        }
-        .paso-formulario {
-            margin-bottom: 35px;
-        }
-        .numero-paso-circulo {
-            width: 28px;
-            height: 28px;
-            background-color: var(--azul-primario);
-            color: white;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-        .paso-formulario-titulo {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #111827;
-        }
+/* --- Navbar (idéntico al resto del módulo) --- */
+.navbar-personalizada {
+    background-color: var(--nav-oscuro);
+}
+.navbar-brand {
+    color: #f4f5f7 !important;
+}
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    margin: 0 4px;
+    padding: 8px 18px !important;
+    transition: 0.3s;
+}
+.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
+.nav-link.nav-activo { background-color: #2a3555; }
 
-        /* --- Inputs en Línea --- */
-        .input-formulario-linea, .input-formulario-select {
-            border: none;
-            border-bottom: 2px solid #cbd5e1;
-            border-radius: 0;
-            padding: 8px 0;
-            font-size: 0.9rem;
-            width: 100%;
-            color: #1f2937;
-            background-color: transparent;
-        }
-        .input-formulario-select {
-            padding-right: 30px;
-            color: #4b5563;
-        }
-        .input-formulario-linea:focus, .input-formulario-select:focus {
-            outline: none;
-            border-bottom-color: var(--azul-primario);
-        }
-        .form-label-personalizado {
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 6px;
-            font-size: 0.85rem;
-        }
+.btn-perfil-empresa {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
 
-        /* --- Tags de Competencias --- */
-        .contenedor-tags {
-            border-bottom: 2px solid #cbd5e1;
-            padding: 8px 0;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .tag-requisito {
-            background-color: #f3f4f6;
-            color: #4b5563;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+/* --- Marcador de pasos --- */
+.marcador-paso {
+    width: 4px;
+    height: 22px;
+    background-color: var(--azul-primario);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.texto-paso {
+    color: #16213b;
+    font-weight: 600;
+}
 
-        /* --- Vista Previa --- */
-        .tarjeta-vista-previa {
-            background: white;
-            border-radius: var(--radio-tarjeta);
-            border: 1px solid #e5e7eb;
-            padding: 24px;
-        }
-        .badge-preview-estado {
-            background-color: #ecfdf5;
-            color: #10b981;
-            font-size: 0.75rem;
-            font-weight: 500;
-            padding: 2px 8px;
-            border-radius: 12px;
-        }
-        .meta-tag-preview {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.72rem;
-            color: #6b7280;
-            background-color: #f8fafc;
-            padding: 3px 8px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-        }
+/* --- Inputs estilo línea --- */
+.form-control-linea, .form-select-linea {
+    border: none;
+    border-bottom: 2px solid #cbd5e1;
+    border-radius: 0;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: #23272f;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+.form-select-linea {
+    padding-right: 24px;
+    color: #4b5563;
+}
+.form-control-linea:focus, .form-select-linea:focus {
+    outline: none;
+    border-bottom-color: var(--azul-primario);
+}
 
-        /* --- Consejos --- */
-        .tarjeta-consejos {
-            background-color: #f0f5ff;
-            border-radius: var(--radio-tarjeta);
-            padding: 24px;
-        }
-        .consejo-item {
-            display: flex;
-            align-items: start;
-            gap: 12px;
-            font-size: 0.85rem;
-            color: #374151;
-            margin-bottom: 14px;
-        }
-        .consejo-item:last-child { margin-bottom: 0; }
+/* Chips de habilidades */
+.chip-habilidad {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.chip-habilidad i {
+    cursor: pointer;
+    font-size: 0.7rem;
+}
 
-        /* --- Barra de Acciones Inferior --- */
-        .barra-inferior-botones {
-            padding: 20px 40px;
-            background-color: #eaebef;
-        }
-        .btn-cancelar {
-            background: white;
-            color: #4b5563;
-            font-weight: 700;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 12px 40px;
-        }
-        .btn-publicar {
-            background-color: var(--azul-primario);
-            color: white;
-            font-weight: 700;
-            border: none;
-            border-radius: 10px;
-            padding: 12px 40px;
-        }
+/* --- Vista previa --- */
+.icono-preview {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+}
+
+.caja-consejos {
+    background-color: #f4f6fd;
+}
+.titulo-consejos { color: var(--azul-primario); }
+
+.marcador-consejo-mini {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--azul-primario);
+    flex-shrink: 0;
+    margin-top: 7px;
+}
+
+/* --- Botones inferiores --- */
+.btn-inferior-publicar {
+    background-color: var(--azul-primario);
+    color: white;
+    font-weight: bold;
+    padding: 10px 32px;
+    border-radius: 10px;
+    border: none;
+}
+.btn-inferior-publicar:hover { background-color: #1f3fae; }
+.btn-inferior-cancelar {
+    background-color: white;
+    color: var(--azul-primario);
+    font-weight: bold;
+    padding: 10px 32px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}

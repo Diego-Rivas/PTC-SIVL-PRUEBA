@@ -1,72 +1,92 @@
- :root {
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-            --primario-enfoque: #1a56db;
-        }
+/* --- Variables Globales --- */
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: #f4f5f7;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Barra de Navegación --- */
-        .navegacion-personalizada {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-nav {
-            color: #9ca3af !important;
-            font-weight: 500;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .enlace-nav:hover { 
-            color: #ffffff !important; 
-        }
-        .enlace-nav.nav-activo {
-            background-color: var(--primario-enfoque);
-            color: #ffffff !important;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
+.titulo-pagina { font-weight: 700; font-size: 1.4rem; color: #16213b; }
+.titulo-seccion { font-weight: 600; color: #16213b; }
 
-        /* --- Componentes del Dashboard --- */
-        .progreso-barra-personalizada {
-            height: 8px;
-            background-color: #e5e7eb;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .progreso-relleno {
-            height: 100%;
-            background: linear-gradient(90deg, #5850ec, #1c64f2);
-            border-radius: 4px;
-        }
+/* --- Navbar --- */
+.navegacion-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.enlace-nav { color: #a3a9bd !important; font-weight: 500; transition: 0.25s; }
+.enlace-nav:hover, .enlace-nav.nav-activo { color: #ffffff !important; }
+.enlace-nav.nav-activo { background-color: #2a3555; }
 
-        /* Simulación del Gráfico SVG */
-        .contenedor-grafico-lineal {
-            position: relative;
-            width: 100%;
-            height: 180px;
-        }
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada { border-radius: var(--radio-borde-tarjeta); box-shadow: 0 3px 10px rgba(20,25,40,0.05); }
 
-        /* Estilos específicos para las tarjetas de estado superior */
-        .tarjeta-estado-superior {
-            background-color: #f9fafb;
-            border: 1px solid #f3f4f6;
-            transition: transform 0.2s;
-        }
-        .tarjeta-estado-superior:hover {
-            transform: translateY(-2px);
-        }
+/* --- Tarjetas de estado superior (reemplaza ícono en caja de color) --- */
+.tarjeta-estado-superior {
+    background-color: #f7f8fb;
+    border: 1px solid #eef0f2;
+}
+.marcador-estado {
+    width: 4px;
+    align-self: stretch;
+    min-height: 44px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: inline-block;
+}
 
-        .chart-container{
+/* --- Barra de progreso personalizada --- */
+.progreso-barra-personalizada {
+    height: 8px;
+    background-color: #eef0f2;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progreso-relleno {
+    height: 100%;
+    background-color: var(--azul-primario);
+    border-radius: 6px;
+}
 
-    position: relative;
+/* --- Logo empresa placeholder --- */
+.logo-empresa-placeholder {
+    width: 75px;
+    height: 75px;
+    background-color: #eef0f2;
+}
 
-    width:100%;
+/* --- Gráfico --- */
+.chart-container { height: 200px; }
 
-    height:320px;
+/* --- Perfil --- */
+.foto-perfil { width: 80px; height: 80px; background-color: #d7dbe3; }
+.btn-perfil-estudiante { background-color: var(--azul-primario); color: #fff; }
+.btn-perfil-estudiante:hover { color: #fff; background-color: #1550c9; }
+.punto-estado {
+    width: 8px; height: 8px; border-radius: 50%;
+    background-color: #10b981; display: inline-block;
+}
 
+/* --- Consejos (marcador lateral en vez de círculo de color) --- */
+.item-consejo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.item-consejo:last-child { margin-bottom: 0; }
+.marcador-consejo {
+    width: 4px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 30px;
 }

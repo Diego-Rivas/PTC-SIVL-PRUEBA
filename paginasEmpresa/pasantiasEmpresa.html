@@ -6,14 +6,15 @@
     <title>Panel de Empresa - Pasantías</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/empresaCSS/pasantiasEmpresa.css">
-    
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold me-4" href="#">
+            <a class="navbar-brand fw-bold me-4" href="#">
                 <span class="text-warning">●</span> RICALDONE
             </a>
             <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
@@ -27,7 +28,7 @@
                     <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./pasantesYhorasLaboralesEmpresa.html"><i class="bi bi-clock-history me-1"></i> Pasantes y horas</a></li>
                     <li class="nav-item">
                         <a class="nav-link px-3 rounded-5 fw-medium" href="./notificacionesEmpresa.html">
-                            <i class="bi bi-bell me-1"></i> Notificaciones 
+                            <i class="bi bi-bell me-1"></i> Notificaciones
                             <span id="empresaNotificaciones" class="badge bg-danger ms-1 rounded-pill" style="font-size: 0.7rem; padding: 3px 6px;">5</span>
                         </a>
                     </li>
@@ -47,11 +48,7 @@
                     <h5 id="empresaTipo" class="fw-bold mb-0" style="font-size: 1.05rem;">Empresa</h5>
                     <p id="empresaNombre" class="text-muted small mb-3">TechSolutions S.A.</p>
                     
-                    <!-- CAMBIO EN EL BOTÓN "VER MI PERFIL" PARA DETONAR EL MODAL -->
-                    <!-- Se agregaron los atributos data-bs-toggle y data-bs-target -->
-                    <a id="empresaVerPerfil" href="#" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold border-0 small" style="background-color: var(--azul-primario);" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">Ver mi perfil</a>
-                    <!-- FIN DEL CAMBIO EN EL BOTÓN -->
-                    
+                    <a id="empresaVerPerfil" href="#" class="btn btn-perfil-empresa w-100 rounded-pill py-2 fw-semibold border-0 small" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">Ver mi perfil</a>
                 </div>
             </div>
 
@@ -59,52 +56,33 @@
                 
                 <div class="d-flex justify-content-between align-items-start mb-4">
                     <div>
-                        <h4 class="fw-bold mb-1" style="font-size: 1.4rem;">Pasantías</h4>
+                        <h4 class="titulo-pagina mb-1">Pasantías</h4>
                         <span class="text-muted">Publica y gestiona las pasantías que ofrece tu empresa</span>
                     </div>
-                  <a href="./crearPasantiasEmpresa.html"
-                                 class="btn btn-primary d-flex align-items-center gap-2 border-0 fw-bold px-4 py-2 rounded-3 shadow-sm"
-                                style="background-color: var(--azul-primario); font-size: 1.05rem;">
-                             <i class="bi bi-plus-lg fs-5"></i> Crear pasantía
-                        </a>
+                    <a href="./crearPasantiasEmpresa.html" class="btn btn-crear-oferta d-flex align-items-center gap-2 border-0 fw-bold px-4 py-2 rounded-3 shadow-sm" style="font-size: 1.05rem;">
+                        <i class="bi bi-plus-lg fs-5"></i> Crear pasantía
+                    </a>
                 </div>
 
-                <div class="row g-3 mb-4">
-                    <div class="col-xxl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background-color: #e8f0fe; color: var(--azul-primario);"><i class="bi bi-briefcase-fill"></i></div>
-                            <div>
-                                <div id="contadorPasantiasActivas" class=" text-dark fw-bold fs-3 lh-1 mb-1">6</div>
-                                <div class="text-muted fw-medium small lh-sm">Pasantías activas</div>
-                            </div>
-                        </div>
+                <div class="franja-metricas mb-4">
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorPasantiasActivas">6</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-briefcase-fill me-1"></i>Pasantías activas</div>
                     </div>
-                    <div class="col-xxl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background-color: #e6f7ed; color: #10b981;"><i class="bi bi-people-fill"></i></div>
-                            <div>
-                                <div id="contadorPostulaciones" class="text-dark fw-bold fs-3 lh-1 mb-1">42</div>
-                                <div class="text-muted fw-medium small lh-sm">Postulaciones recibidas</div>
-                            </div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorPostulaciones">42</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-people-fill me-1"></i>Postulaciones recibidas</div>
                     </div>
-                    <div class="col-xxl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background-color: #f3e8ff; color: #a855f7;"><i class="bi bi-person-check-fill"></i></div>
-                            <div>
-                                <div id="contadorAceptados" class="text-dark fw-bold fs-3 lh-1 mb-1">12</div>
-                                <div class="text-muted fw-medium small lh-sm">Estudiantes aceptados</div>
-                            </div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorAceptados">12</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-person-check-fill me-1"></i>Estudiantes aceptados</div>
                     </div>
-                    <div class="col-xxl-3 col-md-6">
-                        <div class="card border-0 rounded-4 p-3 bg-white shadow-sm d-flex flex-row align-items-center gap-3">
-                            <div class="rounded-3 d-flex align-items-center justify-content-center fs-4 flex-shrink-0" style="width: 48px; height: 48px; background-color: #fef3c7; color: #f59e0b;"><i class="bi bi-file-earmark-check-fill"></i></div>
-                            <div>
-                                <div id="contadorPasantiasFinalizadas" class="text-dark fw-bold fs-3 lh-1 mb-1">3</div>
-                                <div class="text-muted fw-medium small lh-sm">Pasantías finalizadas</div>
-                            </div>
-                        </div>
+                    <div class="separador-metrica"></div>
+                    <div class="metrica-item">
+                        <div class="metrica-numero" id="contadorPasantiasFinalizadas">3</div>
+                        <div class="metrica-etiqueta"><i class="bi bi-file-earmark-check-fill me-1"></i>Pasantías finalizadas</div>
                     </div>
                 </div>
 
@@ -128,7 +106,7 @@
                         
                         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 p-4 tarjeta-pasantia border-bottom " data-id="1">
                             <div class="d-flex align-items-start gap-3 flex-grow-1" style="max-width: 700px;">
-                                <div class="bg-secondary-subtle rounded flex-shrink-0" style="width: 72px; height: 72px;"></div>
+                                <div class="marcador-pasantia flex-shrink-0"></div>
                                 <div>
                                     <div class="d-flex align-items-center gap-2 mb-1">
                                         <h5  class=" titulo-pasantia fw-bold mb-0 text-dark" style="font-size: 1.05rem;">Desarrollador Frontend</h5>
@@ -167,7 +145,7 @@
 
                         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 p-4 tarjeta-pasantia border-bottom" data-id="2">
                             <div class="d-flex align-items-start gap-3 flex-grow-1" style="max-width: 700px;">
-                                <div class="bg-secondary-subtle rounded flex-shrink-0" style="width: 72px; height: 72px;"></div>
+                                <div class="marcador-pasantia flex-shrink-0"></div>
                                 <div>
                                     <div class="d-flex align-items-center gap-2 mb-1">
                                         <h5 titulo-pasantia class="fw-bold mb-0 text-dark" style="font-size: 1.05rem;">Diseñador UI/UX</h5>
@@ -211,12 +189,9 @@
         </div>
     </div>
 
-         <!-- Agregar ver pefil empresa -->
-
     <div class="modal fade" id="modalPerfilEmpresa" tabindex="-1" aria-labelledby="modalPerfilEmpresaLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow">
-                <!-- Encabezado del Modal -->
                 <div class="modal-header border-bottom-0 px-4 pt-4 pb-2 d-flex align-items-center justify-content-between">
                     <h5 class="modal-title fw-bold fs-4" id="modalPerfilEmpresaLabel">Mi perfil</h5>
                     <div class="d-flex align-items-center gap-2">
@@ -226,16 +201,13 @@
                         <button type="button" class="btn-close ms-2" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                 </div>
-                <!-- Cuerpo del Modal (Basado fielmente en tu imagen) -->
                 <div class="modal-body px-4 pb-4">
                     <div class="row align-items-start mb-4">
-                        <!-- Cuadro Gris de Logotipo / Imagen -->
                         <div class="col-auto">
                             <div class="rounded-3 bg-secondary-subtle d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
                                 <i class="bi bi-building text-white fs-1"></i>
                             </div>
                         </div>
-                        <!-- Información Principal Superior -->
                         <div class="col">
                             <h3 class="fw-bold text-dark mb-2">Tech Solutions S.A. de C.V.</h3>
                             <p class="text-secondary mb-3" style="font-size: 0.95rem;">Empresa de desarrollo de software y soluciones tecnológicas</p>
@@ -248,9 +220,7 @@
 
                     <hr class="text-secondary opacity-25 my-4">
 
-                    <!-- Cuadrícula de Datos de Contacto y Empresa -->
                     <div class="row g-4 mb-4" style="font-size: 0.9rem;">
-                        <!-- Columna Izquierda -->
                         <div class="col-md-6">
                             <div class="d-flex gap-3 mb-3">
                                 <div class="text-primary fs-5"><i class="bi bi-envelope"></i></div>
@@ -282,7 +252,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Columna Derecha -->
                         <div class="col-md-6">
                             <div class="d-flex gap-3 mb-3">
                                 <div class="text-primary fs-5"><i class="bi bi-briefcase"></i></div>
@@ -302,7 +271,6 @@
                         </div>
                     </div>
 
-                    <!-- Sección de Descripción -->
                     <div class="bg-light p-3 rounded-3" style="font-size: 0.88rem;">
                         <h6 class="fw-bold text-dark mb-2">Descripción de la empresa</h6>
                         <p class="text-secondary mb-0 lh-base">
@@ -314,11 +282,6 @@
         </div>
     </div>
 
-
-
-
-    <!-- Div editar perfil -->
-
     <div class="modal fade" id="modalEditarPerfilEmpresa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalVerPerfilEmpresaLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content modal-content-custom">
@@ -328,7 +291,6 @@
                 </div>
                 <div class="modal-body modal-body-custom">
                     <form id="formPerfilEmpresa">
-                        
                         <h6 class="fw-bold mb-3" style="font-size: 0.9rem; color: #4b5563;">Detalles Generales</h6>
 
                         <div class="row mb-3">
@@ -363,7 +325,6 @@
                             <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="btn btn-guardar">Guardar Cambios</button>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -371,9 +332,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
      <script src="../JS/EmpresaJS/pasantias.js"></script>
 </body>
 </html>

@@ -6,25 +6,26 @@
     <title>Panel Administrador - Asignación de Docentes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/administradorCSS/docentesAdmin.css">
-    
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 px-4 py-2">
+
+    <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold me-4" href="#">
+            <a class="navbar-brand fw-bold me-4" href="#">
                 <span class="text-warning">●</span> RICALDONE
             </a>
             <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavegacion">
                 <i class="bi bi-list fs-2"></i>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavegacion">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link mx-1 px-3 py-2 rounded-5" href="./indexadministrador.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link nav-activo mx-1 px-3 py-2 rounded-5" href="./docentesAdministrador.html"><i class="bi bi-person-badge me-1"></i> Docentes</a></li>
-                    <li class="nav-item"><a class="nav-link mx-1 px-3 py-2 rounded-5" href="./usuariosAdministrador.html"><i class="bi bi-people me-1"></i> Usuarios</a></li>
-                    <li class="nav-item"><a class="nav-link mx-1 px-3 py-2 rounded-5" href="./especialidadGruposAdministrador.html"><i class="bi bi-tags me-1"></i> Especialidades & grupos</a></li>
+                <ul class="navbar-nav gap-1">
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./indexadministrador.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="./docentesAdministrador.html"><i class="bi bi-person-badge me-1"></i> Docentes</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./usuariosAdministrador.html"><i class="bi bi-people me-1"></i> Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./especialidadGruposAdministrador.html"><i class="bi bi-tags me-1"></i> Especialidades &amp; grupos</a></li>
                 </ul>
             </div>
         </div>
@@ -32,24 +33,29 @@
 
     <div class="container-fluid px-4">
         <div class="row">
-            
+
             <aside class="col-xl-2 col-lg-3 mb-4">
                 <div class="card tarjeta-personalizada border-0 p-4 text-center bg-white">
                     <div id="empresaFotoPerfil" class="imagen-perfil mb-3 d-flex align-items-center justify-content-center rounded-circle mx-auto">
                         <i class="bi bi-person-fill text-white" style="font-size: 3rem;"></i>
                     </div>
-                    <h5 class="fw-bold mb-0">Admin</h5>
+                    <h5 class="fw-bold mb-0" style="font-size: 1.1rem;">Admin</h5>
                     <p id="empresaNombre" class="text-muted small mb-3">Lic. Carlos Mendoza</p>
-                    <a id="empresaVerPerfil" href="#" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold" style="background-color: var(--azul-primario); border:none;">Ver mi perfil</a>
+                    <a id="empresaVerPerfil" href="#" class="btn btn-perfil-admin w-100 rounded-pill py-2 fw-semibold border-0 small">Ver mi perfil</a>
                 </div>
             </aside>
 
             <main class="col-xl-10 col-lg-9">
+                <div class="mb-4">
+                    <h4 class="titulo-pagina mb-0">Asignación de docentes</h4>
+                    <span class="text-muted small">Asigna grupos de estudiantes a cada docente para su supervisión</span>
+                </div>
+
                 <div class="row g-3">
-                    
+
                     <div class="col-md-4 mb-3">
-                        <div id="adminListaDocentes" class=" lista-seleccionable card tarjeta-personalizada border-0 p-3 h-100 bg-white">
-                            <h6 class="fw-bold mb-3">Seleccionar docente</h6>
+                        <div id="adminListaDocentes" class="card tarjeta-personalizada border-0 p-3 h-100 bg-white">
+                            <h6 class="titulo-seccion mb-3" style="font-size:0.95rem;">Seleccionar docente</h6>
                             <div class="caja-buscar-interna d-flex align-items-center px-3 py-2 mb-3">
                                 <input id="adminBuscarDocentes" type="text" class="form-control border-0 bg-transparent p-0" placeholder="Busca docente..." style="box-shadow:none; font-size:0.85rem;">
                                 <i class="bi bi-search text-muted"></i>
@@ -57,34 +63,42 @@
 
                             <div class="lista-seleccionable">
                                 <div class="item-seleccionable activo d-flex align-items-center p-2 rounded-3 mb-2">
-                                    <div class="avatar-mini me-3 d-flex align-items-center justify-content-center rounded-circle"><i class="bi bi-person-fill"></i></div>
+                                    <span class="marcador-item me-3"></span>
                                     <div class="flex-grow-1">
-                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Nombre docente</div>
-                                        <div class="text-muted" style="font-size:0.75rem;">Docente</div>
+                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Carlos García</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Desarrollo de Software</div>
                                     </div>
-                                    <i class="bi bi-chevron-right text-primary"></i>
+                                    <i class="bi bi-chevron-right texto-activo"></i>
                                 </div>
                                 <div class="item-seleccionable d-flex align-items-center p-2 rounded-3 mb-2">
-                                    <div class="avatar-mini me-3 d-flex align-items-center justify-content-center rounded-circle"><i class="bi bi-person-fill"></i></div>
+                                    <span class="marcador-item me-3"></span>
                                     <div class="flex-grow-1">
-                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Nombre docente</div>
-                                        <div class="text-muted" style="font-size:0.75rem;">Docente</div>
-                                    </div>
-                                    <i class="bi bi-chevron-right text-muted"></i>
-                                </div>
-                                <div class="item-seleccionable d-flex align-items-center p-2 rounded-3 mb-2">
-                                    <div class="avatar-mini me-3 d-flex align-items-center justify-content-center rounded-circle"><i class="bi bi-person-fill"></i></div>
-                                    <div class="flex-grow-1">
-                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Nombre docente</div>
-                                        <div class="text-muted" style="font-size:0.75rem;">Docente</div>
+                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Ana Molina</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Contaduría</div>
                                     </div>
                                     <i class="bi bi-chevron-right text-muted"></i>
                                 </div>
                                 <div class="item-seleccionable d-flex align-items-center p-2 rounded-3 mb-2">
-                                    <div class="avatar-mini me-3 d-flex align-items-center justify-content-center rounded-circle"><i class="bi bi-person-fill"></i></div>
+                                    <span class="marcador-item me-3"></span>
                                     <div class="flex-grow-1">
-                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Nombre docente</div>
-                                        <div class="text-muted" style="font-size:0.75rem;">Docente</div>
+                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">Roberto Fuentes</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Diseño Gráfico</div>
+                                    </div>
+                                    <i class="bi bi-chevron-right text-muted"></i>
+                                </div>
+                                <div class="item-seleccionable d-flex align-items-center p-2 rounded-3 mb-2">
+                                    <span class="marcador-item me-3"></span>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">María Castillo</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Electromecánica</div>
+                                    </div>
+                                    <i class="bi bi-chevron-right text-muted"></i>
+                                </div>
+                                <div class="item-seleccionable d-flex align-items-center p-2 rounded-3">
+                                    <span class="marcador-item me-3"></span>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-bold text-dark" style="font-size:0.85rem;">José Torres</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Electrónica</div>
                                     </div>
                                     <i class="bi bi-chevron-right text-muted"></i>
                                 </div>
@@ -95,7 +109,7 @@
                     <div class="col-md-5 mb-3">
                         <div class="card tarjeta-personalizada border-0 p-3 h-100 bg-white">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h6 class="fw-bold mb-0">Seleccionar grupos para asignar</h6>
+                                <h6 class="titulo-seccion mb-0" style="font-size:0.95rem;">Seleccionar grupos para asignar</h6>
                                 <div class="caja-buscar-interna d-flex align-items-center px-2 py-1" style="width: 140px;">
                                     <input id="adminBuscarGrupos" type="text" class="form-control border-0 bg-transparent p-0" placeholder="Filtrar por año" style="box-shadow:none; font-size:0.75rem;">
                                     <i class="bi bi-search text-muted" style="font-size: 0.75rem;"></i>
@@ -109,8 +123,8 @@
                                             <th style="width: 10%;" class="rounded-start border-0 p-2"></th>
                                             <th style="width: 30%;" class="border-0 p-2">Grupo</th>
                                             <th style="width: 25%;" class="border-0 p-2">Especialidad</th>
-                                            <th style="width: 20%;" class="border-0 p-2">Estudiante</th>
-                                            <th style="width: 15%;" class="rounded-end border-0 p-2">Semestre</th>
+                                            <th style="width: 20%;" class="border-0 p-2">Estudiantes</th>
+                                            <th style="width: 15%;" class="rounded-end border-0 p-2">Año</th>
                                         </tr>
                                     </thead>
                                     <tbody id="adminTablaGrupos">
@@ -143,18 +157,11 @@
                                             <td class="text-muted border-bottom p-2">2026</td>
                                         </tr>
                                         <tr>
-                                            <td class="border-bottom p-2"><input class="form-check-input" type="checkbox"></td>
-                                            <td class="fw-bold border-bottom p-2">A Grupo 1</td>
-                                            <td class="border-bottom p-2">Diseño</td>
-                                            <td class="border-bottom p-2">40</td>
-                                            <td class="text-muted border-bottom p-2">2026</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="border-bottom p-2"><input class="form-check-input" type="checkbox"></td>
-                                            <td class="fw-bold border-bottom p-2">A Grupo 2</td>
-                                            <td class="border-bottom p-2">Diseño</td>
-                                            <td class="border-bottom p-2">40</td>
-                                            <td class="text-muted border-bottom p-2">2026</td>
+                                            <td class="p-2"><input class="form-check-input" type="checkbox"></td>
+                                            <td class="fw-bold p-2">A Grupo 1</td>
+                                            <td class="p-2">Diseño</td>
+                                            <td class="p-2">40</td>
+                                            <td class="text-muted p-2">2026</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -165,14 +172,14 @@
                     <div class="col-md-3 mb-3">
                         <div class="card tarjeta-personalizada border-0 p-3 h-100 d-flex flex-column justify-content-between bg-white">
                             <div>
-                                <h6 class="fw-bold mb-3">Detalle de la asignación</h6>
-                                
+                                <h6 class="titulo-seccion mb-3" style="font-size:0.95rem;">Detalle de la asignación</h6>
+
                                 <span class="text-muted small d-block mb-2">Docente seleccionado</span>
                                 <div class="d-flex align-items-center mb-4">
                                     <div id="adminDetalleFoto" class="avatar-mini me-2 d-flex align-items-center justify-content-center rounded-circle" style="width:35px; height:35px;"><i class="bi bi-person-fill"></i></div>
                                     <div>
-                                        <div id="adminDetalleNombre" class="fw-bold" style="font-size:0.85rem;">Nombre docente</div>
-                                        <div id="adminDetalleCargo" class="text-muted" style="font-size:0.75rem;">Docente</div>
+                                        <div id="adminDetalleNombre" class="fw-bold" style="font-size:0.85rem;">Carlos García</div>
+                                        <div id="adminDetalleCargo" class="text-muted" style="font-size:0.75rem;">Desarrollo de Software</div>
                                     </div>
                                 </div>
 
@@ -182,16 +189,22 @@
                                 </div>
 
                                 <div class="adminGruposSeleccionado tarjeta-resumen-grupo p-3 mb-2">
-                                    <div class="fw-bold" style="font-size:0.85rem;">A Grupo 1</div>
-                                    <div class="text-muted" style="font-size:0.75rem;">Software</div>
-                                    <div class="text-muted" style="font-size:0.75rem;"><i class="bi bi-people-fill me-1"></i> 40 estudiantes</div>
+                                    <span class="marcador-resumen"></span>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-bold" style="font-size:0.85rem;">A Grupo 1</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Software</div>
+                                        <div class="text-muted" style="font-size:0.75rem;"><i class="bi bi-people-fill me-1"></i> 40 estudiantes</div>
+                                    </div>
                                     <button class="btn-remover-seleccion bg-transparent border-0"><i class="bi bi-x-circle-fill"></i></button>
                                 </div>
 
                                 <div class="adminGruposSeleccionado tarjeta-resumen-grupo p-3 mb-2">
-                                    <div class="fw-bold" style="font-size:0.85rem;">B Grupo 1</div>
-                                    <div class="text-muted" style="font-size:0.75rem;">Software</div>
-                                    <div class="text-muted" style="font-size:0.75rem;"><i class="bi bi-people-fill me-1"></i> 40 estudiantes</div>
+                                    <span class="marcador-resumen"></span>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-bold" style="font-size:0.85rem;">B Grupo 1</div>
+                                        <div class="text-muted" style="font-size:0.75rem;">Software</div>
+                                        <div class="text-muted" style="font-size:0.75rem;"><i class="bi bi-people-fill me-1"></i> 40 estudiantes</div>
+                                    </div>
                                     <button class="btn-remover-seleccion bg-transparent border-0"><i class="bi bi-x-circle-fill"></i></button>
                                 </div>
                             </div>
@@ -201,7 +214,7 @@
                                     <i class="bi bi-info-circle-fill me-2 fs-6 flex-shrink-0"></i>
                                     <div>El docente seleccionado podrá ver y supervisar a todos los estudiantes de los grupos asignados.</div>
                                 </div>
-                                <button id="adminAsignarGrupos" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" style="background-color: #2563eb; border:none; font-size:0.85rem;">Asignar grupos</button>
+                                <button id="adminAsignarGrupos" class="btn-asignar-grupos w-100 rounded-pill py-2 fw-bold border-0" style="font-size:0.85rem;">Asignar grupos</button>
                             </div>
                         </div>
                     </div>
@@ -213,9 +226,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="../JS/AdminJS/docentes.js"></script>
-
     <script src="../JS/AdminJS/adminGlobal.js"></script>
 </body>
 </html>

@@ -1,168 +1,221 @@
+/* --- Variables Globales --- */
 :root {
-            --fondo-gris: #f4f5f7;
-            --menu-oscuro: #121826;
-            --azul-principal: #1c64f2;
-            --texto-gris: #6b7280;
-            --borde-tarjeta: 16px;
-            
-            /* Colores de los Estados */
-            --pendiente: #eab308;
-            --pendiente-fondo: #fef9c3;
-            --revision: #3b82f6;
-            --revision-fondo: #dbeafe;
-            --aceptado: #10b981;
-            --aceptado-fondo: #d1fae5;
-            --rechazado: #ef4444;
-            --rechazado-fondo: #fee2e2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
 
-        body {
-            background-color: var(--fondo-gris);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+    --pendiente: #d97706;
+    --revision: #1c64f2;
+    --aceptado: #16a34a;
+    --rechazado: #9ca3af;
+}
 
-        /* --- Barra de Navegación superior --- */
-        .barra-navegacion {
-            background-color: var(--menu-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-menu {
-            color: #9ca3af !important;
-            font-weight: 500;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .enlace-menu:hover { color: #ffffff !important; }
-        .enlace-menu.activo {
-            background-color: #1a56db;
-            color: #ffffff !important;
-        }
-        .caja-busqueda {
-            background-color: #ffffff;
-            border-radius: 20px;
-            padding: 6px 15px;
-            width: 280px;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Tarjetas Blancas Contenedoras --- */
-        .tarjeta-blanca {
-            background: white;
-            border-radius: var(--borde-tarjeta);
-            border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.titulo-pagina,
+.titulo-seccion,
+.navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Panel Izquierdo (Estadísticas) --- */
-        .fila-estadistica {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-        .punto-color {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 10px;
-        }
-        
-        /* Gráfico Circular de Dona en CSS Puro */
-        .circulo-dona {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: conic-gradient(
-                var(--pendiente) 0% 33%, 
-                var(--revision) 33% 58%, 
-                var(--aceptado) 58% 66%, 
-                var(--rechazado) 66% 83%,
-                #e5e7eb 83% 100%
-            );
-            position: relative;
-        }
-        .centro-blanco-dona {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: white;
-            border-radius: 50%;
-            top: 15px;
-            left: 15px;
-            box-shadow: inset 0px 0px 5px rgba(0,0,0,0.05);
-        }
+.titulo-pagina {
+    font-weight: 700;
+    color: #16213b;
+}
 
-        /* --- Centro (Tablero Kanban) --- */
-        .fondo-columna {
-            background-color: #f9fafb;
-            border-radius: 12px;
-            padding: 10px;
-            height: 100%;
-            min-height: 400px;
-        }
-        .tarjeta-postulacion {
-            background-color: white;
-            border-radius: 12px;
-            border: 1px solid #f3f4f6;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            transition: 0.2s;
-        }
-        .tarjeta-postulacion:hover {
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .titulo-columna {
-            padding: 10px 15px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-        }
-        .logo-empresa {
-            width: 40px;
-            height: 40px;
-            background-color: #d1d5db;
-            border-radius: 8px;
-            flex-shrink: 0;
-            margin-right: 12px;
-        }
-        .nombre-puesto {
-            font-size: 0.95rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        .nombre-empresa {
-            color: var(--azul-principal);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .datos-extra {
-            font-size: 0.7rem;
-            color: var(--texto-gris);
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Panel Derecho (Perfil y Sugerencias) --- */
-        .foto-perfil {
-            width: 80px;
-            height: 80px;
-            background-color: #9ca3af;
-            border-radius: 50%;
-        }
-        .punto-activo-perfil {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 5px;
-        }
-        .circulo-icono {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
+/* --- Navbar --- */
+.navegacion-personalizada {
+    background-color: var(--nav-oscuro);
+}
+
+.navbar-brand {
+    color: #f4f5f7 !important;
+}
+
+.enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.enlace-nav:hover,
+.enlace-nav.nav-activo {
+    color: #ffffff !important;
+}
+
+.enlace-nav.nav-activo {
+    background-color: #2a3555;
+}
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
+}
+
+/* --- Fila de estadística con punto de color --- */
+.fila-estadistica {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #4b5563;
+}
+
+.punto-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* --- Dona de estadísticas --- */
+.circulo-dona {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(var(--pendiente) 0% 33%,
+            var(--revision) 33% 58%,
+            var(--aceptado) 58% 67%,
+            var(--rechazado) 67% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centro-blanco-dona {
+    width: 95px;
+    height: 95px;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+/* --- Columnas de postulaciones --- */
+.fondo-columna {
+    background: transparent;
+}
+
+.tarjeta-postulacion {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #eef0f2;
+}
+
+.titulo-columna {
+    padding: 10px 14px;
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.titulo-pendiente {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.titulo-revision {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.titulo-aceptado {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.titulo-rechazado {
+    background-color: #f1f2f5;
+    color: #4b5563;
+}
+
+.logo-empresa-placeholder {
+    width: 42px;
+    height: 42px;
+    background-color: #eef0f2;
+    border-radius: 8px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.nombre-puesto {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #16213b;
+}
+
+.nombre-empresa {
+    color: var(--azul-primario);
+    font-size: 0.78rem;
+    text-decoration: none;
+}
+
+.nombre-empresa:hover {
+    text-decoration: underline;
+}
+
+.datos-extra {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* --- Perfil --- */
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    background-color: #d7dbe3;
+}
+
+.btn-perfil-estudiante {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+
+.btn-perfil-estudiante:hover {
+    color: #fff;
+    background-color: #1550c9;
+}
+
+.punto-estado {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    display: inline-block;
+}
+
+/* --- Consejos --- */
+.item-consejo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.item-consejo:last-child {
+    margin-bottom: 0;
+}
+
+.marcador-consejo {
+    width: 4px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 30px;
+}

@@ -1,60 +1,148 @@
+/* --- Variables Globales --- */
 :root {
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #2952d1;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: #f4f5f7;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Estilos personalizados indispensables --- */
-        .navbar-personalizada {
-            background-color: var(--nav-oscuro);
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            transition: 0.3s;
-        }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link.nav-activo {
-            background-color: #1a56db;
-            color: #ffffff !important;
-        }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* Puntos decorativos de títulos */
-        .punto-azul::before {
-            content: "●";
-            color: #1c64f2;
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
-        .punto-verde::before {
-            content: "●";
-            color: #10b981;
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
+.titulo-pagina {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #16213b;
+}
 
-        /* --- Elementos de Listas Registradas --- */
-        .item-especialidad {
-            border-bottom: 1px solid #f3f4f6;
-        }
-        .btn-accion-mini {
-            background-color: #374151;
-            color: white;
-            width: 28px;
-            height: 28px;
-            transition: 0.2s;
-        }
-        .btn-accion-mini:hover { background-color: #1f2937; }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Badges de Grupos --- */
-        .badge-periodo {
-            background-color: #def7ec;
-            color: #03543f;
-        }
-        .caja-estudiantes-badge {
-            background-color: #2563eb;
-            min-width: 90px;
-        }
+/* --- Navbar (idéntico al resto del sitio) --- */
+.navbar-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
+.nav-link.nav-activo { background-color: #2a3555; }
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+.imagen-perfil {
+    width: 82px;
+    height: 82px;
+    background-color: #d7dbe3;
+}
+.btn-perfil-admin {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-admin:hover { color: #fff; background-color: #1f3fae; }
+
+/* --- Marcador lateral de títulos (reemplaza el bullet "●") --- */
+.marcador-titulo {
+    width: 4px;
+    height: 20px;
+    border-radius: 3px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* --- Inputs --- */
+.input-personalizado {
+    border: 1px solid #dfe3ea;
+    background-color: #f9fafb;
+    transition: 0.2s;
+}
+.input-personalizado:focus {
+    border-color: var(--azul-primario);
+    box-shadow: 0 0 0 2px rgba(41,82,209,0.12);
+    background-color: #fff;
+    outline: none;
+}
+
+.btn-agregar {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-agregar:hover { background-color: #1f3fae; color: #fff; }
+
+.btn-cancelar-mini {
+    background-color: #f1f2f5;
+    color: #374151;
+}
+.btn-cancelar-mini:hover { background-color: #e5e7eb; }
+
+/* --- Lista de especialidades --- */
+.item-especialidad {
+    border-bottom: 1px solid #f1f2f5;
+}
+.btn-accion-mini {
+    background-color: #f1f2f5;
+    color: #4b5563;
+    width: 28px;
+    height: 28px;
+    transition: 0.2s;
+}
+.btn-accion-mini:hover { background-color: #e5e7eb; color: var(--azul-primario); }
+.btn-accion-mini.eliminar:hover { color: #ef4444; }
+
+/* --- Tarjetas de grupo --- */
+.tarjeta-grupo {
+    border: 1px solid #eef0f2;
+    border-radius: 12px;
+    background-color: #fafbfc;
+}
+
+.badge-periodo {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+}
+
+.mini-metrica {
+    text-align: center;
+}
+.mini-metrica-numero {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #16213b;
+    line-height: 1;
+}
+.mini-metrica-etiqueta {
+    display: block;
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.btn-editar-grupo {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+}
+.btn-editar-grupo:hover { background-color: #dbe3fb; }
+
+.btn-eliminar-grupo {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+.btn-eliminar-grupo:hover { background-color: #fecaca; }

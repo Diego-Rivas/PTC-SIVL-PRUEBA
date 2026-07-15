@@ -3,34 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Empresa - Crear Pasantía</title>
-    <!-- CDN de Bootstrap 5 -->
+    <title>Crear una nueva pasantía</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CDN de Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/empresaCSS/crearPasantiasEmpresa.css">
-    
 </head>
 <body>
 
-    <!-- NAVBAR UNIFICADO -->
-    <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4">
+    <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fw-bold me-4" href="#">
+            <a class="navbar-brand fw-bold me-4" href="#">
                 <span class="text-warning">●</span> RICALDONE
             </a>
-            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavegacion">
                 <i class="bi bi-list fs-2"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="menuPrincipal">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="./indexEmpresa.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./ofertasLaboralesEmpresa.html"><i class="bi bi-briefcase me-1"></i> Ofertas laborales</a></li>
-                    <li class="nav-item"><a class="nav-link nav-activo" href="./pasantiasEmpresa.html"><i class="bi bi-file-earmark-person me-1"></i> Pasantías</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./pasantesYHorasEmpresa.html"><i class="bi bi-clock-history me-1"></i> Pasantes y horas</a></li>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavegacion">
+                <ul class="navbar-nav gap-1">
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./indexEmpresa.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./ofertasLaboralesEmpresa.html"><i class="bi bi-briefcase me-1"></i> Ofertas laborales</a></li>
+                    <li class="nav-item"><a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="./pasantiasEmpresa.html"><i class="bi bi-file-earmark-person me-1"></i> Pasantías</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./pasantesYhorasLaboralesEmpresa.html"><i class="bi bi-person-badge me-1"></i> Pasantes y horas</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-bell me-1"></i> Notificaciones 
+                        <a class="nav-link px-3 rounded-5 fw-medium" href="./notificacionesEmpresa.html">
+                            <i class="bi bi-bell me-1"></i> Notificaciones
                             <span id="empresaNotificaciones" class="badge bg-danger ms-1 rounded-pill" style="font-size: 0.7rem; padding: 3px 6px;">5</span>
                         </a>
                     </li>
@@ -39,210 +37,180 @@
         </div>
     </nav>
 
-    <!-- CUERPO DE LA INTERFAZ -->
-    <div class="container-fluid px-4 mb-5">
-        <div class="row g-4">
-            
-            <!-- LATERAL IZQUIERDO: PERFIL DE LA EMPRESA -->
-            <div class="col-xl-2 col-lg-3">
-                <div class="tarjeta-perfil p-4 text-center shadow-sm">
-                    <div id="empresaFotoPerfil" class="avatar-placeholder mb-3 d-flex align-items-center justify-content-center">
-                        <i class="bi bi-building text-white" style="font-size: 2.3rem;"></i>
+    <div class="container-fluid px-4">
+        <div class="row">
+
+            <aside class="col-xxl-2 col-xl-3 col-lg-3 mb-4">
+                <div class="bg-white rounded-4 p-4 text-center shadow-sm">
+                    <div id="empresaFotoPerfil" class="rounded-circle bg-secondary-subtle mb-3 d-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px;">
+                        <i class="bi bi-person-fill text-white" style="font-size: 2.6rem;"></i>
                     </div>
                     <h5 id="empresaTipo" class="fw-bold mb-0" style="font-size: 1.05rem;">Empresa</h5>
                     <p id="empresaNombre" class="text-muted small mb-3">TechSolutions S.A.</p>
-                    <a id="empresaVerPerfil" href="#" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold" style="background-color: var(--azul-primario); border:none; font-size:0.85rem;">Ver mi perfil</a>
+                    <a id="empresaVerPerfil" href="#" class="btn btn-perfil-empresa w-100 rounded-pill py-2 fw-semibold border-0" style="font-size:0.85rem;">Ver mi perfil</a>
                 </div>
-            </div>
+            </aside>
 
-            <!-- CONTENIDO CENTRAL: FORMULARIO DE PASANTÍAS -->
-            <main class="col-xl-7 col-lg-5">
-                <div class="tarjeta-panel-creacion shadow-sm">
+            <main class="col-xxl-7 col-xl-6 col-lg-5 mb-4">
+                <div class="bg-white rounded-4 p-4 shadow-sm">
                     <div class="d-flex align-items-start gap-3 mb-4">
-                    <a id="btnRegresar"
-                          href="./pasantiasEmpresa.html"
-                         class="boton-retorno mt-1">
-                             <i class="bi bi-arrow-left"></i>
-                                </a>
+                        <a href="./pasantiasEmpresa.html" class="text-secondary mt-1"><i class="bi bi-arrow-left fs-5"></i></a>
                         <div>
-                            <h4 class="fw-bold mb-0">Crear propuesta de pasantía</h4>
-                            <span class="text-muted small">Completa los criterios del proyecto académico para solicitar pasantes institucionales</span>
+                            <h4 class="titulo-pagina mb-0" style="font-size: 1.3rem;">Crear una nueva pasantía</h4>
+                            <span class="text-muted small">Completa la información para publicar una nueva pasantía para estudiantes</span>
                         </div>
                     </div>
 
-                    <form id="formCrearPasantias">
-                        <!-- PASO 1 -->
-                        <div class="paso-formulario">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="numero-paso-circulo">1</div>
-                                <span class="paso-formulario-titulo">Información básica de la pasantía</span>
+                    <form id="formCrearPasantia">
+                        <div class="d-flex align-items-center gap-2 mb-3 mt-4">
+                            <div class="marcador-paso"></div>
+                            <span class="fw-bold texto-paso" style="font-size: 1.05rem;">01 — Información básica</span>
+                        </div>
+                        <div class="row g-4 mb-4 ps-4">
+                            <div class="col-md-7 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Título de la pasantía</label>
+                                <input id="pasantiaTitulo" type="text" class="form-control-linea" placeholder="Ej: Pasante de Desarrollo Frontend">
                             </div>
-                            <div class="row g-4 mb-4 ps-4">
-                                <div class="col-md-7">
-                                    <label class="form-label-personalizado">Nombre de la plaza o proyecto de pasantía</label>
-                                    <input id="pasantiaTitulo" type="text" class="input-formulario-linea" placeholder="Ej. Auxiliar de Desarrollo Frontend">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="form-label-personalizado">Área / Especialidad técnica</label>
-                                    <select id="pasantiasEspecialidad" class="input-formulario-select">
-                                        <option>Desarrollo de Software</option>
-                                        <option>Diseño Gráfico</option>
-                                        <option>Electrónica / Mecatrónica</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-personalizado">Horas requeridas del perfil</label>
-                                    <select id="pasantiasHoras" class="input-formulario-select">
-                                        <option>200 horas indispensables</option>
-                                        <option>150 horas indispensables</option>
-                                        <option>Horas personalizadas / Flexibles</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label-personalizado">Modalidad del proyecto</label>
-                                    <select id="pasantiasModalidad" class="input-formulario-select">
-                                        <option>Presencial</option>
-                                        <option>Remoto (Home Office)</option>
-                                        <option>Semipresencial / Híbrido</option>
-                                    </select>
-                                </div>
+                            <div class="col-md-5 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Especialidad</label>
+                                <select id="pasantiaEspecialidad" class="form-select-linea">
+                                    <option>Desarrollo de Software</option>
+                                    <option>Redes e Informática</option>
+                                    <option>Diseño Gráfico</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Modalidad</label>
+                                <select id="pasantiaModalidad" class="form-select-linea">
+                                    <option>Presencial</option>
+                                    <option>Remoto</option>
+                                    <option>Híbrido</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Ubicación</label>
+                                <input id="pasantiaUbicacion" type="text" class="form-control-linea" value="San Salvador">
                             </div>
                         </div>
 
-                        <!-- PASO 2 -->
-                        <div class="paso-formulario">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="numero-paso-circulo">2</div>
-                                <span class="paso-formulario-titulo">Objetivos y descripción de tareas</span>
-                            </div>
-                            <div class="ps-4 mb-4">
-                                <label class="form-label-personalizado">Descripción de actividades que realizará el estudiante</label>
-                                <textarea id="pasantiaDescripcion" class="input-formulario-linea" rows="3" placeholder="Describe los proyectos de apoyo, responsabilidades asignadas y metas de aprendizaje...."></textarea>
-                                <div id="contadorDescripcion" class="text-end text-muted small mt-1">0/1000</div>
-                            </div>
+                        <div class="d-flex align-items-center gap-2 mb-3 mt-4">
+                            <div class="marcador-paso"></div>
+                            <span class="fw-bold texto-paso" style="font-size: 1.05rem;">02 — Descripción de la pasantía</span>
+                        </div>
+                        <div class="mb-4 ps-4">
+                            <label class="fw-semibold text-dark small mb-1 d-block">Descripción general</label>
+                            <textarea id="pasantiaDescripcion" class="form-control-linea" rows="3" placeholder="Describe las actividades que realizará el estudiante y el objetivo de la pasantía..."></textarea>
+                            <div id="contadorDescripcion" class="text-end text-muted mt-1" style="font-size: 0.75rem;">0/1000</div>
                         </div>
 
-                        <!-- PASO 3 -->
-                        <div class="paso-formulario">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="numero-paso-circulo">3</div>
-                                <span class="paso-formulario-titulo">Competencias y Tecnologías deseadas</span>
-                            </div>
-                              <div class="ps-4">
-
-                             <label class="fw-semibold text-dark small mb-2 d-block">
-                                 Competencias y tecnologías requeridas
-                            </label>
-
-                                <input
-                                  id="inputHabilidad"
-                                  type="text"
-                                     class="input-formulario-linea mb-3"
-                                     placeholder="Escribe una habilidad y presiona Enter">
-
-                                 <div
-                                 id="empresaListaHabilidades"
-                                 class="border-bottom border-2 border-light-subtle py-2 d-flex gap-2 flex-wrap">
-
-                                  </div>
-
-                             <div
-                                  id="contadorHabilidades"
-                                  class="small text-muted mt-2">
-                                0 habilidades
-                     </div>
-                </div>
+                        <div class="d-flex align-items-center gap-2 mb-3 mt-4">
+                            <div class="marcador-paso"></div>
+                            <span class="fw-bold texto-paso" style="font-size: 1.05rem;">03 — Requisitos</span>
+                        </div>
+                        <div class="ps-4 mb-2">
+                            <label class="fw-semibold text-dark small mb-2 d-block">Habilidades requeridas</label>
+                            <input id="inputHabilidad" type="text" class="form-control-linea mb-3" placeholder="Escribe una habilidad y presiona Enter">
+                            <div id="empresaListaHabilidades" class="border-bottom border-2 border-light-subtle py-2 d-flex gap-2 flex-wrap"></div>
+                            <div id="contadorHabilidades" class="small text-muted mt-2">0 habilidades</div>
                         </div>
 
-                        <!-- PASO 4 -->
-                        <div class="paso-formulario">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="numero-paso-circulo">4</div>
-                                <span class="paso-formulario-titulo">Detalles adicionales de la convocatoria</span>
+                        <div class="d-flex align-items-center gap-2 mb-3 mt-4">
+                            <div class="marcador-paso"></div>
+                            <span class="fw-bold texto-paso" style="font-size: 1.05rem;">04 — Duración y cupos</span>
+                        </div>
+                        <div class="row g-4 ps-4">
+                            <div class="col-md-4 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Horas requeridas</label>
+                                <input id="pasantiaHoras" type="number" class="form-control-linea" value="200" min="1">
                             </div>
-                            <div class="row g-4 mb-4 ps-4 align-items-center">
-                                <div class="col-md-5">
-                                    <label class="form-label-personalizado">Apoyo económico / Viáticos (Opcional)</label>
-                                    <input id="pasantiaApoyo" type="text" class="input-formulario-linea" placeholder="Ej: $100 mensuales para transporte">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label-personalizado">Cierre de postulaciones</label>
-                                    <input id="pasantiaFecha" type="text" class="input-formulario-linea text-muted" placeholder="dd/mm/aaaa">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label-personalizado">Cupos disponibles</label>
-                                    <input id="pasantiaCupos" type="number" class="input-formulario-linea text-center" value="2" min="1">
-                                </div>
-                                <div class="col-md-6 mt-3">
-                                    <label class="form-label-personalizado">Dirección o sede física asignada</label>
-                                    <input id="pasantiaUbicacion" type="text" class="input-formulario-linea" value="San Salvador, El Salvador">
-                                </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Fecha de inicio</label>
+                                <input id="pasantiaFechaInicio" type="text" class="form-control-linea text-muted" placeholder="dd/mm/aaaa">
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Cupos disponibles</label>
+                                <input id="pasantiaCupos" type="number" class="form-control-linea" value="1" min="1">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">Fecha límite para postular</label>
+                                <input id="pasantiaFechaLimite" type="text" class="form-control-linea text-muted" placeholder="dd/mm/aaaa">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label class="fw-semibold text-dark small mb-1 d-block">¿Ofrece remuneración?</label>
+                                <select id="pasantiaRemuneracion" class="form-select-linea">
+                                    <option>No remunerada</option>
+                                    <option>Remunerada</option>
+                                    <option>Viáticos / bonificación</option>
+                                </select>
                             </div>
                         </div>
                     </form>
                 </div>
             </main>
 
-            <!-- LATERAL DERECHO: VISTA PREVIA -->
-            <aside class="col-xl-3 col-lg-4">
-                <div class="d-flex flex-column gap-3">
-                    <div class="tarjeta-vista-previa shadow-sm">
-                        <h6 class="fw-bold mb-3 text-secondary text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Vista previa del formato</h6>
-                        <div class="d-flex align-items-start gap-3 border-bottom pb-3 mb-3">
-                            <div class="bg-secondary bg-opacity-25 rounded" style="width:50px; height:50px; flex-shrink: 0;"></div>
-                            <div>
-                                <div class="d-flex align-items-center gap-2 mb-1">
-                                    <h6 id="previewTitulo" class="fw-bold mb-0 text-dark" style="font-size: 0.95rem;">Desarrollador Frontend</h6>
-                                    <span class="badge-preview-estado">Activa</span>
-                                </div>
-                                <p id="previewDescripcion" class="text-muted mb-0" style="font-size: 0.8rem; line-height: 1.3;">Apoya en el desarrollo de interfaces web modernas...</p>
+            <aside class="col-xxl-3 col-xl-3 col-lg-4 mb-4">
+                <div class="bg-white rounded-4 p-3 shadow-sm">
+                    <h6 class="titulo-seccion mb-3" style="font-size: 0.95rem;">Vista previa de la pasantía</h6>
+
+                    <div class="bg-white border rounded-4 p-3 text-center mb-4">
+                        <div class="rounded-3 icono-preview mx-auto mb-2 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px; font-size: 1.6rem;">
+                            <i class="bi bi-file-earmark-person-fill"></i>
+                        </div>
+                        <h5 id="pasantiaVistaPrevia" class="fw-bold text-dark mb-1" style="font-size: 1.1rem;">Pasante de Desarrollo Frontend</h5>
+                        <p id="pasantiaPreviewEmpresa" class="text-muted mb-3" style="font-size: 0.8rem;">TechSolutions S.A. &bull; San Salvador &bull; Presencial</p>
+
+                        <div class="d-flex justify-content-center gap-2 mb-3">
+                            <span id="previewHoras" class="bg-light text-secondary border rounded-1 px-2 py-1 fw-medium" style="font-size: 0.65rem;">200 horas</span>
+                            <span id="previewCupos" class="bg-light text-secondary border rounded-1 px-2 py-1 fw-medium" style="font-size: 0.65rem;">1 cupo</span>
+                        </div>
+
+                        <div class="text-start border-top pt-3">
+                            <span class="fw-bold d-block mb-1" style="font-size:0.8rem;">Descripción breve</span>
+                            <p id="pasantiaPreviewDescripcion" class="text-muted mb-3" style="font-size:0.75rem; line-height: 1.4;">Apoyarás al equipo de desarrollo en tareas reales de frontend, aprendiendo buenas prácticas de la industria.</p>
+
+                            <span class="fw-bold d-block mb-2" style="font-size:0.8rem;">Requisitos principales</span>
+                            <div id="pasantiaPreviewRequisitos" class="d-flex align-items-center gap-2 text-muted" style="font-size:0.75rem;">
+                                <i class="bi bi-check-circle-fill text-primary"></i> Conocimientos básicos en HTML, CSS y JavaScript
                             </div>
-                        </div>
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <span id="previewEspecialidad" class="meta-tag-preview"><i class="bi bi-briefcase"></i> Software</span>
-                            <span id="previewModalidad" class="meta-tag-preview"><i class="bi bi-building"></i> Presencial</span>
-                            <span id="previewHoras" class="meta-tag-preview"><i class="bi bi-clock"></i> 200 horas</span>
-                        </div>
-                        <div class="bg-light p-2 rounded" style="font-size: 0.78rem;">
-                            <div class="text-muted mb-1"><i class="bi bi-people me-1"></i> <strong>0</strong> estudiantes postulados</div>
-                            <div class="text-muted"><i class="bi bi-person-check me-1"></i> Limite: <strong>0 / 2</strong> Solicitados</div>
                         </div>
                     </div>
 
-                    <div class="tarjeta-consejos text-start shadow-sm">
-                        <div class="d-flex align-items-center gap-2 mb-3 text-primary fw-bold" style="font-size:0.9rem;">
-                            <i class="bi bi-mortarboard-fill"></i> Consejos de vinculación
+                    <div class="rounded-4 p-3 caja-consejos">
+                        <div class="d-flex align-items-center gap-2 mb-3 fw-bold titulo-consejos" style="font-size:0.85rem;">
+                            <i class="bi bi-star-fill"></i> Consejos para una buena pasantía
                         </div>
-                        <div class="consejo-item">
-                            <i class="bi bi-check2-circle text-primary mt-1 flex-shrink-0"></i>
-                            <span>Define proyectos reales que ayuden al crecimiento técnico del estudiante.</span>
+                        <div class="d-flex gap-2 text-dark mb-2 small" style="font-size: 0.8rem;">
+                            <span class="marcador-consejo-mini"></span>
+                            <span>Define claramente las horas y el horario esperado</span>
                         </div>
-                        <div class="consejo-item">
-                            <i class="bi bi-check2-circle text-primary mt-1 flex-shrink-0"></i>
-                            <span>Asegura que las horas solicitadas coincidan con los planes de estudio.</span>
+                        <div class="d-flex gap-2 text-dark mb-2 small" style="font-size: 0.8rem;">
+                            <span class="marcador-consejo-mini"></span>
+                            <span>Explica qué aprenderá el estudiante</span>
                         </div>
-                        <div class="consejo-item">
-                            <i class="bi bi-check2-circle text-primary mt-1 flex-shrink-0"></i>
-                            <span>Indicar si ofreces apoyo de viáticos aumenta el interés de mejores perfiles.</span>
+                        <div class="d-flex gap-2 text-dark mb-2 small" style="font-size: 0.8rem;">
+                            <span class="marcador-consejo-mini"></span>
+                            <span>Indica si hay posibilidad de contratación posterior</span>
+                        </div>
+                        <div class="d-flex gap-2 text-dark small" style="font-size: 0.8rem;">
+                            <span class="marcador-consejo-mini"></span>
+                            <span>Sé realista con el número de cupos disponibles</span>
                         </div>
                     </div>
                 </div>
             </aside>
+        </div>
 
+        <div class="row mb-5">
+            <div class="col-12 d-flex justify-content-end gap-3 px-4">
+                <button id="btnCancelar" type="button" class="btn-inferior-cancelar">Cancelar</button>
+                <button id="btnPublicar" type="button" class="btn-inferior-publicar d-flex align-items-center gap-2">
+                    <i class="bi bi-send-fill"></i> Publicar pasantía
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- BARRA INFERIOR GLOBAL -->
-    <div class="barra-inferior-botones d-flex justify-content-end gap-3 mt-4 px-5">
-        <button id="btnCancelar" type="button" class="btn btn-cancelar">Cancelar</button>
-        <button id="btnPublicar" type="button" class="btn btn-publicar d-flex align-items-center gap-2">
-            <i class="bi bi-cloud-arrow-up-fill"></i> Publicar Pasantía
-        </button>
-    </div>
-
-    <!-- Script oficial de Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-     <script src="../JS/EmpresaJS/crearPasantias.js"></script>
+    <script src="../JS/EmpresaJS/crearPasantias.js"></script>
 </body>
 </html>

@@ -1,165 +1,236 @@
+/* --- Variables Globales --- */
 :root {
-            --fondo-claro: #f4f5f7;
-            --nav-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: var(--fondo-claro);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Barra de Navegación --- */
-        .navbar-personalizado {
-            background-color: var(--nav-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .enlace-nav {
-            color: #9ca3af !important;
-            font-weight: 500;
-            margin: 0 5px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .enlace-nav:hover { color: #ffffff !important; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.titulo-pagina,
+.titulo-seccion,
+.navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Tarjetas Estilo Base --- */
-        .tarjeta-personalizada {
-            border-radius: 16px;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Portada y Avatar del Perfil --- */
-        .portada-perfil {
-            position: relative;
-            height: 160px;
-            background-color: #d1d5db;
-            border-radius: 16px 16px 0 0;
-            overflow: hidden;
-        }
-        .portada-perfil svg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-        }
-        .contenedor-avatar-perfil {
-            position: relative;
-            margin-top: -65px;
-            margin-left: 30px;
-            display: inline-block;
-        }
-        .avatar-perfil {
-            width: 120px;
-            height: 120px;
-            background-color: #9ca3af;
-            border: 5px solid #ffffff;
-        }
-        .insignia-editar-avatar {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            background-color: white;
-            border: 1px solid #d1d5db;
-            width: 28px;
-            height: 28px;
-            cursor: pointer;
-        }
-        .btn-editar-perfil {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #e5e7eb;
-            color: #4b5563;
-            border: none;
-            font-weight: 600;
-            padding: 6px 15px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            z-index: 10;
-            transition: 0.2s;
-        }
-        .btn-editar-perfil:hover { background-color: #d1d5db; }
+/* --- Navbar --- */
+.navegacion-personalizada {
+    background-color: var(--nav-oscuro);
+}
 
-        .valor-info-perfil a {
-            color: var(--azul-primario);
-            text-decoration: underline;
-        }
+.navbar-brand {
+    color: #f4f5f7 !important;
+}
 
-        /* --- Iconos de Estadísticas --- */
-        .icono-estadistica {
-            width: 45px;
-            height: 45px;
-        }
+.enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
 
-        /* --- Sección Portafolio --- */
-        .imagen-portafolio {
-            height: 120px;
-            background-color: #d1d5db;
-            border-radius: 12px 12px 0 0;
-        }
+.enlace-nav:hover,
+.enlace-nav.nav-activo {
+    color: #ffffff !important;
+}
 
-        /* --- Círculos de Progreso Dinámicos --- */
-        .circulo-progreso {
-            width: 110px;
-            height: 110px;
-        }
-        .circulo-progreso-interno {
-            width: 85px;
-            height: 85px;
-            background-color: white;
-        }
-         .modal-content-custom {
-            border-radius: 20px;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .modal-header-custom {
-            border-bottom: none;
-            padding: 25px 30px 10px 30px;
-        }
-        .modal-body-custom {
-            padding: 10px 30px 25px 30px;
-        }
-        .form-label-custom {
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: #212529;
-            margin-bottom: 6px;
-        }
-        .form-control-custom {
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
-            padding: 10px 12px;
-            font-size: 0.9rem;
-        }
-        .form-control-custom::placeholder {
-            color: #adb5bd;
-        }
-        .btn-cancelar {
-            background-color: #ffffff;
-            color: #212529;
-            border: 1px solid #dee2e6;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-cancelar:hover {
-            background-color: #f8f9fa;
-        }
-        .btn-guardar {
-            background-color: #0d6efd;
-            color: #ffffff;
-            border: none;
-            font-weight: 600;
-            padding: 10px 24px;
-            border-radius: 8px;
-        }
-        .btn-guardar:hover {
-            background-color: #0b5ed7;
-        }
+.enlace-nav.nav-activo {
+    background-color: #2a3555;
+}
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
+}
+
+/* --- Portada y avatar --- */
+.portada-perfil {
+    position: relative;
+    height: 140px;
+    background-color: var(--nav-oscuro);
+    border-radius: var(--radio-borde-tarjeta) var(--radio-borde-tarjeta) 0 0;
+    overflow: hidden;
+}
+
+.portada-perfil svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-avatar-perfil {
+    position: relative;
+    margin-top: -55px;
+    width: fit-content;
+}
+
+.avatar-perfil {
+    width: 110px;
+    height: 110px;
+    background-color: #d7dbe3;
+    border: 4px solid #fff;
+}
+
+.insignia-editar-avatar {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+}
+
+.btn-editar-perfil {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: #16213b;
+    z-index: 2;
+}
+
+.btn-editar-perfil:hover {
+    background-color: #fff;
+}
+
+/* --- Info de contacto --- */
+.bloque-info-contacto {
+    background-color: #f7f8fb;
+}
+
+.etiqueta-info-perfil {
+    display: block;
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.valor-info-perfil {
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.valor-info-perfil a {
+    color: var(--azul-primario);
+    text-decoration: none;
+}
+
+.valor-info-perfil a:hover {
+    text-decoration: underline;
+}
+
+/* --- Estadísticas (marcador lateral en vez de círculo de color) --- */
+.marcador-stat-perfil {
+    width: 4px;
+    height: 36px;
+    border-radius: 3px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* --- Portafolio --- */
+.imagen-portafolio {
+    height: 120px;
+    background-color: #eef0f2;
+    border-radius: var(--radio-borde-tarjeta) var(--radio-borde-tarjeta) 0 0;
+}
+
+.enlace-proyecto {
+    color: var(--azul-primario);
+    text-decoration: none;
+}
+
+.enlace-proyecto:hover {
+    text-decoration: underline;
+}
+
+.enlace-agregar-proyecto {
+    color: var(--azul-primario);
+}
+
+/* --- Círculos de progreso (dona real con conic-gradient) --- */
+.circulo-progreso {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+}
+
+.circulo-progreso-interno {
+    width: 68px;
+    height: 68px;
+    background: #ffffff;
+}
+
+/* --- Modal --- */
+.modal-content-custom {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header-custom {
+    border-bottom: none;
+    padding: 25px 30px 10px 30px;
+}
+
+.modal-body-custom {
+    padding: 10px 30px 25px 30px;
+}
+
+.form-label-custom {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #212529;
+    margin-bottom: 6px;
+}
+
+.form-control-custom {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+}
+
+.btn-cancelar-mini {
+    background-color: #f1f2f5;
+    color: #374151;
+}
+
+.btn-cancelar-mini:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-guardar-proyecto {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+
+.btn-guardar-proyecto:hover {
+    background-color: #1550c9;
+    color: #fff;
+}

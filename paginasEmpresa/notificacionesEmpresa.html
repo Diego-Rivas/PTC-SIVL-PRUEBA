@@ -6,31 +6,37 @@
     <title>Notificaciones de Empresa - Ricaldone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/empresaCSS/notificacionesEmpresa.css">
-
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4">
-    <div class="container-fluid">
-        <a class="navbar-brand text-white fw-bold me-4" href="#">
-            <span class="text-warning">●</span> RICALDONE
-        </a>
-        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavegacion">
-            <i class="bi bi-list fs-2"></i>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNavegacion">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="./indexEmpresa.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./ofertasLaboralesEmpresa.html"><i class="bi bi-briefcase me-1"></i> Ofertas laborales</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pasantiasEmpresa.html"><i class="bi bi-file-earmark-person me-1"></i> Pasantías</a></li>
-                <li class="nav-item"><a class="nav-link" href="./pasantesYhorasLaboralesEmpresa.html"><i class="bi bi-person-badge me-1"></i> Pasantes y horas</a></li>
-                <li class="nav-item"><a class="nav-link nav-activo" href="./notificacionesEmpresa.html"><i class="bi bi-bell me-1"></i> Notificaciones <span id="empresaNotificaciones" class="badge bg-danger rounded-pill ms-1" style="font-size: 0.7rem; padding: 3px 6px;">5</span></a></li>
-            </ul>
+<nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold me-4" href="#">
+                <span class="text-warning">●</span> RICALDONE
+            </a>
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavegacion">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavegacion">
+                <ul class="navbar-nav gap-1">
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./indexEmpresa.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./ofertasLaboralesEmpresa.html"><i class="bi bi-briefcase me-1"></i> Ofertas laborales</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./pasantiasEmpresa.html"><i class="bi bi-file-earmark-person me-1"></i> Pasantias</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./pasantesYhorasLaboralesEmpresa.html"><i class="bi bi-clock-history me-1"></i> Pasantes y horas</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="./notificacionesEmpresa.html">
+                            <i class="bi bi-bell me-1"></i> Notificaciones
+                            <span id="empresaNotificaciones" class="badge bg-danger ms-1 rounded-pill" style="font-size: 0.7rem; padding: 3px 6px;">5</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <div class="container-fluid px-4">
     <div class="row">
@@ -38,30 +44,29 @@
         <aside class="col-lg-3 col-xl-2 mb-4">
             <div class="card tarjeta-personalizada p-3">
                 <div class="d-flex justify-content-between align-items-center mb-3 px-2">
-                    <h6 class="fw-bold mb-0">Bandeja</h6>
+                    <h6 class="titulo-seccion mb-0">Bandeja</h6>
                     <i class="bi bi-sliders text-muted"></i>
                 </div>
                 <a id="filtroTodas" href="#" class="item-filtro activo">
-                    <div><i class="bi bi-inbox icono-filtro text-primary"></i> Todas</div>
+                    <div><i class="bi bi-inbox icono-filtro"></i> Todas</div>
                     <span id="contadorTodas" class="fw-bold">12</span>
                 </a>
                 <a id="filtroSinLeer" href="#" class="item-filtro">
-                    <div><i class="bi bi-chat-left-dots icono-filtro text-warning"></i> Sin leer</div>
+                    <div><i class="bi bi-chat-left-dots icono-filtro" style="color:#d97706;"></i> Sin leer</div>
                     <span id="contadorSinLeer" class="fw-bold">5</span>
                 </a>
                 <a id="filtroPostulaciones" href="#" class="item-filtro">
-                    <div><i class="bi bi-people icono-filtro text-success"></i> Postulaciones</div>
+                    <div><i class="bi bi-people icono-filtro" style="color:#16a34a;"></i> Postulaciones</div>
                     <span id="contadorPostulaciones" class="fw-bold">4</span>
                 </a>
                 <a id="filtroHoras" href="#" class="item-filtro">
                     <div><i class="bi bi-clock-history icono-filtro" style="color: #8b5cf6;"></i> Control Horas</div>
                     <span id="contadorHoras" class="fw-bold">3</span>
                 </a>
-               
             </div>
 
             <div class="card tarjeta-personalizada p-3">
-                <h6 class="fw-bold mb-3 px-2">Preferencias</h6>
+                <h6 class="titulo-seccion mb-3 px-2">Preferencias</h6>
                 
                 <div class="d-flex justify-content-between align-items-center mb-3 px-2">
                     <div>
@@ -97,14 +102,14 @@
             <div id="contenedorNotificaciones" class="card tarjeta-personalizada p-4">
                 <div class="d-flex justify-content-between align-items-end mb-4">
                     <div>
-                        <h4 class="fw-bold mb-1">Notificaciones corporativas</h4>
+                        <h4 class="titulo-pagina mb-1">Notificaciones corporativas</h4>
                         <p class="text-muted small mb-0">Entérate de nuevas postulaciones, solicitudes de firmas de horas y avisos del ITR.</p>
                     </div>
-                    <a id="btnMarcarLeidas" href="#" class="text-decoration-none fw-bold" style="color: var(--azul-primario); font-size: 0.85rem;">Marcar todas como leídas</a>
+                    <a id="btnMarcarLeidas" href="#" class="text-decoration-none fw-bold enlace-marcar-leidas" style="font-size: 0.85rem;">Marcar todas como leídas</a>
                 </div>
 
                 <div class="tarjeta-notificacion">
-                    <div class="circulo-icono fondo-icono-azul"><i class="bi bi-person-plus-fill"></i></div>
+                    <span class="marcador-noti" style="background-color:#2952d1;"></span>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between mb-1">
                             <span class="fw-bold">Nueva postulación recibida</span>
@@ -118,7 +123,7 @@
                 </div>
 
                 <div class="tarjeta-notificacion notificacion-horas">
-                    <div class="circulo-icono fondo-icono-purpura"><i class="bi bi-clock-fill"></i></div>
+                    <span class="marcador-noti" style="background-color:#8b5cf6;"></span>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between mb-1">
                             <span class="fw-bold">Reporte de horas listo para revisión</span>
@@ -132,7 +137,7 @@
                 </div>
 
                 <div class="tarjeta-notificacion">
-                    <div class="circulo-icono fondo-icono-verde"><i class="bi bi-shield-check-fill"></i></div>
+                    <span class="marcador-noti" style="background-color:#16a34a;"></span>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between mb-1">
                             <span class="fw-bold">Convenio de pasantías aprobado por ITR</span>
@@ -146,7 +151,7 @@
                 </div>
 
                 <div class="tarjeta-notificacion">
-                    <div class="circulo-icono fondo-icono-naranja"><i class="bi bi-exclamation-triangle-fill"></i></div>
+                    <span class="marcador-noti" style="background-color:#d97706;"></span>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between mb-1">
                             <span class="fw-bold">Convocatoria próxima a vencer</span>
@@ -157,7 +162,7 @@
                 </div>
 
                 <div class="tarjeta-notificacion notificacion-alerta">
-                    <div class="circulo-icono fondo-icono-rojo"><i class="bi bi-info-circle-fill"></i></div>
+                    <span class="marcador-noti" style="background-color:#dc2626;"></span>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between mb-1">
                             <span class="fw-bold">Actualización de normativas de evaluación</span>
@@ -177,16 +182,16 @@
                 </div>
                 <h5 id="empresaNombre" class="fw-bold mb-0">TechSolutions S.A.</h5>
                 <div class="mb-3">
-                    <span id="empresaEstadoConvenio" class="punto-estado"></span><span id="empresaTextoConvenio" class="fw-bold" style="color: #10b981; font-size: 0.8rem;">Convenio Activo ITR</span>
+                    <span id="empresaEstadoConvenio" class="punto-estado"></span><span id="empresaTextoConvenio" class="fw-bold" style="color: #16a34a; font-size: 0.8rem;">Convenio Activo ITR</span>
                 </div>
-                <a id="empresaVerPerfil" href="#" class="btn btn-primary w-100 rounded-pill" style="background-color: var(--azul-primario); border:none; padding: 8px; font-weight: 600; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">Ver perfil</a>
+                <a id="empresaVerPerfil" href="#" class="btn btn-perfil-empresa w-100 rounded-pill" style="padding: 8px; font-weight: 600; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalPerfilEmpresa">Ver perfil</a>
             </div>
 
             <div class="card tarjeta-personalizada p-4">
-                <h6 class="fw-bold mb-4">Consejos de selección</h6>
+                <h6 class="titulo-seccion mb-4">Consejos de selección</h6>
                 
                 <div class="item-consejo">
-                    <div class="icono-consejo"><i class="bi bi-lightning-charge-fill"></i></div>
+                    <span class="marcador-consejo" style="background-color:#2952d1;"></span>
                     <div>
                         <div class="fw-bold" style="font-size: 0.85rem;">Responde rápido</div>
                         <div class="text-muted" style="font-size: 0.7rem; line-height: 1.2;">Revisar los CVs en las primeras 48 horas asegura captar a los alumnos más proactivos.</div>
@@ -194,7 +199,7 @@
                 </div>
                 
                 <div class="item-consejo">
-                    <div class="icono-consejo" style="background-color: #f3e8ff; color: #7e22ce;"><i class="bi bi-clock-history"></i></div>
+                    <span class="marcador-consejo" style="background-color:#8b5cf6;"></span>
                     <div>
                         <div class="fw-bold" style="font-size: 0.85rem;">Monitorea las horas</div>
                         <div class="text-muted" style="font-size: 0.7rem; line-height: 1.2;">Aprobar los reportes de horas semanalmente evita acumulaciones al fin de año.</div>
@@ -202,7 +207,7 @@
                 </div>
                 
                 <div class="item-consejo mb-0">
-                    <div class="icono-consejo" style="background-color: #dcfce7; color: #15803d;"><i class="bi bi-chat-square-text-fill"></i></div>
+                    <span class="marcador-consejo" style="background-color:#16a34a;"></span>
                     <div>
                         <div class="fw-bold" style="font-size: 0.85rem;">Feedback Claro</div>
                         <div class="text-muted" style="font-size: 0.7rem; line-height: 1.2;">Si rechazas una postulación, dejar una breve nota ayuda al crecimiento del estudiante.</div>
@@ -214,169 +219,212 @@
     </div>
 </div>
 
- <!-- Agregar ver pefil empresa -->
-
-    <div class="modal fade" id="modalPerfilEmpresa" tabindex="-1" aria-labelledby="modalPerfilEmpresaLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0 shadow">
-                <!-- Encabezado del Modal -->
-                <div class="modal-header border-bottom-0 px-4 pt-4 pb-2 d-flex align-items-center justify-content-between">
-                    <h5 class="modal-title fw-bold fs-4" id="modalPerfilEmpresaLabel">Mi perfil</h5>
-                    <div class="d-flex align-items-center gap-2">
-                        <button type="button" class="btn btn-outline-primary rounded-3 btn-sm fw-medium px-3 d-flex align-items-center gap-2" style="font-size: 0.85rem;">
-                            <i class="bi bi-pencil shadow-sm"></i><a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#modalEditarPerfilEmpresa">Editar mi perfil</a>
-                        </button>
-                        <button type="button" class="btn-close ms-2" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Modal Ver Perfil Empresa -->
+<div class="modal fade" id="modalPerfilEmpresa" tabindex="-1" aria-labelledby="modalPerfilEmpresaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0 shadow">
+            <div class="modal-header border-bottom-0 px-4 pt-4 pb-2 d-flex align-items-center justify-content-between">
+                <h5 class="modal-title fw-bold fs-4" id="modalPerfilEmpresaLabel">Mi perfil</h5>
+                <div class="d-flex align-items-center gap-2">
+                    <button type="button" class="btn btn-outline-primary rounded-3 btn-sm fw-medium px-3 d-flex align-items-center gap-2" style="font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalEditarPerfilEmpresa">
+                        <i class="bi bi-pencil shadow-sm"></i>Editar mi perfil
+                    </button>
+                    <button type="button" class="btn-close ms-2" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body px-4 pb-4">
+                <div class="row align-items-start mb-4">
+                    <div class="col-auto">
+                        <div class="rounded-3 bg-secondary-subtle d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
+                            <i class="bi bi-building text-white fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="fw-bold text-dark mb-2">Tech Solutions S.A. de C.V.</h3>
+                        <p class="text-secondary mb-3" style="font-size: 0.95rem;">Empresa de desarrollo de software y soluciones tecnológicas</p>
+                        <div class="d-flex flex-wrap gap-3 text-muted small">
+                            <span><i class="bi bi-geo-alt-fill me-1 text-primary"></i> San Salvador, El Salvador</span>
+                            <span><i class="bi bi-globe me-1 text-primary"></i> <a href="https://www.techsolutions.com.sv" target="_blank" class="text-decoration-none text-muted">www.techsolutions.com.sv</a></span>
+                        </div>
                     </div>
                 </div>
-                <!-- Cuerpo del Modal (Basado fielmente en tu imagen) -->
-                <div class="modal-body px-4 pb-4">
-                    <div class="row align-items-start mb-4">
-                        <!-- Cuadro Gris de Logotipo / Imagen -->
-                        <div class="col-auto">
-                            <div class="rounded-3 bg-secondary-subtle d-flex align-items-center justify-content-center" style="width: 120px; height: 120px;">
-                                <i class="bi bi-building text-white fs-1"></i>
+
+                <hr class="text-secondary opacity-25 my-4">
+
+                <div class="row g-4 mb-4" style="font-size: 0.9rem;">
+                    <div class="col-md-6">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="text-primary fs-5"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Correo de contacto</span>
+                                <span class="fw-medium text-dark">contacto@techsolutions.com.sv</span>
                             </div>
                         </div>
-                        <!-- Información Principal Superior -->
-                        <div class="col">
-                            <h3 class="fw-bold text-dark mb-2">Tech Solutions S.A. de C.V.</h3>
-                            <p class="text-secondary mb-3" style="font-size: 0.95rem;">Empresa de desarrollo de software y soluciones tecnológicas</p>
-                            <div class="d-flex flex-wrap gap-3 text-muted small">
-                                <span><i class="bi bi-geo-alt-fill me-1 text-primary"></i> San Salvador, El Salvador</span>
-                                <span><i class="bi bi-globe me-1 text-primary"></i> <a href="https://www.techsolutions.com.sv" target="_blank" class="text-decoration-none text-muted">www.techsolutions.com.sv</a></span>
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="text-primary fs-5"><i class="bi bi-telephone"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Teléfono</span>
+                                <span class="fw-medium text-dark">+503 2267 8899</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="text-primary fs-5"><i class="bi bi-card-text"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">NIT</span>
+                                <span class="fw-medium text-dark">0614-120420-101-9</span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="text-primary fs-5"><i class="bi bi-person-badge"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Representante</span>
+                                <span class="fw-medium text-dark d-block">Lic. Andrés Molina</span>
+                                <span class="text-muted small">Gerente General</span>
                             </div>
                         </div>
                     </div>
-
-                    <hr class="text-secondary opacity-25 my-4">
-
-                    <!-- Cuadrícula de Datos de Contacto y Empresa -->
-                    <div class="row g-4 mb-4" style="font-size: 0.9rem;">
-                        <!-- Columna Izquierda -->
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="text-primary fs-5"><i class="bi bi-envelope"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">Correo de contacto</span>
-                                    <span class="fw-medium text-dark">contacto@techsolutions.com.sv</span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="text-primary fs-5"><i class="bi bi-telephone"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">Teléfono</span>
-                                    <span class="fw-medium text-dark">+503 2267 8899</span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="text-primary fs-5"><i class="bi bi-card-text"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">NIT</span>
-                                    <span class="fw-medium text-dark">0614-120420-101-9</span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3">
-                                <div class="text-primary fs-5"><i class="bi bi-person-badge"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">Representante</span>
-                                    <span class="fw-medium text-dark d-block">Lic. Andrés Molina</span>
-                                    <span class="text-muted small">Gerente General</span>
-                                </div>
+                    <div class="col-md-6">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="text-primary fs-5"><i class="bi bi-briefcase"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Industria</span>
+                                <span class="fw-medium text-dark">Tecnología / Desarrollo de Software</span>
                             </div>
                         </div>
-                        <!-- Columna Derecha -->
-                        <div class="col-md-6">
-                            <div class="d-flex gap-3 mb-3">
-                                <div class="text-primary fs-5"><i class="bi bi-briefcase"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">Industria</span>
-                                    <span class="fw-medium text-dark">Tecnología / Desarrollo de Software</span>
-                                </div>
-                            </div>
-                            <div class="d-flex gap-3">
-                                <div class="text-primary fs-5"><i class="bi bi-geo-alt"></i></div>
-                                <div>
-                                    <span class="text-muted d-block small">Dirección</span>
-                                    <span class="fw-medium text-dark d-block">Calle El Mirador, Edificio 123</span>
-                                    <span class="text-muted small">Col. Escalón, San Salvador</span>
-                                </div>
+                        <div class="d-flex gap-3">
+                            <div class="text-primary fs-5"><i class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <span class="text-muted d-block small">Dirección</span>
+                                <span class="fw-medium text-dark d-block">Calle El Mirador, Edificio 123</span>
+                                <span class="text-muted small">Col. Escalón, San Salvador</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Sección de Descripción -->
-                    <div class="bg-light p-3 rounded-3" style="font-size: 0.88rem;">
-                        <h6 class="fw-bold text-dark mb-2">Descripción de la empresa</h6>
-                        <p class="text-secondary mb-0 lh-base">
-                            Somos una empresa dedicada al desarrollo de software a la medida, aplicaciones móviles y consultoría tecnológica. Trabajamos con organizaciones para transformar ideas en soluciones innovadoras que generan valor y crecimiento.
-                        </p>
-                    </div>
+                <div class="bg-light p-3 rounded-3" style="font-size: 0.88rem;">
+                    <h6 class="fw-bold text-dark mb-2">Descripción de la empresa</h6>
+                    <p class="text-secondary mb-0 lh-base">
+                        Somos una empresa dedicada al desarrollo de software a la medida, aplicaciones móviles y consultoría tecnológica. Trabajamos con organizaciones para transformar ideas en soluciones innovadoras que generan valor y crecimiento.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+<!-- Modal Editar Perfil -->
+<div class="modal fade" id="modalEditarPerfilEmpresa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalVerPerfilEmpresaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-content-custom">
+            <div class="modal-header modal-header-custom d-flex flex-column align-items-start">
+                <h4 class="modal-title fw-bold" id="modalVerPerfilEmpresaLabel">Perfil de la Empresa</h4>
+                <p class="text-muted small mb-0">Visualiza y actualiza la información pública de tu organización</p>
+            </div>
+            <div class="modal-body modal-body-custom">
+                <form id="formPerfilEmpresa">
+                    <h6 class="fw-bold mb-3" style="font-size: 0.9rem; color: #4b5563;">Detalles Generales</h6>
 
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="modalNombreEmpresa" class="form-label form-label-custom">Nombre de la Empresa *</label>
+                            <input type="text" class="form-control form-control-custom" id="modalNombreEmpresa" value="TechSolutions S.A." placeholder="Nombre corporativo" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="modalSitioWeb" class="form-label form-label-custom">Sitio Web Corporativo</label>
+                            <input type="url" class="form-control form-control-custom" id="modalSitioWeb" placeholder="https://ejemplo.com">
+                        </div>
+                    </div>
 
+                    <div class="mb-3">
+                        <label for="modalDescripcionEmpresa" class="form-label form-label-custom">Descripción de la Organización *</label>
+                        <textarea class="form-control form-control-custom" id="modalDescripcionEmpresa" rows="4" maxlength="500" placeholder="Describe brevemente el sector, cultura y metas de tu empresa..." required></textarea>
+                        <div class="text-end text-muted small mt-1" style="font-size: 0.75rem;">0/500</div>
+                    </div>
 
-    <!-- Div editar perfil -->
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label for="modalUbicacionEmpresa" class="form-label form-label-custom">Ubicación principal *</label>
+                            <input type="text" class="form-control form-control-custom" id="modalUbicacionEmpresa" placeholder="Ej. San Salvador, El Salvador" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="modalContactoEmpresa" class="form-label form-label-custom">Correo electrónico de contacto *</label>
+                            <input type="email" class="form-control form-control-custom" id="modalContactoEmpresa" placeholder="contacto@empresa.com" required>
+                        </div>
+                    </div>
 
-    <div class="modal fade" id="modalEditarPerfilEmpresa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalVerPerfilEmpresaLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content modal-content-custom">
-                <div class="modal-header modal-header-custom d-flex flex-column align-items-start">
-                    <h4 class="modal-title fw-bold" id="modalVerPerfilEmpresaLabel">Perfil de la Empresa</h4>
-                    <p class="text-muted small mb-0">Visualiza y actualiza la información pública de tu organización</p>
+                    <div class="d-flex justify-content-end gap-2 pt-2">
+                        <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-guardar">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Silenciar Notificaciones -->
+<div class="modal fade" id="modalSilenciar" tabindex="-1" aria-labelledby="etiquetaModalSilenciar" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-3">
+            <div class="modal-body">
+                <div class="d-flex mb-4 align-items-start">
+                    <i class="bi bi-bell-slash text-dark me-3" style="font-size: 2rem; line-height: 1;"></i>
+                    <div>
+                        <h4 class="fw-bold mb-1" id="etiquetaModalSilenciar">Silenciar notificaciones</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.9rem;">Elige qué tipos de avisos docentes deseas pausar.</p>
+                    </div>
                 </div>
-                <div class="modal-body modal-body-custom">
-                    <form id="formPerfilEmpresa">
-                        
-                        <h6 class="fw-bold mb-3" style="font-size: 0.9rem; color: #4b5563;">Detalles Generales</h6>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <label for="modalNombreEmpresa" class="form-label form-label-custom">Nombre de la Empresa *</label>
-                                <input type="text" class="form-control form-control-custom" id="modalNombreEmpresa" value="TechSolutions S.A." placeholder="Nombre corporativo" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="modalSitioWeb" class="form-label form-label-custom">Sitio Web Corporativo</label>
-                                <input type="url" class="form-control form-control-custom" id="modalSitioWeb" placeholder="https://ejemplo.com">
-                            </div>
-                        </div>
+                <h6 class="fw-bold mb-3">¿Qué deseas silenciar?</h6>
 
-                        <div class="mb-3">
-                            <label for="modalDescripcionEmpresa" class="form-label form-label-custom">Descripción de la Organización *</label>
-                            <textarea class="form-control form-control-custom" id="modalDescripcionEmpresa" rows="4" maxlength="500" placeholder="Describe brevemente el sector, cultura y metas de tu empresa..." required></textarea>
-                            <div class="text-end text-muted small mt-1" style="font-size: 0.75rem;">0/500</div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <label for="modalUbicacionEmpresa" class="form-label form-label-custom">Ubicación principal *</label>
-                                <input type="text" class="form-control form-control-custom" id="modalUbicacionEmpresa" placeholder="Ej. San Salvador, El Salvador" required>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="tarjeta-opcion-modal d-flex align-items-center" style="border-color: var(--azul-primario); background-color: #f8fafc;">
+                            <div class="caja-icono-modal" style="background-color: #e1effe; color: var(--azul-primario);">
+                                <i class="bi bi-bell-fill"></i>
                             </div>
-                            <div class="col-md-6">
-                                <label for="modalContactoEmpresa" class="form-label form-label-custom">Correo electrónico de contacto *</label>
-                                <input type="email" class="form-control form-control-custom" id="modalContactoEmpresa" placeholder="contacto@empresa.com" required>
+                            <div>
+                                <div class="fw-bold" style="font-size: 0.9rem;">Todas las alertas</div>
+                                <div class="text-muted" style="font-size: 0.75rem; line-height: 1.2;">Pausa de manera temporal toda la actividad académica de la plataforma.</div>
                             </div>
                         </div>
-
-                        <div class="d-flex justify-content-end gap-2 pt-2">
-                            <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="submit" class="btn btn-guardar">Guardar Cambios</button>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tarjeta-opcion-modal d-flex align-items-center">
+                            <div class="caja-icono-modal" style="background-color: #def7ec; color: #046c4e;">
+                                <i class="bi bi-file-earmark-check-fill"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold" style="font-size: 0.9rem;">Entregas de Reportes</div>
+                                <div class="text-muted" style="font-size: 0.75rem; line-height: 1.2;">Silencia los avisos cuando tus alumnos suban documentos mensuales.</div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tarjeta-opcion-modal d-flex align-items-center">
+                            <div class="caja-icono-modal" style="background-color: #fde8e8; color: #c81e1e;">
+                                <i class="bi bi-exclamation-triangle-fill"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold" style="font-size: 0.9rem;">Alertas de Convenios</div>
+                                <div class="text-muted" style="font-size: 0.75rem; line-height: 1.2;">Silencia los recordatorios automáticos de plazos y prórrogas.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                    </form>
+                <div class="d-flex justify-content-center mt-2 gap-2">
+                    <button id="btnCancelarSilencio" type="button" class="btn btn-light px-4 py-2 fw-bold" data-bs-dismiss="modal" style="border: 1px solid #e5e7eb; border-radius: 20px;">Cancelar</button>
+                    <button id="btnGuardarSilencio" type="button" class="btn btn-primary px-4 py-2 fw-bold" style="background-color: var(--azul-primario); border: none; border-radius: 20px;"><i class="bi bi-bell-slash me-2"></i>Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
- <script src="../JS/EmpresaJS/notificaciones.js"></script>
-
+<script src="../JS/EmpresaJS/notificaciones.js"></script>
 
 </body>
 </html>

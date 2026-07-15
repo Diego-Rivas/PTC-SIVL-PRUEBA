@@ -1,113 +1,201 @@
+/* --- Variables Globales --- */
 :root {
-            --fondo-claro: #f4f5f7;
-            --menu-oscuro: #121826;
-            --azul-primario: #1c64f2;
-        }
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-        body {
-            background-color: var(--fondo-claro);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 0.9rem;
-            color: #1f2937;
-        }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-        /* --- Barra de Navegación --- */
-        .barra-personalizada {
-            background-color: var(--menu-oscuro);
-            border-radius: 25px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .nav-link {
-            color: #9ca3af !important;
-            font-weight: 500;
-            margin: 0 5px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link.enlace-activo {
-            background-color: #1a56db;
-            color: #ffffff !important;
-        }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.titulo-pagina,
+.titulo-seccion,
+.navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-        /* --- Tarjetas Generales --- */
-        .tarjeta-personalizada {
-            border-radius: 16px;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+.titulo-pagina {
+    font-weight: 700;
+    color: #16213b;
+}
 
-        /* --- Barra Lateral Izquierda (Filtros) --- */
-        .contenedor-entrada-busqueda { position: relative; }
-        .contenedor-entrada-busqueda .bi-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6b7280;
-        }
-        
-        /* Casillas de verificación personalizadas */
-        .casilla-personalizada .form-check-input {
-            border-radius: 4px;
-            border-color: #d1d5db;
-        }
-        .casilla-personalizada .form-check-input:checked {
-            background-color: var(--azul-primario);
-            border-color: var(--azul-primario);
-        }
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
 
-        /* --- Centro (Asignaciones) --- */
-        .tarjeta-asignacion {
-            border-radius: 16px;
-            border: 1px solid #f3f4f6;
-            transition: 0.2s;
-        }
-        .tarjeta-asignacion:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-color: #e5e7eb;
-        }
-        .caja-icono-asignacion {
-            width: 70px;
-            height: 70px;
-            background-color: #eff6ff; 
-            color: var(--azul-primario);
-            border-radius: 12px;
-            flex-shrink: 0;
-            font-size: 1.8rem;
-        }
-        .nombre-modulo {
-            color: var(--azul-primario);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .nombre-modulo:hover { text-decoration: underline; }
+/* --- Navbar --- */
+.navegacion-personalizada {
+    background-color: var(--nav-oscuro);
+}
 
-        /* Botones personalizados basados en tu paleta */
-        .boton-lineas-primario-personalizado {
-            color: var(--azul-primario);
-            border: 1px solid var(--azul-primario);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .boton-lineas-primario-personalizado:hover { background-color: #f0f5ff; }
-        
-        .boton-primario-personalizado {
-            background-color: var(--azul-primario);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .boton-primario-personalizado:hover {
-            background-color: #1a56db;
-            color: white;
-        }
+.navbar-brand {
+    color: #f4f5f7 !important;
+}
 
-        /* --- Barra Lateral Derecha (Perfil) --- */
-        .imagen-perfil {
-            width: 80px;
-            height: 80px;
-            background-color: #9ca3af;
-        }
+.enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+
+.enlace-nav:hover,
+.enlace-nav.nav-activo {
+    color: #ffffff !important;
+}
+
+.enlace-nav.nav-activo {
+    background-color: #2a3555;
+}
+
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
+}
+
+/* --- Búsqueda --- */
+.contenedor-entrada-busqueda {
+    position: relative;
+}
+
+.contenedor-entrada-busqueda .bi-search {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.entrada-busqueda {
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+    padding-right: 34px;
+}
+
+.entrada-busqueda:focus {
+    border-color: var(--azul-primario);
+    box-shadow: none;
+    background-color: #fff;
+}
+
+/* --- Checkboxes --- */
+.casilla-personalizada .form-check-input:checked {
+    background-color: var(--azul-primario);
+    border-color: var(--azul-primario);
+}
+
+/* --- Tarjetas de asignación (marcador lateral en vez de ícono en caja de color) --- */
+.tarjeta-asignacion {
+    background-color: #fafbfc;
+    border: 1px solid #eef0f2;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.tarjeta-asignacion:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.marcador-asignacion {
+    width: 5px;
+    align-self: stretch;
+    min-height: 64px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.nombre-modulo {
+    color: var(--azul-primario);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nombre-modulo:hover {
+    text-decoration: underline;
+}
+
+/* --- Badges de estado --- */
+.badge-pendiente {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-revision {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-completado {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* --- Botones --- */
+.boton-lineas-primario-personalizado {
+    color: var(--azul-primario);
+    border: 1px solid var(--azul-primario);
+    background-color: transparent;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.boton-lineas-primario-personalizado:hover {
+    background-color: #eef2ff;
+}
+
+.boton-primario-personalizado {
+    background-color: var(--azul-primario);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+}
+
+.boton-primario-personalizado:hover {
+    background-color: #1550c9;
+    color: #fff;
+}
+
+.boton-primario-personalizado:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* --- Perfil --- */
+.foto-perfil {
+    width: 80px;
+    height: 80px;
+    background-color: #d7dbe3;
+}
+
+.btn-perfil-estudiante {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+
+.btn-perfil-estudiante:hover {
+    color: #fff;
+    background-color: #1550c9;
+}
+
+.punto-estado {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #10b981;
+    display: inline-block;
+}

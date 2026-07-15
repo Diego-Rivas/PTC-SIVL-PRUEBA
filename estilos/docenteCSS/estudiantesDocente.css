@@ -1,99 +1,99 @@
-/* --- Variables y Base --- */
-    :root {
-        --nav-oscuro: #121826;
-        --azul-primario: #1c64f2;
-        --primario-enfoque: #1a56db;
-    }
-    body {
-        background-color: #f4f5f7;
-        font-size: 0.9rem;
-    }
+/* --- Variables Globales --- */
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --azul-primario: #1c64f2;
+    --radio-borde-tarjeta: 14px;
+}
 
-    /* --- Barra de Navegación --- */
-    .navegacion-personalizada {
-        background-color: var(--nav-oscuro);
-        border-radius: 25px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .enlace-nav {
-        color: #9ca3af !important;
-        border-radius: 20px;
-        transition: 0.3s;
-    }
-    .enlace-nav:hover, .enlace-nav.nav-activo {
-        color: #ffffff !important;
-    }
-    .enlace-nav.nav-activo {
-        background-color: var(--primario-enfoque);
-    }
-    .barra-busqueda {
-        border-radius: 20px;
-        width: 250px;
-    }
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
 
-    /* --- Panel Izquierdo: Grupos Asignados --- */
-    .foto-perfil {
-        width: 85px;
-        height: 85px;
-        background-color: #d1d5db;
-    }
-    .btn-grupo-lateral {
-        color: #4b5563;
-        font-size: 0.85rem;
-        transition: 0.2s;
-    }
-    .btn-grupo-lateral:hover {
-        background-color: #f3f4f6;
-        color: #111827;
-    }
-    .btn-grupo-lateral.activo {
-        background-color: #eff6ff;
-        color: var(--azul-primario);
-    }
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
 
-    /* --- Panel Central: Acciones Rápidas --- */
-    .tarjeta-accion-rapida {
-        border-radius: 16px;
-        transition: 0.2s;
-    }
-    .tarjeta-accion-rapida:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        border-color: #d1d5db;
-    }
-    .icono-accion {
-        width: 45px;
-        height: 45px;
-        border-radius: 12px;
-    }
+.titulo-pagina { font-weight: 700; font-size: 1.5rem; color: #16213b; }
+.titulo-seccion { font-weight: 600; color: #16213b; }
 
-    /* --- Tabla de Estudiantes --- */
-    .tabla-estudiantes th {
-        font-size: 0.8rem;
-        color: #6b7280;
-    }
-    .tabla-estudiantes td {
-        font-size: 0.85rem;
-    }
-    .avatar-estudiante {
-        width: 32px;
-        height: 32px;
-        background-color: #d1d5db;
-    }
-    
-    /* --- Badges de Estado --- */
-    .badge-estado {
-        padding: 5px 12px;
-        border-radius: 6px;
-        font-size: 0.75rem;
-    }
-    .estado-riesgo { background-color: #fee2e2; color: #ef4444; }
-    .estado-atencion { background-color: #fef3c7; color: #d97706; }
-    .estado-avanzado { background-color: #dcfce7; color: #10b981; }
-    .estado-completado { background-color: #e0f2fe; color: #0284c7; }
+/* --- Navbar --- */
+.navegacion-personalizada { background-color: var(--nav-oscuro); }
+.navbar-brand { color: #f4f5f7 !important; }
+.enlace-nav { color: #a3a9bd !important; font-weight: 500; transition: 0.25s; }
+.enlace-nav:hover, .enlace-nav.nav-activo { color: #ffffff !important; }
+.enlace-nav.nav-activo { background-color: #2a3555; }
 
-    /* --- Panel Derecho: Estadísticas --- */
-    .icono-metrica {
-        width: 42px;
-        height: 42px;
-        border-radius: 10px;
-    }
+/* --- Tarjetas Genéricas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+.foto-perfil { width: 82px; height: 82px; background-color: #d7dbe3; }
+.btn-perfil-docente { background-color: var(--azul-primario); color: #fff; }
+.btn-perfil-docente:hover { color: #fff; background-color: #1550c9; }
+
+/* --- Mis grupos asignados --- */
+.btn-grupo-lateral {
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.btn-grupo-lateral:hover { background-color: #f3f4f6; color: #111827; }
+.btn-grupo-lateral.activo { background-color: #e9edfb; color: var(--azul-primario); font-weight: 600; }
+.marcador-grupo {
+    width: 5px; height: 20px; border-radius: 3px;
+    background-color: #d7dbe3; flex-shrink: 0; display: inline-block;
+}
+.btn-grupo-lateral.activo .marcador-grupo { background-color: var(--azul-primario); }
+
+/* --- Acciones rápidas (marcador lateral en vez de ícono en caja de color) --- */
+.tarjeta-accion-rapida {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    color: #23272f;
+    transition: 0.2s;
+}
+.tarjeta-accion-rapida:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-color: #d1d5db; }
+.marcador-accion {
+    width: 6px; height: 34px; border-radius: 4px; flex-shrink: 0; display: inline-block;
+}
+
+/* --- Búsqueda --- */
+.entrada-busqueda-alumnos {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 8px 12px 8px 34px;
+    background-color: #f9fafb;
+}
+.entrada-busqueda-alumnos:focus { border-color: var(--azul-primario); box-shadow: none; background-color: #fff; }
+
+/* --- Tabla de Estudiantes --- */
+.tabla-estudiantes th { font-size: 0.8rem; color: #6b7280; }
+.tabla-estudiantes td { font-size: 0.85rem; }
+.avatar-estudiante { width: 32px; height: 32px; background-color: #d7dbe3; }
+
+/* --- Badges de Estado --- */
+.badge-estado { padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; }
+.estado-riesgo { background-color: #fee2e2; color: #ef4444; }
+.estado-atencion { background-color: #fef3c7; color: #d97706; }
+.estado-avanzado { background-color: #dcfce7; color: #10b981; }
+.estado-completado { background-color: #e0f2fe; color: #0284c7; }
+
+/* --- Panel Derecho: Estadísticas (marcador en vez de ícono redondo) --- */
+.marcador-stat {
+    width: 4px;
+    height: 40px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: inline-block;
+}
