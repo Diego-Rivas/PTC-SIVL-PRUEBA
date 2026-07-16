@@ -3,35 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asignación de Pasantías - ITR</title>
+    <title>Panel Administrador - Asignación de Pasantías</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/docenteCSS/pasantiasDocente.css">
+    <link rel="stylesheet" href="../estilos/administradorCSS/pasantiasAdmin.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navegacion-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-personalizada mx-4 mt-3 mb-4 rounded-5 px-4 py-2 shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold me-4" href="#">
                 <span class="text-warning">●</span> RICALDONE
             </a>
-            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavegacion">
                 <i class="bi bi-list fs-2"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavegacion">
                 <ul class="navbar-nav gap-1">
-                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./indexDocente.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./estudiantesDocente.html"><i class="bi bi-people me-1"></i> Estudiantes</a></li>
-                    <li class="nav-item"><a class="nav-link enlace-nav nav-activo px-3 rounded-5 fw-medium" href="./pasantiasDocente.html"><i class="bi bi-folder-check me-1"></i> Pasantías</a></li>
-                    <li class="nav-item"><a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./reportesDocente.html"><i class="bi bi-file-earmark-bar-graph me-1"></i> Reportes</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link enlace-nav px-3 rounded-5 fw-medium" href="./notificacionesDocente.html">
-                            <i class="bi bi-bell me-1"></i> Notificaciones
-                            <span id="docenteCantidadNotificaciones" class="badge bg-danger rounded-pill ms-1" style="font-size:0.7rem;">3</span>
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./indexadministrador.html"><i class="bi bi-house-door me-1"></i> Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./docentesAdministrador.html"><i class="bi bi-person-badge me-1"></i> Docentes</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./usuariosAdministrador.html"><i class="bi bi-people me-1"></i> Usuarios</a></li>
+                    <li class="nav-item"><a class="nav-link nav-activo px-3 rounded-5 fw-medium" href="./pasantiasAdministrador.html"><i class="bi bi-folder-check me-1"></i> Pasantías</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 rounded-5 fw-medium" href="./especialidadGruposAdministrador.html"><i class="bi bi-tags me-1"></i> Especialidades &amp; grupos</a></li>
                 </ul>
             </div>
         </div>
@@ -41,44 +36,32 @@
         <div class="row">
 
             <aside class="col-xl-2 col-lg-3 mb-4">
-                <div class="card tarjeta-personalizada border-0 p-4 text-center bg-white mb-3">
-                    <div id="docenteFotoPerfil" class="foto-perfil mb-3 d-flex align-items-center justify-content-center mx-auto rounded-circle">
+                <div class="card tarjeta-personalizada border-0 p-4 text-center bg-white">
+                    <div id="empresaFotoPerfil" class="imagen-perfil mb-3 d-flex align-items-center justify-content-center rounded-circle mx-auto">
                         <i class="bi bi-person-fill text-white" style="font-size: 3rem;"></i>
                     </div>
-                    <h5 class="fw-bold mb-0" style="font-size: 1.1rem;">Docente</h5>
-                    <p id="docenteNombre" class="text-muted small mb-1">Lic. Carlos García</p>
-                    <p id="docenteEspecialidad" class="text-muted small mb-3">Desarrollo de Software</p>
-                    <button id="docenteVerPerfil" class="btn btn-perfil-docente w-100 rounded-pill border-0 py-2 fw-semibold small">Ver mi perfil</button>
-                </div>
-
-                <div class="card tarjeta-personalizada border-0 p-3 bg-white">
-                    <h6 class="titulo-seccion mb-3 px-1" style="font-size: 0.95rem;">Mis grupos asignados</h6>
-                    <div id="docenteListaGrupos" class="d-flex flex-column gap-1">
-                        <a href="#" class="btn-grupo-lateral activo d-flex align-items-center gap-2 text-decoration-none">
-                            <span class="marcador-grupo"></span> 2 Software A - Grupo 1
-                        </a>
-                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
-                            <span class="marcador-grupo"></span> 2 Software A - Grupo 2
-                        </a>
-                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
-                            <span class="marcador-grupo"></span> 2 Software B - Grupo 1
-                        </a>
-                        <a href="#" class="btn-grupo-lateral d-flex align-items-center gap-2 text-decoration-none">
-                            <span class="marcador-grupo"></span> 2 Software B - Grupo 2
-                        </a>
-                    </div>
+                    <h5 class="fw-bold mb-0" style="font-size: 1.1rem;">Admin</h5>
+                    <p id="empresaNombre" class="text-muted small mb-3">Lic. Carlos Mendoza</p>
+                    <a id="empresaVerPerfil" href="#" class="btn btn-perfil-admin w-100 rounded-pill py-2 fw-semibold border-0 small">Ver mi perfil</a>
                 </div>
             </aside>
 
             <section class="col-xl-3 col-lg-4 mb-4">
                 <div class="card tarjeta-personalizada border-0 p-3 bg-white mb-3">
-                    <div class="position-relative">
+                    <div class="position-relative mb-2">
                         <i class="bi bi-search text-muted position-absolute" style="left: 12px; top: 50%; transform: translateY(-50%);"></i>
-                        <input id="docenteBuscarVacante" type="text" class="form-control entrada-busqueda-alumnos shadow-none w-100" placeholder="Buscar vacante...">
+                        <input id="adminBuscarVacante" type="text" class="form-control entrada-busqueda-alumnos shadow-none w-100" placeholder="Buscar vacante...">
                     </div>
+                    <select id="adminFiltroEspecialidad" class="form-select input-personalizado rounded-3" style="font-size: 0.85rem;">
+                        <option selected>Todas las especialidades</option>
+                        <option>Desarrollo de Software</option>
+                        <option>Diseño Gráfico</option>
+                        <option>Contaduría</option>
+                        <option>Electromecánica</option>
+                    </select>
                 </div>
 
-                <div id="docenteListaVacantes" class="card tarjeta-personalizada border-0 p-3 d-flex flex-column gap-2 bg-white">
+                <div id="adminListaVacantes" class="card tarjeta-personalizada border-0 p-3 d-flex flex-column gap-2 bg-white">
                     <div data-id="1" class="tarjeta-vacante item-vacante seleccionada d-flex gap-3 p-3 rounded-3">
                         <span class="marcador-vacante"></span>
                         <div>
@@ -101,7 +84,7 @@
                         <span class="marcador-vacante"></span>
                         <div>
                             <h6 class="nombre-vacante fw-bold mb-0" style="font-size:0.95rem;">Soporte Técnico</h6>
-                            <span class="empresa-vacante d-block fw-semibold" style="font-size:0.8rem;">Data Solutions SV</span>
+                            <span class="empresa-vacante d-block fw-semibold" style="font-size:0.75rem;">Data Solutions SV</span>
                             <span class="cupos-vacante d-block fw-medium" style="font-size:0.75rem;">● 3 cupos disponibles</span>
                             <span class="modalidad-vacante text-muted d-block fw-medium" style="font-size:0.75rem;">Presencial</span>
                         </div>
@@ -113,10 +96,10 @@
                 <div class="card tarjeta-personalizada border-0 p-4 bg-white">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h5 class="titulo-seccion mb-0" style="font-size: 1.05rem;">Estudiantes</h5>
-                        <input id="docenteBuscarEstudiante" type="text" class="form-control entrada-busqueda-mini shadow-none px-3 py-1" placeholder="Buscar estudiante" style="font-size: 0.8rem; max-width: 150px;">
+                        <input id="adminBuscarEstudiante" type="text" class="form-control entrada-busqueda-mini shadow-none px-3 py-1" placeholder="Buscar estudiante" style="font-size: 0.8rem; max-width: 150px;">
                     </div>
 
-                    <div id="docenteListaEstudiantes" class="d-flex flex-column gap-2">
+                    <div id="adminListaEstudiantes" class="d-flex flex-column gap-2">
                         <div data-id="1" class="tarjeta-estudiante d-flex align-items-center justify-content-between py-2 border-bottom border-light">
                             <div style="width: 50%;" class="d-flex flex-column">
                                 <div class="d-flex align-items-center gap-2 mb-1">
@@ -190,19 +173,19 @@
                             <table class="w-100" style="font-size: 0.8rem;">
                                 <tr>
                                     <td class="text-secondary py-1">Empresa</td>
-                                    <td id="docenteEmpresaAsignacion" class="empresa-asignacion fw-semibold text-dark text-end py-1">TechSV S.A.</td>
+                                    <td id="adminEmpresaAsignacion" class="empresa-asignacion fw-semibold text-dark text-end py-1">TechSV S.A.</td>
                                 </tr>
                                 <tr>
                                     <td class="text-secondary py-1">Rol/Vacante</td>
-                                    <td id="docenteVacanteAsignacion" class="vacante-asignacion fw-semibold text-dark text-end py-1">Frontend Developer</td>
+                                    <td id="adminVacanteAsignacion" class="vacante-asignacion fw-semibold text-dark text-end py-1">Frontend Developer</td>
                                 </tr>
                                 <tr>
                                     <td class="text-secondary py-1">Modalidad</td>
-                                    <td id="docenteModalidadAsignacion" class="modalidad-asignacion fw-semibold text-dark text-end py-1">Presencial</td>
+                                    <td id="adminModalidadAsignacion" class="modalidad-asignacion fw-semibold text-dark text-end py-1">Presencial</td>
                                 </tr>
                                 <tr>
                                     <td class="text-secondary py-1">Duración</td>
-                                    <td id="docenteDuracionAsignacion" class="duracion-asignacion fw-semibold text-dark text-end py-1">200 horas</td>
+                                    <td id="adminDuracionAsignacion" class="duracion-asignacion fw-semibold text-dark text-end py-1">200 horas</td>
                                 </tr>
                             </table>
                         </div>
@@ -210,7 +193,7 @@
 
                     <div class="card tarjeta-personalizada border-0 p-4 bg-white">
                         <h6 class="titulo-seccion mb-3" style="font-size: 1rem;">Estudiante seleccionado</h6>
-                        <div id="docenteEstudianteSeleccionado" class="d-flex flex-column gap-2">
+                        <div id="adminEstudianteSeleccionado" class="d-flex flex-column gap-2">
                             <div class="d-flex align-items-center gap-2">
                                 <div id="detalleFotoEstudiante" class="rounded-circle" style="width: 32px; height: 32px; background-color:#d7dbe3;"></div>
                                 <div class="d-flex flex-column">
@@ -227,7 +210,7 @@
                             <span id="detallePorcentajeEstudiante" class="text-end text-muted" style="font-size:0.75rem;">0%</span>
                         </div>
 
-                        <button id="docenteAsignarPasantia" class="btn-asignar-pasantia w-100 rounded-pill py-2 fw-bold border-0 mt-3">Asignar pasantía</button>
+                        <button id="adminAsignarPasantia" class="btn-asignar-pasantia w-100 rounded-pill py-2 fw-bold border-0 mt-3">Asignar pasantía</button>
                     </div>
 
                 </div>
@@ -237,7 +220,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../JS/DocentesJS/pasantias.js"></script>
-    <script src="../JS/DocentesJS/docenteGlobal.js"></script>
+    <script src="../JS/AdminJS/pasantias.js"></script>
+    <script src="../JS/AdminJS/adminGlobal.js"></script>
 </body>
 </html>
