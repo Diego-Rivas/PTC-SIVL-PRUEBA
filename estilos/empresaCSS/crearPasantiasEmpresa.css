@@ -1,87 +1,16 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-claro: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #2952d1;
 }
 
-body {
-    background-color: var(--fondo-claro);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
-
-h1, h2, h3, h4, h5, h6,
-.titulo-pagina, .titulo-seccion, .navbar-brand, .texto-paso {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina {
-    font-weight: 700; color: #16213b; 
-}
-.titulo-seccion {
-    font-weight: 600; color: #16213b;
-}
-
-/* --- Navbar (idéntico al resto del módulo) --- */
-.navbar-personalizada {
-    background-color: var(--nav-oscuro);
-}
-.navbar-brand {
-    color: #f4f5f7 !important;
-}
+/* --- Navbar: variante de este módulo (más espaciado) --- */
 .nav-link {
-    color: #a3a9bd !important;
-    font-weight: 500;
     margin: 0 4px;
     padding: 8px 18px !important;
     transition: 0.3s;
 }
-.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
-.nav-link.nav-activo { background-color: #2a3555; }
 
-.btn-perfil-empresa {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
-
-/* --- Marcador de pasos --- */
-.marcador-paso {
-    width: 4px;
-    height: 22px;
-    background-color: var(--azul-primario);
-    border-radius: 3px;
-    flex-shrink: 0;
-}
-.texto-paso {
-    color: #16213b;
-    font-weight: 600;
-}
-
-/* --- Inputs estilo línea --- */
-.form-control-linea, .form-select-linea {
-    border: none;
-    border-bottom: 2px solid #cbd5e1;
-    border-radius: 0;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    background-color: transparent;
-    color: #23272f;
-    width: 100%;
-    transition: border-color 0.3s;
-}
-.form-select-linea {
-    padding-right: 24px;
-    color: #4b5563;
-}
-.form-control-linea:focus, .form-select-linea:focus {
-    outline: none;
-    border-bottom-color: var(--azul-primario);
-}
-
-/* Chips de habilidades */
+/* --- Chips de habilidades --- */
 .chip-habilidad {
     background-color: #e9edfb;
     color: var(--azul-primario);
@@ -96,43 +25,4 @@ h1, h2, h3, h4, h5, h6,
 .chip-habilidad i {
     cursor: pointer;
     font-size: 0.7rem;
-}
-
-/* --- Vista previa --- */
-.icono-preview {
-    background-color: #e9edfb;
-    color: var(--azul-primario);
-}
-
-.caja-consejos {
-    background-color: #f4f6fd;
-}
-.titulo-consejos { color: var(--azul-primario); }
-
-.marcador-consejo-mini {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: var(--azul-primario);
-    flex-shrink: 0;
-    margin-top: 7px;
-}
-
-/* --- Botones inferiores --- */
-.btn-inferior-publicar {
-    background-color: var(--azul-primario);
-    color: white;
-    font-weight: bold;
-    padding: 10px 32px;
-    border-radius: 10px;
-    border: none;
-}
-.btn-inferior-publicar:hover { background-color: #1f3fae; }
-.btn-inferior-cancelar {
-    background-color: white;
-    color: var(--azul-primario);
-    font-weight: bold;
-    padding: 10px 32px;
-    border-radius: 10px;
-    border: 1px solid #cbd5e1;
 }

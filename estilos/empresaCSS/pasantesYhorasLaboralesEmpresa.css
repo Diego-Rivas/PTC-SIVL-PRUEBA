@@ -1,92 +1,15 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-gris: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #2952d1;
 }
 
-body {
-    background-color: var(--fondo-gris);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
+.titulo-pagina { font-size: 1.5rem; }
 
-h1, h2, h3, h4, h5, h6,
-.titulo-pagina, .titulo-seccion, .navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #16213b;
-}
-
-.titulo-seccion {
-    font-weight: 600;
-    color: #16213b;
-}
-
-/* --- Navbar (idéntico a ofertasLaboralesEmpresa) --- */
-.navbar-personalizada { background-color: var(--nav-oscuro); }
-.navbar-brand { color: #f4f5f7 !important; }
-.nav-link {
-    color: #a3a9bd !important;
-    font-weight: 500;
-    transition: 0.2s;
-}
-.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
-.nav-link.nav-activo { background-color: #2a3555; }
-
-.btn-perfil-empresa {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
-
-/* --- Franja de Métricas (reemplaza tarjetas con ícono) --- */
-.franja-metricas {
-    display: flex;
-    align-items: stretch;
-    background-color: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
-    padding: 1.4rem 1rem;
-}
-
-.metrica-item {
-    flex: 1;
-    text-align: center;
-    padding: 0 0.5rem;
-}
-
-.metrica-numero {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: #16213b;
-    line-height: 1;
-    margin-bottom: 6px;
-}
-
-.metrica-etiqueta {
-    font-size: 0.8rem;
-    color: #6b7280;
-    font-weight: 500;
-}
-.metrica-etiqueta i { color: var(--azul-primario); }
-
-.separador-metrica {
-    width: 1px;
-    background-color: #e9eaee;
-    margin: 4px 0;
-}
+/* --- Navbar: variante de este módulo --- */
+.nav-link { transition: 0.2s; }
 
 @media (max-width: 767px) {
-    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
     .metrica-item { flex: 1 1 40%; }
-    .separador-metrica { display: none; }
 }
 
 /* Pestañas internas */
@@ -115,28 +38,4 @@ h1, h2, h3, h4, h5, h6,
 .tabla-pasantes td {
     vertical-align: middle;
     padding: 1rem 1.5rem;
-}
-
-/* --- Modal --- */
-.btn-cancelar {
-    background-color: #ffffff;
-    color: #212529;
-    border: 1px solid #dee2e6;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 8px;
-}
-.btn-cancelar:hover {
-    background-color: #f8f9fa;
-}
-.btn-guardar {
-    background-color: var(--azul-primario);
-    color: #ffffff;
-    border: none;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 8px;
-}
-.btn-guardar:hover {
-    background-color: #1f3fae;
 }

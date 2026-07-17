@@ -1,217 +1,26 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-claro: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #1c64f2;
-    --radio-borde-tarjeta: 14px;
-}
-
-body {
-    background-color: var(--fondo-claro);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.titulo-pagina,
-.titulo-seccion,
-.navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina {
-    font-weight: 700;
-    color: #16213b;
-}
-
-.titulo-seccion {
-    font-weight: 600;
-    color: #16213b;
-}
-
-/* --- Navbar --- */
-.navegacion-personalizada {
-    background-color: var(--nav-oscuro);
-}
-
-.navbar-brand {
-    color: #f4f5f7 !important;
-}
-
-.enlace-nav {
-    color: #a3a9bd !important;
-    font-weight: 500;
-    transition: 0.25s;
-}
-
-.enlace-nav:hover,
-.enlace-nav.nav-activo {
-    color: #ffffff !important;
-}
-
-.enlace-nav.nav-activo {
-    background-color: #2a3555;
-}
-
-/* --- Tarjetas Genéricas --- */
-.tarjeta-personalizada {
-    border-radius: var(--radio-borde-tarjeta);
-    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
-}
-
-/* --- Filtros --- */
-.item-filtro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 12px;
-    border-radius: 10px;
-    color: #4b5563;
-    text-decoration: none;
-    font-weight: 500;
-    margin-bottom: 5px;
-    transition: 0.2s;
-}
-
-.item-filtro:hover {
-    background-color: #f3f4f6;
-}
-
-.item-filtro.activo {
-    background-color: #e9edfb;
-    color: var(--azul-primario);
 }
 
 .icono-filtro {
     width: 22px;
-    text-align: center;
     margin-right: 8px;
-    color: var(--azul-primario);
-}
-
-/* --- Switches --- */
-.form-switch .form-check-input {
-    width: 2.5em;
-    height: 1.25em;
-}
-
-.form-switch .form-check-input:checked {
-    background-color: #16a34a;
-    border-color: #16a34a;
-}
-
-/* --- Lista de notificaciones --- */
-.tarjeta-notificacion {
-    display: flex;
-    align-items: flex-start;
-    padding: 15px 20px;
-    border-radius: 12px;
-    transition: 0.2s;
-    margin-bottom: 10px;
-    gap: 15px;
-}
-
-.tarjeta-notificacion:hover {
-    background-color: #f9fafb;
-}
-
-.marcador-noti {
-    width: 5px;
-    align-self: stretch;
-    border-radius: 4px;
-    flex-shrink: 0;
-    min-height: 40px;
-}
-
-.punto-sin-leer {
-    width: 8px;
-    height: 8px;
-    background-color: var(--azul-primario);
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.enlace-marcar-leidas {
-    color: var(--azul-primario);
 }
 
 /* --- Perfil --- */
 .foto-perfil {
     width: 78px;
     height: 78px;
-    background-color: #d7dbe3;
-}
-
-.btn-perfil-estudiante {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-
-.btn-perfil-estudiante:hover {
-    color: #fff;
-    background-color: #1550c9;
 }
 
 .punto-estado {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
     background-color: #10b981;
-    display: inline-block;
 }
 
-/* --- Modal Silenciar --- */
-.modal-content-custom {
-    border-radius: 20px;
-    border: none;
-}
-
+/* --- Modal Silenciar: variante propia (ver comun.css para el resto) --- */
 .tarjeta-opcion-modal {
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 15px;
-    cursor: pointer;
-    transition: 0.2s;
-    height: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.tarjeta-opcion-modal:hover {
-    border-color: var(--azul-primario);
-    background-color: #f8fafc;
-}
-
-.marcador-opcion-modal {
-    width: 5px;
-    align-self: stretch;
-    border-radius: 4px;
-    flex-shrink: 0;
-    min-height: 40px;
-}
-
-.btn-cancelar-mini {
-    background-color: #f1f2f5;
-    color: #374151;
-}
-
-.btn-cancelar-mini:hover {
-    background-color: #e5e7eb;
-}
-
-.btn-guardar-silencio {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-
-.btn-guardar-silencio:hover {
-    background-color: #1550c9;
-    color: #fff;
 }

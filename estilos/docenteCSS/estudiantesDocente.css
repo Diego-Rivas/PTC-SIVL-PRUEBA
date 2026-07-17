@@ -1,59 +1,9 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-claro: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #1c64f2;
-    --radio-borde-tarjeta: 14px;
 }
 
-body {
-    background-color: var(--fondo-claro);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
-
-h1, h2, h3, h4, h5, h6,
-.titulo-pagina, .titulo-seccion, .navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina { font-weight: 700; font-size: 1.5rem; color: #16213b; }
-.titulo-seccion { font-weight: 600; color: #16213b; }
-
-/* --- Navbar --- */
-.navegacion-personalizada { background-color: var(--nav-oscuro); }
-.navbar-brand { color: #f4f5f7 !important; }
-.enlace-nav { color: #a3a9bd !important; font-weight: 500; transition: 0.25s; }
-.enlace-nav:hover, .enlace-nav.nav-activo { color: #ffffff !important; }
-.enlace-nav.nav-activo { background-color: #2a3555; }
-
-/* --- Tarjetas Genéricas --- */
-.tarjeta-personalizada {
-    border-radius: var(--radio-borde-tarjeta);
-    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
-}
-
-.foto-perfil { width: 82px; height: 82px; background-color: #d7dbe3; }
-.btn-perfil-docente { background-color: var(--azul-primario); color: #fff; }
-.btn-perfil-docente:hover { color: #fff; background-color: #1550c9; }
-
-/* --- Mis grupos asignados --- */
-.btn-grupo-lateral {
-    color: #4b5563;
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: 10px 12px;
-    border-radius: 10px;
-    transition: 0.2s;
-}
-.btn-grupo-lateral:hover { background-color: #f3f4f6; color: #111827; }
-.btn-grupo-lateral.activo { background-color: #e9edfb; color: var(--azul-primario); font-weight: 600; }
-.marcador-grupo {
-    width: 5px; height: 20px; border-radius: 3px;
-    background-color: #d7dbe3; flex-shrink: 0; display: inline-block;
-}
-.btn-grupo-lateral.activo .marcador-grupo { background-color: var(--azul-primario); }
+.foto-perfil { width: 82px; height: 82px; }
 
 /* --- Acciones rápidas (marcador lateral en vez de ícono en caja de color) --- */
 .tarjeta-accion-rapida {
@@ -64,23 +14,11 @@ h1, h2, h3, h4, h5, h6,
     transition: 0.2s;
 }
 .tarjeta-accion-rapida:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-color: #d1d5db; }
-.marcador-accion {
-    width: 6px; height: 34px; border-radius: 4px; flex-shrink: 0; display: inline-block;
-}
-
-/* --- Búsqueda --- */
-.entrada-busqueda-alumnos {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 8px 12px 8px 34px;
-    background-color: #f9fafb;
-}
-.entrada-busqueda-alumnos:focus { border-color: var(--azul-primario); box-shadow: none; background-color: #fff; }
 
 /* --- Tabla de Estudiantes --- */
 .tabla-estudiantes th { font-size: 0.8rem; color: #6b7280; }
 .tabla-estudiantes td { font-size: 0.85rem; }
-.avatar-estudiante { width: 32px; height: 32px; background-color: #d7dbe3; }
+.avatar-estudiante { width: 32px; height: 32px; }
 
 /* --- Badges de Estado --- */
 .badge-estado { padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; }
@@ -89,11 +27,46 @@ h1, h2, h3, h4, h5, h6,
 .estado-avanzado { background-color: #dcfce7; color: #10b981; }
 .estado-completado { background-color: #e0f2fe; color: #0284c7; }
 
-/* --- Panel Derecho: Estadísticas (marcador en vez de ícono redondo) --- */
-.marcador-stat {
-    width: 4px;
-    height: 40px;
-    border-radius: 3px;
-    flex-shrink: 0;
-    display: inline-block;
+/* --- Panel Derecho: Estadísticas (marcador en vez de ícono redondo, ver comun.css) --- */
+
+/* --- Modal Mi Perfil (Docente) --- */
+.btn-outline-primario-docente {
+    color: var(--azul-primario);
+    border: 1px solid var(--azul-primario);
+    background-color: transparent;
 }
+.btn-outline-primario-docente:hover {
+    background-color: #eef2ff;
+    color: var(--azul-primario);
+}
+
+.bloque-info-perfil-docente {
+    background-color: #f7f8fb;
+    border: 1px solid #eef0f2;
+}
+
+.icono-info-docente {
+    color: var(--azul-primario);
+    font-size: 1.1rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.pill-grupo-docente {
+    background-color: #e9edfb;
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-cerrar-perfil-docente {
+    background-color: #ffffff;
+    color: #374151;
+    border: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+.btn-cerrar-perfil-docente:hover { background-color: #f8f9fa; }

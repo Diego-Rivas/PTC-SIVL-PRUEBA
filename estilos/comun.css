@@ -1,0 +1,429 @@
+/* ============================================================
+   comun.css — Estilos compartidos por TODAS las paginas del
+   sistema (Administrador, Docente, Empresa, Estudiante).
+   Cada hoja de estilos especifica de cada pagina solo debe
+   contener lo que es propio de esa pagina; lo que se repite en
+   varias paginas vive aqui.
+   ============================================================ */
+
+:root {
+    --fondo-claro: #eef0f2;
+    --nav-oscuro: #16213b;
+    --radio-borde-tarjeta: 14px;
+}
+
+body {
+    background-color: var(--fondo-claro);
+    font-family: 'Work Sans', sans-serif;
+    color: #23272f;
+}
+
+h1, h2, h3, h4, h5, h6,
+.titulo-pagina, .titulo-seccion, .navbar-brand, .texto-paso {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+.titulo-pagina {
+    font-weight: 700;
+    color: #16213b;
+}
+
+.titulo-seccion {
+    font-weight: 600;
+    color: #16213b;
+}
+
+.texto-paso {
+    color: #16213b;
+    font-weight: 600;
+}
+
+/* --- Navbar --- */
+.navbar-personalizada, .navegacion-personalizada {
+    background-color: var(--nav-oscuro);
+}
+.navbar-brand { color: #f4f5f7 !important; }
+.nav-link, .enlace-nav {
+    color: #a3a9bd !important;
+    font-weight: 500;
+    transition: 0.25s;
+}
+.nav-link:hover, .nav-link.nav-activo,
+.enlace-nav:hover, .enlace-nav.nav-activo {
+    color: #ffffff !important;
+}
+.nav-link.nav-activo, .enlace-nav.nav-activo {
+    background-color: #2a3555;
+}
+
+/* --- Tarjetas genericas --- */
+.tarjeta-personalizada {
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+}
+
+/* --- Foto / imagen de perfil lateral --- */
+.imagen-perfil, .foto-perfil, .avatar-estudiante {
+    background-color: #d7dbe3;
+}
+
+/* --- Logo de empresa (placeholder) --- */
+.logo-empresa-placeholder {
+    background-color: #eef0f2;
+}
+
+/* --- Nombre de empresa (tarjetas/listas) --- */
+.nombre-empresa {
+    color: var(--azul-primario);
+    text-decoration: none;
+}
+.nombre-empresa:hover { text-decoration: underline; }
+
+/* --- Texto en estado activo --- */
+.texto-activo { color: var(--azul-primario); }
+
+/* --- Botones de "Ver mi perfil" --- */
+.btn-perfil-admin, .btn-perfil-docente, .btn-perfil-empresa, .btn-perfil-estudiante {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-perfil-admin:hover, .btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
+.btn-perfil-docente:hover, .btn-perfil-estudiante:hover { color: #fff; background-color: #1550c9; }
+
+/* --- Franja de metricas --- */
+.franja-metricas {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: var(--radio-borde-tarjeta);
+    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
+    padding: 1.4rem 1rem;
+}
+.metrica-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.5rem;
+}
+.metrica-numero {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #16213b;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.metrica-etiqueta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+.metrica-etiqueta i { color: var(--azul-primario); }
+.separador-metrica {
+    width: 1px;
+    background-color: #e9eaee;
+    margin: 4px 0;
+}
+@media (max-width: 767px) {
+    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
+    .separador-metrica { display: none; }
+}
+
+/* --- Acciones rapidas --- */
+.item-accion-rapida {
+    color: #23272f;
+    border-bottom: 1px solid #f1f2f5;
+    transition: 0.2s;
+}
+.item-accion-rapida:last-child { border-bottom: none; }
+.item-accion-rapida:hover { background-color: #f7f8fa; }
+.marcador-accion {
+    width: 6px;
+    height: 34px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+.marcador-stat {
+    width: 4px;
+    height: 40px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* --- Grupos asignados (barra lateral, modulo docente) --- */
+.btn-grupo-lateral {
+    color: #4b5563;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.btn-grupo-lateral:hover { background-color: #f3f4f6; color: #111827; }
+.btn-grupo-lateral.activo { background-color: #e9edfb; color: var(--azul-primario); font-weight: 600; }
+.marcador-grupo {
+    width: 5px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #d7dbe3;
+    flex-shrink: 0;
+    display: inline-block;
+}
+.btn-grupo-lateral.activo .marcador-grupo { background-color: var(--azul-primario); }
+
+/* --- Busqueda de alumnos (modulo docente/admin) --- */
+.entrada-busqueda-alumnos {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 8px 12px 8px 34px;
+    background-color: #f9fafb;
+}
+.entrada-busqueda-alumnos:focus { border-color: var(--azul-primario); box-shadow: none; background-color: #fff; }
+
+/* --- Busqueda / inputs (modulo estudiante) --- */
+.entrada-busqueda, .input-personalizado {
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+.entrada-busqueda:focus, .input-personalizado:focus {
+    border-color: var(--azul-primario);
+    box-shadow: none;
+    background-color: #fff;
+}
+.contenedor-entrada-busqueda { position: relative; }
+.contenedor-entrada-busqueda .bi-search {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+/* --- Boton cancelar (mini) --- */
+.btn-cancelar-mini {
+    background-color: #f1f2f5;
+    color: #374151;
+}
+.btn-cancelar-mini:hover { background-color: #e5e7eb; }
+
+/* --- Consejos (marcador lateral) --- */
+.item-consejo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.item-consejo:last-child { margin-bottom: 0; }
+.marcador-consejo {
+    width: 4px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 30px;
+}
+
+/* --- Punto de estado --- */
+.punto-estado {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* --- Notificaciones --- */
+.tarjeta-notificacion {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px 20px;
+    border-radius: 12px;
+    transition: 0.2s;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+.tarjeta-notificacion:hover { background-color: #f9fafb; }
+.marcador-noti {
+    width: 5px;
+    align-self: stretch;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-height: 40px;
+}
+.punto-sin-leer {
+    width: 8px;
+    height: 8px;
+    background-color: var(--azul-primario);
+    border-radius: 50%;
+    display: inline-block;
+}
+.enlace-marcar-leidas { color: var(--azul-primario); }
+
+/* --- Filtros laterales (notificaciones) --- */
+.item-filtro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 10px;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 5px;
+    transition: 0.2s;
+}
+.item-filtro:hover { background-color: #f3f4f6; }
+.item-filtro.activo { background-color: #e9edfb; color: var(--azul-primario); }
+.icono-filtro { text-align: center; color: var(--azul-primario); }
+
+/* --- Switches --- */
+.form-switch .form-check-input { width: 2.5em; height: 1.25em; }
+.form-switch .form-check-input:checked { background-color: #16a34a; border-color: #16a34a; }
+
+/* --- Casillas de verificacion personalizadas --- */
+.casilla-personalizada .form-check-input:checked {
+    background-color: var(--azul-primario);
+    border-color: var(--azul-primario);
+}
+
+/* --- Ventana modal generica (encabezado/cuerpo/formulario) --- */
+.modal-header-custom { border-bottom: none; padding: 25px 30px 10px 30px; }
+.modal-body-custom { padding: 10px 30px 25px 30px; }
+.form-label-custom { font-weight: 700; font-size: 0.85rem; color: #212529; margin-bottom: 6px; }
+.form-control-custom { border-radius: 8px; border: 1px solid #dee2e6; padding: 10px 12px; font-size: 0.9rem; }
+.form-control-custom::placeholder { color: #adb5bd; }
+.btn-cancelar {
+    background-color: #ffffff;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-cancelar:hover { background-color: #f8f9fa; }
+.btn-guardar {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+.btn-guardar:hover { background-color: #1f3fae; }
+
+/* --- Modal de opciones (silenciar notificaciones, etc.) --- */
+.modal-content-custom {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.tarjeta-opcion-modal {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    height: 100%;
+}
+.tarjeta-opcion-modal:hover,
+.tarjeta-opcion-modal.seleccionada {
+    border-color: var(--azul-primario);
+    background-color: #f8fafc;
+}
+.marcador-opcion-modal {
+    width: 5px;
+    align-self: stretch;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-height: 40px;
+}
+.btn-guardar-silencio {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-guardar-silencio:hover { background-color: #1550c9; color: #fff; }
+
+/* --- Marcador de pasos (formularios multi-paso, modulo empresa) --- */
+.marcador-paso {
+    width: 4px;
+    height: 22px;
+    background-color: var(--azul-primario);
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+/* --- Inputs estilo "linea" (formularios de creacion, modulo empresa) --- */
+.form-control-linea, .form-select-linea {
+    border: none;
+    border-bottom: 2px solid #cbd5e1;
+    border-radius: 0;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: #23272f;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+.form-select-linea { padding-right: 24px; color: #4b5563; }
+.form-control-linea:focus, .form-select-linea:focus {
+    outline: none;
+    border-bottom-color: var(--azul-primario);
+}
+
+/* --- Vista previa / caja de consejos (formularios de creacion) --- */
+.icono-preview { background-color: #e9edfb; color: var(--azul-primario); }
+.caja-consejos { background-color: #f4f6fd; }
+.titulo-consejos { color: var(--azul-primario); }
+.marcador-consejo-mini {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--azul-primario);
+    flex-shrink: 0;
+    margin-top: 7px;
+}
+
+/* --- Botones inferiores de formulario (modulo empresa) --- */
+.btn-inferior-publicar {
+    background-color: var(--azul-primario);
+    color: white;
+    font-weight: bold;
+    padding: 10px 32px;
+    border-radius: 10px;
+    border: none;
+}
+.btn-inferior-publicar:hover { background-color: #1f3fae; }
+.btn-inferior-cancelar {
+    background-color: white;
+    color: var(--azul-primario);
+    font-weight: bold;
+    padding: 10px 32px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
+/* --- Boton crear oferta (modulo empresa) --- */
+.btn-crear-oferta {
+    background-color: var(--azul-primario);
+    color: #fff;
+}
+.btn-crear-oferta:hover { background-color: #1f3fae; color: #fff; }
+
+/* --- Pestanas de filtro internas de tabla (modulo empresa) --- */
+.nav-link-filtro {
+    color: #6b7280;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: 0.2s;
+}
+.nav-link-filtro:hover { color: #111827; }
+.nav-link-filtro.activo {
+    color: var(--azul-primario);
+    border-bottom-color: var(--azul-primario);
+}
+.btn-gestionar-bootstrap {
+    border: 2px solid var(--azul-primario) !important;
+    color: var(--azul-primario) !important;
+    min-width: 115px;
+}
+.btn-gestionar-bootstrap:hover { background-color: #f0f5ff !important; }
+.item-eliminar { color: #ef4444 !important; }

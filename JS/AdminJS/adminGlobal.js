@@ -1,10 +1,10 @@
-const uiGlobalEmpresa = {
+const uiGlobalAdmin = {
 
     perfil: {
 
-        foto: document.getElementById("empresaFotoPerfil"),
-        nombre: document.getElementById("empresaNombre"),
-        verPerfil: document.getElementById("empresaVerPerfil")
+        foto: document.getElementById("adminFotoPerfil"),
+        nombre: document.getElementById("adminNombre"),
+        verPerfil: document.getElementById("adminVerPerfil")
 
     }
 

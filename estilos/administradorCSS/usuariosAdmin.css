@@ -1,61 +1,14 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-claro: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #2952d1;
-    --radio-borde-tarjeta: 14px;
 }
 
-body {
-    background-color: var(--fondo-claro);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
-
-h1, h2, h3, h4, h5, h6,
-.titulo-pagina, .titulo-seccion, .navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #16213b;
-}
-
-.titulo-seccion {
-    font-weight: 600;
-    color: #16213b;
-}
-
-/* --- Navbar (idéntico al resto del sitio) --- */
-.navbar-personalizada { background-color: var(--nav-oscuro); }
-.navbar-brand { color: #f4f5f7 !important; }
-.nav-link {
-    color: #a3a9bd !important;
-    font-weight: 500;
-    transition: 0.25s;
-}
-.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
-.nav-link.nav-activo { background-color: #2a3555; }
-
-/* --- Tarjetas Genéricas --- */
-.tarjeta-personalizada {
-    border-radius: var(--radio-borde-tarjeta);
-    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
-}
+.titulo-pagina { font-size: 1.5rem; }
 
 .imagen-perfil {
     width: 82px;
     height: 82px;
-    background-color: #d7dbe3;
 }
-.btn-perfil-admin {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-.btn-perfil-admin:hover { color: #fff; background-color: #1f3fae; }
 
 /* --- Menú lateral de roles (marcador en vez de resaltado plano) --- */
 .nav-link-lateral {

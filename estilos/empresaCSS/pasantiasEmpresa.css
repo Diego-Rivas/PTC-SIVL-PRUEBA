@@ -1,106 +1,22 @@
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --nav-oscuro: #16213b;
     --azul-primario: #2952d1;
 }
 
-body {
-    background-color: #eef0f2;
-    color: #23272f;
-    font-family: 'Work Sans', sans-serif;
-}
+.titulo-pagina { font-size: 1.5rem; }
 
-h1, h2, h3, h4, h5, h6,
-.titulo-pagina, .titulo-seccion, .navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-pagina {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #16213b;
-}
-
-/* --- Navbar (idéntico a ofertasLaboralesEmpresa) --- */
-.navbar-personalizada {
-    background-color: var(--nav-oscuro);
-}
-.navbar-brand { color: #f4f5f7 !important; }
-.nav-link {
-    color: #a3a9bd !important;
-    font-weight: 500;
-    transition: 0.25s;
-}
-.nav-link:hover, .nav-link.nav-activo { color: #ffffff !important; }
-.nav-link.nav-activo {
-    background-color: #2a3555;
-}
-
-/* --- Tarjetas --- */
+/* --- Tarjetas: esta página usa una sombra más sutil --- */
 .tarjeta-personalizada {
-    border-radius: var(--radio-borde-tarjeta);
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .imagen-perfil {
     width: 85px;
     height: 85px;
-    background-color: #d7dbe3;
-}
-.btn-perfil-empresa {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-.btn-perfil-empresa:hover { color: #fff; background-color: #1f3fae; }
-
-.btn-crear-oferta {
-    background-color: var(--azul-primario);
-    color: #fff;
-}
-.btn-crear-oferta:hover { background-color: #1f3fae; color: #fff; }
-
-/* --- Franja de Métricas (reemplaza tarjetas con ícono) --- */
-.franja-metricas {
-    display: flex;
-    align-items: stretch;
-    background-color: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 3px 10px rgba(20,25,40,0.05);
-    padding: 1.4rem 1rem;
-}
-
-.metrica-item {
-    flex: 1;
-    text-align: center;
-    padding: 0 0.5rem;
-}
-
-.metrica-numero {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: #16213b;
-    line-height: 1;
-    margin-bottom: 6px;
-}
-
-.metrica-etiqueta {
-    font-size: 0.8rem;
-    color: #6b7280;
-    font-weight: 500;
-}
-.metrica-etiqueta i { color: var(--azul-primario); }
-
-.separador-metrica {
-    width: 1px;
-    background-color: #e9eaee;
-    margin: 4px 0;
 }
 
 @media (max-width: 767px) {
-    .franja-metricas { flex-wrap: wrap; gap: 1rem; }
     .metrica-item { flex: 1 1 40%; }
-    .separador-metrica { display: none; }
 }
 
 /* Interactividad de pestañas internas */
@@ -131,20 +47,7 @@ h1, h2, h3, h4, h5, h6,
     background-color: var(--azul-primario);
 }
 
-/* Botón Gestionar */
-.btn-gestionar-bootstrap {
-    border: 2px solid var(--azul-primario) !important;
-    color: var(--azul-primario) !important;
-    min-width: 115px;
-}
-.btn-gestionar-bootstrap:hover {
-    background-color: #f0f5ff !important;
-}
-.item-eliminar {
-    color: #ef4444 !important;
-}
-
-/* --- Panel Lateral Izquierdo --- */
+/* --- Panel Lateral Izquierdo: esta página usa una variante propia --- */
 .item-accion-rapida {
     color: #1f2937;
     text-decoration: none;
@@ -154,66 +57,4 @@ h1, h2, h3, h4, h5, h6,
 .item-accion-rapida:hover {
     background-color: #f8fafc;
     color: var(--azul-primario);
-}
-.nav-link-filtro {
-    color: #6b7280;
-    text-decoration: none;
-    border-bottom: 3px solid transparent;
-    transition: 0.2s;
-}
-.nav-link-filtro:hover { color: #111827; }
-.nav-link-filtro.activo {
-    color: var(--azul-primario);
-    border-bottom-color: var(--azul-primario);
-}
-
-/* --- Modal --- */
-.modal-content-custom {
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-.modal-header-custom {
-    border-bottom: none;
-    padding: 25px 30px 10px 30px;
-}
-.modal-body-custom {
-    padding: 10px 30px 25px 30px;
-}
-.form-label-custom {
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: #212529;
-    margin-bottom: 6px;
-}
-.form-control-custom {
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-}
-.form-control-custom::placeholder {
-    color: #adb5bd;
-}
-.btn-cancelar {
-    background-color: #ffffff;
-    color: #212529;
-    border: 1px solid #dee2e6;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 8px;
-}
-.btn-cancelar:hover {
-    background-color: #f8f9fa;
-}
-.btn-guardar {
-    background-color: var(--azul-primario);
-    color: #ffffff;
-    border: none;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 8px;
-}
-.btn-guardar:hover {
-    background-color: #1f3fae;
 }

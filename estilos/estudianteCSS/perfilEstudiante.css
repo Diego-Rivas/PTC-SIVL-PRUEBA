@@ -1,63 +1,6 @@
-/* --- Variables Globales --- */
+/* --- Variables propias del módulo (ver comun.css para el resto) --- */
 :root {
-    --fondo-claro: #eef0f2;
-    --nav-oscuro: #16213b;
     --azul-primario: #1c64f2;
-    --radio-borde-tarjeta: 14px;
-}
-
-body {
-    background-color: var(--fondo-claro);
-    font-family: 'Work Sans', sans-serif;
-    color: #23272f;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.titulo-pagina,
-.titulo-seccion,
-.navbar-brand {
-    font-family: 'Space Grotesk', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.titulo-seccion {
-    font-weight: 600;
-    color: #16213b;
-}
-
-/* --- Navbar --- */
-.navegacion-personalizada {
-    background-color: var(--nav-oscuro);
-}
-
-.navbar-brand {
-    color: #f4f5f7 !important;
-}
-
-.enlace-nav {
-    color: #a3a9bd !important;
-    font-weight: 500;
-    transition: 0.25s;
-}
-
-.enlace-nav:hover,
-.enlace-nav.nav-activo {
-    color: #ffffff !important;
-}
-
-.enlace-nav.nav-activo {
-    background-color: #2a3555;
-}
-
-/* --- Tarjetas Genéricas --- */
-.tarjeta-personalizada {
-    border-radius: var(--radio-borde-tarjeta);
-    box-shadow: 0 3px 10px rgba(20, 25, 40, 0.05);
 }
 
 /* --- Portada y avatar --- */
@@ -184,45 +127,6 @@ h6,
     width: 68px;
     height: 68px;
     background: #ffffff;
-}
-
-/* --- Modal --- */
-.modal-content-custom {
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.modal-header-custom {
-    border-bottom: none;
-    padding: 25px 30px 10px 30px;
-}
-
-.modal-body-custom {
-    padding: 10px 30px 25px 30px;
-}
-
-.form-label-custom {
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: #212529;
-    margin-bottom: 6px;
-}
-
-.form-control-custom {
-    border-radius: 8px;
-    border: 1px solid #dee2e6;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-}
-
-.btn-cancelar-mini {
-    background-color: #f1f2f5;
-    color: #374151;
-}
-
-.btn-cancelar-mini:hover {
-    background-color: #e5e7eb;
 }
 
 .btn-guardar-proyecto {
